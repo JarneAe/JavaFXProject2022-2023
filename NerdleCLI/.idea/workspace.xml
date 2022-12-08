@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/RandomFormulaGenerator/RandomFormulaGenerator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +29,10 @@
         <entry key="$PROJECT_DIR$/.." value="main" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Icy8DfFZMGChdygPCCkkG1wpSz" />
   <component name="ProjectViewState">
@@ -43,13 +47,31 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "F:/Programming/Repos/JavaFXProject2022-2023/NerdleCLI",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Game" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,6 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670495006945</updated>
       <workItem from="1670495007910" duration="413000" />
+      <workItem from="1670511549701" duration="545000" />
     </task>
     <servers />
   </component>
