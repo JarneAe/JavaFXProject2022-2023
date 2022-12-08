@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Game/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="Added comments and TODOs, file restructuring">
+      <change afterPath="$PROJECT_DIR$/Game/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +42,6 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "F:/Programming/Repos/JavaFXProject2022-2023/NerdleCLI",
@@ -55,6 +52,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -81,8 +79,17 @@
       <option name="presentableId" value="Default" />
       <updated>1670495006945</updated>
       <workItem from="1670495007910" duration="413000" />
-      <workItem from="1670511549701" duration="545000" />
+      <workItem from="1670511549701" duration="692000" />
+      <workItem from="1670512250518" duration="2336000" />
     </task>
+    <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
+      <created>1670512189331</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670512189331</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,5 +132,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added comments and TODOs, file restructuring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments and TODOs, file restructuring" />
   </component>
 </project>
