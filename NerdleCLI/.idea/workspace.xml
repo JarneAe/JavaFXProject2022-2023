@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="Added comments and TODOs, file restructuring">
-      <change afterPath="$PROJECT_DIR$/Game/src/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Nerdle/Nerdle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/src/FormulaParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/src/FormulaParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NerdleCLI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NerdleCLI.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,26 +41,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "F:/Programming/Repos/JavaFXProject2022-2023/NerdleCLI",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Programming/Repos/JavaFXProject2022-2023/NerdleCLI&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\Gamee\src" />
+      <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\Gamee" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.FormulaParser">
+    <configuration name="FormulaParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FormulaParser" />
+      <module name="RandomFormulaGenerator" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Nerdle" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Game" />
@@ -66,6 +90,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FormulaParser" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -81,6 +107,8 @@
       <workItem from="1670495007910" duration="413000" />
       <workItem from="1670511549701" duration="692000" />
       <workItem from="1670512250518" duration="2336000" />
+      <workItem from="1670529515321" duration="65000" />
+      <workItem from="1670529589124" duration="950000" />
     </task>
     <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
       <created>1670512189331</created>

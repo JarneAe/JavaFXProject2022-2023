@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Game/Game.iml" filepath="$PROJECT_DIR$/Game/Game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nerdle/Nerdle.iml" filepath="$PROJECT_DIR$/Nerdle/Nerdle.iml" />
       <module fileurl="file://$PROJECT_DIR$/NerdleCLI.iml" filepath="$PROJECT_DIR$/NerdleCLI.iml" />
       <module fileurl="file://$PROJECT_DIR$/RandomFormulaGenerator/RandomFormulaGenerator.iml" filepath="$PROJECT_DIR$/RandomFormulaGenerator/RandomFormulaGenerator.iml" />
     </modules>
