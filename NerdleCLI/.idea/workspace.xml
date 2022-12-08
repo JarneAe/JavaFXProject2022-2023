@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="Added comments and TODOs, file restructuring">
-      <change afterPath="$PROJECT_DIR$/Nerdle/Nerdle.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/src/FormulaParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/src/FormulaParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NerdleCLI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NerdleCLI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/Generator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +61,7 @@
       <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\Gamee" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FormulaParser">
+  <component name="RunManager" selected="Application.Main (2)">
     <configuration name="FormulaParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FormulaParser" />
       <module name="RandomFormulaGenerator" />
@@ -81,6 +76,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="RandomFormulaGenerator" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Game" />
@@ -90,6 +92,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.FormulaParser" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
@@ -108,7 +111,7 @@
       <workItem from="1670511549701" duration="692000" />
       <workItem from="1670512250518" duration="2336000" />
       <workItem from="1670529515321" duration="65000" />
-      <workItem from="1670529589124" duration="950000" />
+      <workItem from="1670529589124" duration="4982000" />
     </task>
     <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
       <created>1670512189331</created>
