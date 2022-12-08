@@ -94,6 +94,8 @@ public class FormulaParser {
         ArrayList<ArrayList<String>> split2 = parser.splitNumbersAndOperators(test2);
         System.out.println(parser.eval(split2));
 
+        // TODO: fix multiple division / multiplication
+
 
         System.out.println();
     }
