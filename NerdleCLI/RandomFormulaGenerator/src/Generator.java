@@ -1,56 +1,46 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 public class Generator {
-    String[] possibleCharacter = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "*", "/"};
-    //Array where the formula gets put in
-    String[] operators = {"+", "-", "*", "/"};
-    List<String> operatorsList = new ArrayList<>(Arrays.asList(operators));
-    ArrayList<String> formula = new ArrayList<>();
+    private static final String[] OPERATORS = {"+", "-", "*", "/"};
+    ArrayList<String> returnFormula = new ArrayList<>();
 
 
+    public ArrayList<String> generateFormula() {
+        StringBuilder formula = new StringBuilder();
+        Random random = new Random();
 
-    public void generate() {
-        Random r = new Random();
+        // Generate a random number of digits to use in the formula
+        int numDigits = random.nextInt(4) + 1;
 
-        for (int i = 0; i < 5; i++) {
-            //separates random generator for the first and last sign in the formula
-            if (i == 0 || i == 4) {
-                int data = r.nextInt(1, 10);
-                formula.add(String.valueOf(data));
-            } else {
-                //random generator to generate the rest of the characters
-                String data = possibleCharacter[r.nextInt(possibleCharacter.length)];
-                formula.add(data);
+        // Generate the specified number of digits and append them to the formula
+        for (int i = 0; i < numDigits; i++) {
+            // Choose a random digit and append it to the formula
+            formula.append(random.nextInt(10));
+
+            // If there is room for another digit, decide whether to use 1 or 2 digits
+            if (formula.length() + 2 <= 5) {
+                if (random.nextBoolean()) {
+                    formula.append(random.nextInt(10));
+                }
+            }
+            // If there is room for an operator, choose a random operator and append it to the formula
+            if (formula.length() + 2 <= 5) {
+                formula.append(OPERATORS[random.nextInt(OPERATORS.length)]);
             }
         }
-
-        for (int i = 0; i < formula.size(); i++) {
-            int amountOfOperators = 0;
-            try{
-                String ind1 = formula.get(i);
-                String ind2 = formula.get(i+1);
-
-                //checks if 2 indexes back to back aren't in the operators list
-                if (operatorsList.contains(ind1) && operatorsList.contains(ind2)){
-                    System.out.println("2 operators next to each other found!");
-                }
-                if(operatorsList.contains(formula.get(1)) || operatorsList.contains(formula.get(2)) || operatorsList.contains(formula.get(3))){
-                    amountOfOperators++;
-                }
-                if(amountOfOperators < 1){
-                    System.out.println("no operator found");
-                }
-                // error handling
-            } catch (IndexOutOfBoundsException e){
-                System.out.println("Index Error ( a good one ;) ) ");
+        if (formula.toString().length() != 5) {
+            System.out.println("formula is too long or too short "+ formula);
+        } else {
+            System.out.println(formula);
+            for (int i = 0; i < formula.length(); i++) {
+                returnFormula.add(String.valueOf(formula.charAt(i)));
             }
         }
-        System.out.println(formula);
-
-        //TODO: make sure that when a division happens it wont return a decimal number
-
+        return returnFormula;
     }
+
 }
+
+
+
