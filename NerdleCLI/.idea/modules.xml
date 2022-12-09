@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Nerdle/Nerdle.iml" filepath="$PROJECT_DIR$/Nerdle/Nerdle.iml" />
       <module fileurl="file://$PROJECT_DIR$/NerdleCLI.iml" filepath="$PROJECT_DIR$/NerdleCLI.iml" />
       <module fileurl="file://$PROJECT_DIR$/RandomFormulaGenerator/RandomFormulaGenerator.iml" filepath="$PROJECT_DIR$/RandomFormulaGenerator/RandomFormulaGenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />
     </modules>
   </component>
 </project>

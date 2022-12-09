@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="Added comments and TODOs">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/MathParser_org_mXparser_v_4_2_0_jdk_1_10.xml" afterDir="false" />
+    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="Added dependency?">
+      <change afterPath="$PROJECT_DIR$/lib/lib.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/MathParser_org_mXparser_v_4_2_0_jdk_1_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/MathParser_org_mXparser_v_4_2_0_jdk_1_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/FormulaParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/FormulaParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/lib/MathParser.org-mXparser-v.4.2.0-jdk.1.10.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MathParser.org-mXparser-v.4.2.0-jdk.1.10.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +47,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "F:/Programming/Repos/JavaFXProject2022-2023/NerdleCLI/RandomFormulaGenerator/lib/MathParser.org-mXparser-v.4.2.0-jdk.1.10.jar",
+    "last_opened_file_path": "F:/Programming/Repos/JavaFXProject2022-2023/NerdleCLI/lib/MathParser.org-mXparser-v.4.2.0-jdk.1.10.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -58,6 +60,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\lib" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\RandomFormulaGenerator\lib" />
       <recent name="C:\Users\robhe\GitHub\NerdleCLI\lib" />
@@ -109,7 +114,8 @@
       <workItem from="1670529515321" duration="65000" />
       <workItem from="1670529589124" duration="950000" />
       <workItem from="1670572848368" duration="1408000" />
-      <workItem from="1670574450639" duration="758000" />
+      <workItem from="1670574450639" duration="1057000" />
+      <workItem from="1670575519226" duration="156000" />
     </task>
     <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
       <created>1670512189331</created>
@@ -118,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670512189331</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added dependency?">
+      <created>1670575266179</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670575266179</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +182,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added comments and TODOs, file restructuring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comments and TODOs, file restructuring" />
+    <MESSAGE value="Added dependency?" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dependency?" />
   </component>
 </project>
