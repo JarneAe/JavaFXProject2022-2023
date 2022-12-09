@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.mariuszgromada.math.mxparser.*;
+
 public class FormulaParser {
 
     public static int getResult() {
