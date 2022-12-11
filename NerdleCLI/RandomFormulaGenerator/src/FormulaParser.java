@@ -39,28 +39,42 @@ public class FormulaParser {
             return false; // no operator in input
         }
 
-        ArrayList<String> expression = new ArrayList<>();
-        StringBuilder resultString = new StringBuilder();
 
-        for (String character : input) { // get expression without the result
-            if (character.equals("=")) {
-                break;
-            } else {
-                expression.add(character);
-            }
-        }
+        int isEqualToIndex = input.indexOf("=");
 
-        int startIndexForResult = input.indexOf("=") + 1;
-
-        if (startIndexForResult >= input.size()) { // if "=" is the last character of the input, thus not having a valid result
+        if (isEqualToIndex+1 >= input.size()) { // if "=" is the last character of the input, thus not having a valid result
             return false;
         }
 
-        for (int i = startIndexForResult; i < input.size(); i++) { // get result from input
-            resultString.append(input.get(i));
+        ArrayList<String> expression = new ArrayList<>(input.subList(0, isEqualToIndex)); // ArrayList of everything before the "=" (the mathematical expression)
+        String resultString = String.join(", ", input.subList(isEqualToIndex+1, input.size())); // String of everything after the "=" (the result)
+
+        return Integer.parseInt(resultString) == FormulaParser.getResult(expression); // returns true if the result in input matches the result of the expression
+    }
+
+    /**
+     *
+     * @param expression ArrayList of an expression without a result
+     * @return ArrayList of the expression with result appended
+     */
+    public static ArrayList<String> appendResultToExpression(ArrayList<String> expression) {
+        if (validateInput(expression)) {
+            System.out.println("expression already complete");
+            return expression;
         }
 
-        return Integer.parseInt(resultString.toString()) == FormulaParser.getResult(expression); // returns true if the result in input matches the result of the expression
+        String resultOfExpression = Integer.toString(FormulaParser.getResult(expression));
+        expression.add("=");
+        for (int i = 0; i < resultOfExpression.length(); i++) {
+            expression.add(String.valueOf((resultOfExpression.charAt(i))));
+        }
+
+        if (validateInput(expression)) { // extra check
+            return expression;
+        } else {
+            System.out.println("something went wrong");
+            return new ArrayList<>();
+        }
     }
 
     public static void main(String[] args) {
@@ -81,5 +95,9 @@ public class FormulaParser {
         System.out.println(FormulaParser.validateInput(test2withResult));
         System.out.println(FormulaParser.validateInput(test3withResult));
         System.out.println(FormulaParser.validateInput(test4withResult));
+
+        System.out.println(FormulaParser.appendResultToExpression(test1));
+        System.out.println(FormulaParser.appendResultToExpression(test2));
+        System.out.println(FormulaParser.appendResultToExpression(test3));
     }
 }
