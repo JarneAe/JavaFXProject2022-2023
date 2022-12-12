@@ -1,17 +1,16 @@
-import java.text.Normalizer;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import org.mariuszgromada.math.mxparser.*;
 
 public class FormulaParser {
+
+    private static final int SIZE_CONSTRAINT = 8; // change here to change the size constraint
 
     /**
      *
      * @param formula the formula in an array of strings WITHOUT A RESULT!
      * @return result of the formula
      */
-    public static int getResult(ArrayList<String> formula) {
+    public static double getResult(ArrayList<String> formula) {
         StringBuilder expressionBuilder = new StringBuilder();
         for (String character : formula) {
             expressionBuilder.append(character);
@@ -21,7 +20,7 @@ public class FormulaParser {
 
         Expression e = new Expression(expressionString);
 
-        return (int) e.calculate();
+        return e.calculate();
     }
 
     /**
@@ -30,13 +29,17 @@ public class FormulaParser {
      * @return true if the input passes all checks (has a result, result matches expression, expression contains operators)
      * and false if it does not
      */
-    public static boolean validateInput(ArrayList<String> input) {
+    public static boolean validateExpressionWithResult(ArrayList<String> input) {
         if (!input.contains("=")) {
             return false; // no result in input
         }
 
         if (!input.contains("+") && !input.contains("-") && !input.contains("*") && !input.contains("/")) {
             return false; // no operator in input
+        }
+
+        if (input.size() != SIZE_CONSTRAINT) {
+            return false; // wrong size
         }
 
 
@@ -47,57 +50,61 @@ public class FormulaParser {
         }
 
         ArrayList<String> expression = new ArrayList<>(input.subList(0, isEqualToIndex)); // ArrayList of everything before the "=" (the mathematical expression)
-        String resultString = String.join(", ", input.subList(isEqualToIndex+1, input.size())); // String of everything after the "=" (the result)
+        String resultString = String.join("", input.subList(isEqualToIndex+1, input.size())); // String of everything after the "=" (the result)
 
         return Integer.parseInt(resultString) == FormulaParser.getResult(expression); // returns true if the result in input matches the result of the expression
+        // should also catch decimal number results
     }
 
     /**
-     *
      * @param expression ArrayList of an expression without a result
-     * @return ArrayList of the expression with result appended
      */
-    public static ArrayList<String> appendResultToExpression(ArrayList<String> expression) {
-        if (validateInput(expression)) {
+    public static void appendResultToExpression(ArrayList<String> expression) {
+
+        if (validateExpressionWithResult(expression)) {
             System.out.println("expression already complete");
-            return expression;
+            return;
         }
 
-        String resultOfExpression = Integer.toString(FormulaParser.getResult(expression));
+        String resultOfExpression = Integer.toString((int) FormulaParser.getResult(expression));
         expression.add("=");
         for (int i = 0; i < resultOfExpression.length(); i++) {
             expression.add(String.valueOf((resultOfExpression.charAt(i))));
         }
+    }
 
-        if (validateInput(expression)) { // extra check
-            return expression;
-        } else {
-            System.out.println("something went wrong");
-            return new ArrayList<>();
-        }
+    public static boolean validateGeneratorOutput(ArrayList<String> generatorOutput) {
+        appendResultToExpression(generatorOutput);
+        return validateExpressionWithResult(generatorOutput);
     }
 
     public static void main(String[] args) {
-        ArrayList<String> test1 = new ArrayList<String>(Arrays.asList("5", "+", "3", "/", "3", "+", "3", "3", "-", "5", "6", "/", "2")); // 11
-        ArrayList<String> test2 = new ArrayList<String>(Arrays.asList("5", "*", "3", "+", "2", "2", "-", "8", "+", "7", "6", "5", "4", "3", "-", "2", "5", "/", "5")); // 76567
-        ArrayList<String> test3 = new ArrayList<String>(Arrays.asList("5", "*", "5", "*", "5")); // 125
-
-        ArrayList<String> test1withResult = new ArrayList<String>(Arrays.asList("5", "+", "3", "/", "3", "+", "3", "3", "-", "5", "6", "/", "2", "=", "11")); // 11
-        ArrayList<String> test2withResult = new ArrayList<String>(Arrays.asList("5", "*", "3", "+", "2", "2", "-", "8", "+", "7", "6", "5", "4", "3", "-", "2", "5", "/", "5", "=", "76567")); // 76567
-        ArrayList<String> test3withResult = new ArrayList<String>(Arrays.asList("5", "*", "5", "*", "5", "=", "125"));
-        ArrayList<String> test4withResult = new ArrayList<String>(Arrays.asList("5", "*", "5", "*", "5", "="));
-
-        System.out.println(FormulaParser.getResult(test1));
-        System.out.println(FormulaParser.getResult(test2));
-        System.out.println(FormulaParser.getResult(test3));
-
-        System.out.println(FormulaParser.validateInput(test1withResult));
-        System.out.println(FormulaParser.validateInput(test2withResult));
-        System.out.println(FormulaParser.validateInput(test3withResult));
-        System.out.println(FormulaParser.validateInput(test4withResult));
-
-        System.out.println(FormulaParser.appendResultToExpression(test1));
-        System.out.println(FormulaParser.appendResultToExpression(test2));
-        System.out.println(FormulaParser.appendResultToExpression(test3));
-    }
+//        ArrayList<String> test1 = new ArrayList<String>(Arrays.asList("5", "+", "3", "/", "3", "+", "3", "3", "-", "5", "6", "/", "2")); // 11
+//        ArrayList<String> test2 = new ArrayList<String>(Arrays.asList("5", "*", "3", "+", "2", "2", "-", "8", "+", "7", "6", "5", "4", "3", "-", "2", "5", "/", "5")); // 76567
+//        ArrayList<String> test3 = new ArrayList<String>(Arrays.asList("5", "*", "5", "*", "5")); // 125
+//        ArrayList<String> test4 = new ArrayList<String>(Arrays.asList("2", "1", "6", "/", "3")); // 72
+//
+//        ArrayList<String> test1withResult = new ArrayList<String>(Arrays.asList("5", "+", "3", "/", "3", "+", "3", "3", "-", "5", "6", "/", "2", "=", "11")); // 11
+//        ArrayList<String> test2withResult = new ArrayList<String>(Arrays.asList("5", "*", "3", "+", "2", "2", "-", "8", "+", "7", "6", "5", "4", "3", "-", "2", "5", "/", "5", "=", "76567")); // 76567
+//        ArrayList<String> test3withResult = new ArrayList<String>(Arrays.asList("5", "*", "5", "*", "5", "=", "125"));
+//        ArrayList<String> test4withResult = new ArrayList<String>(Arrays.asList("5", "*", "5", "*", "5", "="));
+//
+//        System.out.println();
+//
+//        System.out.println(FormulaParser.getResult(test1));
+//        System.out.println(FormulaParser.getResult(test2));
+//        System.out.println(FormulaParser.getResult(test3));
+//
+//        System.out.println(FormulaParser.validateExpressionWithResult(test1withResult));
+//        System.out.println(FormulaParser.validateExpressionWithResult(test2withResult));
+//        System.out.println(FormulaParser.validateExpressionWithResult(test3withResult));
+//        System.out.println(FormulaParser.validateExpressionWithResult(test4withResult));
+//
+//        System.out.println(FormulaParser.appendResultToExpression(test1));
+//        System.out.println(FormulaParser.appendResultToExpression(test2));
+//       System.out.println(FormulaParser.appendResultToExpression(test3));
+//
+//        System.out.println(validateGeneratorOutput(test4));
+//        System.out.println(validateGeneratorOutput(test3));
+    } // testing, ignore
 }
