@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="Added dependency?">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/FormulaParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/FormulaParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/Generator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/Main.java" afterDir="false" />
     </list>
@@ -122,6 +123,7 @@
       <workItem from="1670572848368" duration="1408000" />
       <workItem from="1670574450639" duration="1057000" />
       <workItem from="1670575519226" duration="156000" />
+      <workItem from="1670857404093" duration="5282000" />
     </task>
     <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
       <created>1670512189331</created>
@@ -190,5 +192,15 @@
     <MESSAGE value="Added comments and TODOs, file restructuring" />
     <MESSAGE value="Added dependency?" />
     <option name="LAST_COMMIT_MESSAGE" value="Added dependency?" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

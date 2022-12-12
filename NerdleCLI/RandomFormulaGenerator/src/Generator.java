@@ -4,9 +4,9 @@ import java.util.Random;
 public class Generator {
     private static final String[] OPERATORS = {"+", "-", "*", "/"};
     ArrayList<String> returnFormula = new ArrayList<>();
+    ArrayList<ArrayList<String>> formulaArray = new ArrayList<>();
 
-
-    public ArrayList<String> generateFormula() {
+    public ArrayList<String> generate() {
         StringBuilder formula = new StringBuilder();
         Random random = new Random();
 
@@ -31,13 +31,22 @@ public class Generator {
         }
         if (formula.toString().length() != 5) {
             System.out.println("formula is too long or too short "+ formula);
-        } else {
+        } else{
             System.out.println(formula);
             for (int i = 0; i < formula.length(); i++) {
-                returnFormula.add(String.valueOf(formula.charAt(i)));
+                returnFormula.set(i,(String.valueOf(formula.charAt(i))));
             }
         }
+        System.out.println(FormulaParser.validateGeneratorOutput(returnFormula));
+        System.out.println(returnFormula);
         return returnFormula;
+    }
+
+    public ArrayList<ArrayList<String>> GenerateFormulas(int amount){
+        for (int i = 0; i < amount; i++) {
+            formulaArray.add(generate());
+        }
+        return formulaArray;
     }
 
 }
