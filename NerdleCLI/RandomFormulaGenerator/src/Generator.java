@@ -3,12 +3,13 @@ import java.util.Random;
 
 public class Generator {
     private static final String[] OPERATORS = {"+", "-", "*", "/"};
-    ArrayList<String> returnFormula = new ArrayList<>();
+
     ArrayList<ArrayList<String>> formulaArray = new ArrayList<>();
 
     public ArrayList<String> generate() {
         StringBuilder formula = new StringBuilder();
         Random random = new Random();
+        ArrayList<String> returnFormula = new ArrayList<>();
 
         // Generate a random number of digits to use in the formula
         int numDigits = random.nextInt(4) + 1;
@@ -37,13 +38,12 @@ public class Generator {
                 returnFormula.set(i,(String.valueOf(formula.charAt(i))));
             }
         }
-        System.out.println(FormulaParser.validateGeneratorOutput(returnFormula));
-        System.out.println(returnFormula);
         return returnFormula;
     }
 
     public ArrayList<ArrayList<String>> GenerateFormulas(int amount){
         for (int i = 0; i < amount; i++) {
+
             formulaArray.add(generate());
         }
         return formulaArray;
