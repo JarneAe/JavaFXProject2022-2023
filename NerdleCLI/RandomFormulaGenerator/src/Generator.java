@@ -32,6 +32,7 @@ public class Generator {
         }
         if (formula.toString().length() != 5) {
             System.out.println("formula is too long or too short "+ formula);
+            //TODO: use parser to validate output
         } else{
             System.out.println(formula);
             for (int i = 0; i < formula.length(); i++) {
