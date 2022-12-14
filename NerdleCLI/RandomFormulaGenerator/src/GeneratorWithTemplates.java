@@ -18,7 +18,7 @@ public class GeneratorWithTemplates {
 
             if (String.valueOf(pattern.charAt(i)).equals("I")) {
                 System.out.println("true");
-                pattern = pattern.replace(String.valueOf((pattern.charAt(i))), String.valueOf(num));
+                pattern = pattern.replaceFirst(String.valueOf((pattern.charAt(i))), String.valueOf(num));
             }
         }
         System.out.println(pattern);
