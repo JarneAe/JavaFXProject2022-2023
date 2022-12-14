@@ -23,6 +23,7 @@ public class GeneratorWithTemplates {
 
             if (String.valueOf(pattern.charAt(i)).equals("I")) {
 
+                //removes weird 0s from formula like a 0 after an operator or at the first index
                 try{
                     if((num == 0 && operators.contains(String.valueOf(pattern.charAt(i-1)))) || i == 0){
                         num += random.nextInt(1,9);
