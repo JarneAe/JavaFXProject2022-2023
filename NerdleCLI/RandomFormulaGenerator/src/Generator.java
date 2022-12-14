@@ -30,15 +30,22 @@ public class Generator {
                 formula.append(OPERATORS[random.nextInt(OPERATORS.length)]);
             }
         }
+        System.out.println("formula: ");
         if (formula.toString().length() != 5) {
             System.out.println("formula is too long or too short "+ formula);
-            //TODO: use parser to validate output
         } else{
-            System.out.println(formula);
             for (int i = 0; i < formula.length(); i++) {
                 returnFormula.set(i,(String.valueOf(formula.charAt(i))));
             }
+
         }
+        System.out.println("this is the return formula: " + returnFormula);
+        System.out.println("validation on formula: " + FormulaParser.validateGeneratorOutput(returnFormula));
+
+        if(!FormulaParser.validateGeneratorOutput(returnFormula)){
+            returnFormula.clear();
+        }
+
         return returnFormula;
     }
 
