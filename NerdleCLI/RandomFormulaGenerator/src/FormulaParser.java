@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 import org.mariuszgromada.math.mxparser.*;
 
 public class FormulaParser {
@@ -52,6 +53,10 @@ public class FormulaParser {
         ArrayList<String> expression = new ArrayList<>(input.subList(0, isEqualToIndex)); // ArrayList of everything before the "=" (the mathematical expression)
         String resultString = String.join("", input.subList(isEqualToIndex+1, input.size())); // String of everything after the "=" (the result)
 
+        if (Integer.parseInt(resultString) < 0) { // negative number
+            return false;
+        }
+
         return Integer.parseInt(resultString) == FormulaParser.getResult(expression); // returns true if the result in input matches the result of the expression
         // should also catch decimal number results
     }
@@ -82,6 +87,7 @@ public class FormulaParser {
 //        ArrayList<String> test2 = new ArrayList<String>(Arrays.asList("5", "*", "3", "+", "2", "2", "-", "8", "+", "7", "6", "5", "4", "3", "-", "2", "5", "/", "5")); // 76567
 //        ArrayList<String> test3 = new ArrayList<String>(Arrays.asList("5", "*", "5", "*", "5")); // 125
 //        ArrayList<String> test4 = new ArrayList<String>(Arrays.asList("2", "1", "6", "/", "3")); // 72
+//        ArrayList<String> test5 = new ArrayList<String>(Arrays.asList("2", "2", "-", "2", "3")); // -1
 //
 //        ArrayList<String> test1withResult = new ArrayList<String>(Arrays.asList("5", "+", "3", "/", "3", "+", "3", "3", "-", "5", "6", "/", "2", "=", "11")); // 11
 //        ArrayList<String> test2withResult = new ArrayList<String>(Arrays.asList("5", "*", "3", "+", "2", "2", "-", "8", "+", "7", "6", "5", "4", "3", "-", "2", "5", "/", "5", "=", "76567")); // 76567
@@ -105,5 +111,9 @@ public class FormulaParser {
 //
 //        System.out.println(validateGeneratorOutput(test4));
 //        System.out.println(validateGeneratorOutput(test3));
+//        System.out.println(validateGeneratorOutput(test5));
+//
+//        System.out.println(test4);
+//        System.out.println(test5);
     } // testing, ignore
 }
