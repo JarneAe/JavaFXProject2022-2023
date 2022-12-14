@@ -59,27 +59,23 @@ public class FormulaParser {
     /**
      * @param expression ArrayList of an expression without a result
      */
-    public static ArrayList<String> getExpressionWithResult(ArrayList<String> expression) {
-        ArrayList<String> returnExpression;
-        returnExpression = expression;
+    public static void appendResultToExpression(ArrayList<String> expression) {
 
         if (validateExpressionWithResult(expression)) {
             System.out.println("expression already complete");
-            return returnExpression;
+            return;
         }
 
         String resultOfExpression = Integer.toString((int) FormulaParser.getResult(expression));
-        returnExpression.add("=");
+        expression.add("=");
         for (int i = 0; i < resultOfExpression.length(); i++) {
-            returnExpression.add(String.valueOf((resultOfExpression.charAt(i))));
+            expression.add(String.valueOf((resultOfExpression.charAt(i))));
         }
-
-        return returnExpression;
     }
 
     public static boolean validateGeneratorOutput(ArrayList<String> generatorOutput) {
-        ArrayList<String> expressionToValidate = getExpressionWithResult(generatorOutput);
-        return validateExpressionWithResult(expressionToValidate);
+        appendResultToExpression(generatorOutput);
+        return validateExpressionWithResult(generatorOutput);
     }
     public static void main(String[] args) {
 //        ArrayList<String> test1 = new ArrayList<String>(Arrays.asList("5", "+", "3", "/", "3", "+", "3", "3", "-", "5", "6", "/", "2")); // 11
