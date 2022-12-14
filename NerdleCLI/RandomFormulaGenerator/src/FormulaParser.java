@@ -59,26 +59,28 @@ public class FormulaParser {
     /**
      * @param expression ArrayList of an expression without a result
      */
-    public static void appendResultToExpression(ArrayList<String> expression) {
+    public static ArrayList<String> getExpressionWithResult(ArrayList<String> expression) {
+        ArrayList<String> returnExpression;
+        returnExpression = expression;
 
         if (validateExpressionWithResult(expression)) {
             System.out.println("expression already complete");
-            return;
+            return returnExpression;
         }
 
         String resultOfExpression = Integer.toString((int) FormulaParser.getResult(expression));
-        expression.add("=");
+        returnExpression.add("=");
         for (int i = 0; i < resultOfExpression.length(); i++) {
-            expression.add(String.valueOf((resultOfExpression.charAt(i))));
+            returnExpression.add(String.valueOf((resultOfExpression.charAt(i))));
         }
+
+        return returnExpression;
     }
 
     public static boolean validateGeneratorOutput(ArrayList<String> generatorOutput) {
-        //TODO: stop appending result to input
-        appendResultToExpression(generatorOutput);
-        return validateExpressionWithResult(generatorOutput);
+        ArrayList<String> expressionToValidate = getExpressionWithResult(generatorOutput);
+        return validateExpressionWithResult(expressionToValidate);
     }
-
     public static void main(String[] args) {
 //        ArrayList<String> test1 = new ArrayList<String>(Arrays.asList("5", "+", "3", "/", "3", "+", "3", "3", "-", "5", "6", "/", "2")); // 11
 //        ArrayList<String> test2 = new ArrayList<String>(Arrays.asList("5", "*", "3", "+", "2", "2", "-", "8", "+", "7", "6", "5", "4", "3", "-", "2", "5", "/", "5")); // 76567
