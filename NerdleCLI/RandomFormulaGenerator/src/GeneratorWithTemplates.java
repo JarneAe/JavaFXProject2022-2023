@@ -1,5 +1,6 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -8,7 +9,7 @@ public class GeneratorWithTemplates {
     Random random = new Random();
 
 
-    public ArrayList<String> generate() {
+    private ArrayList<String> generate() {
         ArrayList<String> formula = new ArrayList<>();
         String pattern = patterns[random.nextInt(patterns.length)];
         int patternLength = patterns.length - (patterns.length - 5);
@@ -35,22 +36,16 @@ public class GeneratorWithTemplates {
         return formula;
     }
 
-    public void GenerateFormulas(int amount) {
-        ArrayList<ArrayList<String>> formulaArray = new ArrayList<>();
-        for (int i = 0; i < amount; i++) {
-            ArrayList<String> generatedFormula = generate();
-            if(!generatedFormula.isEmpty()) {
-                formulaArray.add(generatedFormula);
-            }
 
-        }
-        System.out.println(formulaArray);
+    private void WriteToFile(ArrayList<ArrayList<String>> array) {
+        // Tries overwriting a file and throws an error if not possible
         try {
             FileWriter myWriter = new FileWriter("formulas.txt");
-            for (int i = 0; i < formulaArray.size(); i++) {
-                String output = String.valueOf(formulaArray.get(i));
-                output = output.replaceAll("\\[","");
-                output = output.replaceAll("]","");
+            //loops through the array writing every line to the file
+            for (ArrayList<String> strings : array) {
+                String output = String.valueOf(strings);
+                //removes the [] , and whitespace from the Strings
+                output = output.replaceAll("[\\[\\]]|,\\s*", "");
                 myWriter.write(output + "\n");
             }
             myWriter.close();
@@ -60,4 +55,19 @@ public class GeneratorWithTemplates {
             e.printStackTrace();
         }
     }
+    public void GenerateFormulas(int amount) {
+        ArrayList<ArrayList<String>> formulaArray = new ArrayList<>();
+        for (int i = 0; i < amount; i++) {
+            ArrayList<String> generatedFormula = generate();
+            if (!generatedFormula.isEmpty()) {
+                formulaArray.add(generatedFormula);
+            }
+        }
+        System.out.println(formulaArray);
+        WriteToFile(formulaArray);
+    }
 }
+
+
+
+
