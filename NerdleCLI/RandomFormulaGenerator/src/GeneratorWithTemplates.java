@@ -1,11 +1,12 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
-import java.util.StringTokenizer;
 
 public class GeneratorWithTemplates {
     String[] patterns = {"II+II", "I+I+I", "II-II", "I+I-I", "I+I*I", "I*I/I", "I/I+I", "I*I-I"};
+    ArrayList<String> operators = new ArrayList<>(Arrays.asList("+","-","/","+"));
     Random random = new Random();
 
 
@@ -23,15 +24,16 @@ public class GeneratorWithTemplates {
             if (String.valueOf(pattern.charAt(i)).equals("I")) {
 
                 try{
-                    //checks if the number is 0 and the character before it is I if it is not it generates a new random number between 1 and 9
-                    if((num == 0 && !String.valueOf(pattern.charAt(i-1)).equals("I"))){
+                    if((num == 0 && operators.contains(String.valueOf(pattern.charAt(i-1)))) || i == 0){
                         num += random.nextInt(1,9);
+                        pattern = pattern.replaceFirst(String.valueOf((pattern.charAt(i))), String.valueOf(num));
+                    }else{
                         pattern = pattern.replaceFirst(String.valueOf((pattern.charAt(i))), String.valueOf(num));
                     }
                 }catch(StringIndexOutOfBoundsException ignore){}
 
 
-                pattern = pattern.replaceFirst(String.valueOf((pattern.charAt(i))), String.valueOf(num));
+
 
             }
         }
@@ -40,7 +42,6 @@ public class GeneratorWithTemplates {
         for (int i = 0; i < patterns.length - 3; i++) {
             formula.add(String.valueOf(pattern.charAt(i)));
         }
-        System.out.println("formula before check: " + formula);
         if (!FormulaParser.validateGeneratorOutput(formula)) {
             formula.clear();
         }

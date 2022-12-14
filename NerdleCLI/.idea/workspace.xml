@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="new generator fixed">
+    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="fixed random 0s in formula">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/GeneratorWithTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/GeneratorWithTemplates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/Main.java" afterDir="false" />
@@ -129,7 +129,7 @@
       <workItem from="1671011003487" duration="1124000" />
       <workItem from="1671025306179" duration="7819000" />
       <workItem from="1671035516812" duration="1419000" />
-      <workItem from="1671046619931" duration="2207000" />
+      <workItem from="1671046619931" duration="4562000" />
     </task>
     <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
       <created>1670512189331</created>
@@ -159,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671028275430</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed random 0s in formula">
+      <created>1671049344145</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671049344145</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +220,8 @@
     <MESSAGE value="Added dependency?" />
     <MESSAGE value="new generator" />
     <MESSAGE value="new generator fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="new generator fixed" />
+    <MESSAGE value="fixed random 0s in formula" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed random 0s in formula" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
