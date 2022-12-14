@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 import org.mariuszgromada.math.mxparser.*;
 
 public class FormulaParser {
@@ -59,23 +60,27 @@ public class FormulaParser {
     /**
      * @param expression ArrayList of an expression without a result
      */
-    public static void appendResultToExpression(ArrayList<String> expression) {
+    public static ArrayList<String> getExpressionWithResult(ArrayList<String> expression) {
+        ArrayList<String> returnExpression;
+        returnExpression = expression;
 
         if (validateExpressionWithResult(expression)) {
             System.out.println("expression already complete");
-            return;
+            return returnExpression;
         }
 
         String resultOfExpression = Integer.toString((int) FormulaParser.getResult(expression));
-        expression.add("=");
+        returnExpression.add("=");
         for (int i = 0; i < resultOfExpression.length(); i++) {
-            expression.add(String.valueOf((resultOfExpression.charAt(i))));
+            returnExpression.add(String.valueOf((resultOfExpression.charAt(i))));
         }
+
+        return returnExpression;
     }
 
     public static boolean validateGeneratorOutput(ArrayList<String> generatorOutput) {
-        appendResultToExpression(generatorOutput);
-        return validateExpressionWithResult(generatorOutput);
+        ArrayList<String> expressionToValidate = getExpressionWithResult(generatorOutput);
+        return validateExpressionWithResult(expressionToValidate);
     }
 
     public static void main(String[] args) {
