@@ -1,26 +1,63 @@
-import java.util.Arrays;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class GeneratorWithTemplates {
-    String[] patterns = {"II+II", "I+I+I", "II-II", "I+I-I", "I+I*I", "I*I/I"};
+    String[] patterns = {"II+II", "I+I+I", "II-II", "I+I-I", "I+I*I", "I*I/I", "I/I+I", "I*I-I"};
     Random random = new Random();
 
-    public void generate() {
 
-
+    public ArrayList<String> generate() {
+        ArrayList<String> formula = new ArrayList<>();
         String pattern = patterns[random.nextInt(patterns.length)];
-        System.out.println(pattern);
-
-        for (int i = 0; i < patterns.length -1; i++) {
+        int patternLength = patterns.length - (patterns.length - 5);
+        for (int i = 0; i < patternLength; i++) {
 
             int num = (random.nextInt(9));
-            System.out.println(num);
-
             if (String.valueOf(pattern.charAt(i)).equals("I")) {
-                System.out.println("true");
+
                 pattern = pattern.replaceFirst(String.valueOf((pattern.charAt(i))), String.valueOf(num));
             }
         }
-        System.out.println(pattern);
+        //System.out.println(pattern);
+        for (int i = 0; i < patterns.length - 3; i++) {
+            formula.add(String.valueOf(pattern.charAt(i)));
+        }
+        System.out.println("formula before check: " + formula);
+        if (!FormulaParser.validateGeneratorOutput(formula)) {
+            formula.clear();
+        }
+
+        //System.out.println(formula);
+        //System.out.println(FormulaParser.getResult(formula));
+        //System.out.println(FormulaParser.validateGeneratorOutput(formula));
+        return formula;
+    }
+
+    public void GenerateFormulas(int amount) {
+        ArrayList<ArrayList<String>> formulaArray = new ArrayList<>();
+        for (int i = 0; i < amount; i++) {
+            ArrayList<String> generatedFormula = generate();
+            if(!generatedFormula.isEmpty()) {
+                formulaArray.add(generatedFormula);
+            }
+
+        }
+        System.out.println(formulaArray);
+        try {
+            FileWriter myWriter = new FileWriter("formulas.txt");
+            for (int i = 0; i < formulaArray.size(); i++) {
+                String output = String.valueOf(formulaArray.get(i));
+                output = output.replaceAll("\\[","");
+                output = output.replaceAll("]","");
+                myWriter.write(output + "\n");
+            }
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 }

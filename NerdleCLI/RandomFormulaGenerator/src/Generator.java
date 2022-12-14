@@ -51,7 +51,6 @@ public class Generator {
 
     public ArrayList<ArrayList<String>> GenerateFormulas(int amount){
         for (int i = 0; i < amount; i++) {
-
             formulaArray.add(generate());
         }
         return formulaArray;

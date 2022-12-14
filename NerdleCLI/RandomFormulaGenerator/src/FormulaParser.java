@@ -74,6 +74,7 @@ public class FormulaParser {
     }
 
     public static boolean validateGeneratorOutput(ArrayList<String> generatorOutput) {
+        //TODO: stop appending result to input
         appendResultToExpression(generatorOutput);
         return validateExpressionWithResult(generatorOutput);
     }
