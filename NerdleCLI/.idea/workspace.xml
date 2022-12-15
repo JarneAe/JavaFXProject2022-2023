@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="">
+    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="new generator fixed">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/GeneratorWithTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/GeneratorWithTemplates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/formulas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/formulas.txt" afterDir="false" />
     </list>
@@ -127,7 +128,6 @@
       <workItem from="1671011003487" duration="1124000" />
       <workItem from="1671025306179" duration="7819000" />
       <workItem from="1671035516812" duration="1419000" />
-      <workItem from="1671046619931" duration="5519000" />
     </task>
     <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
       <created>1670512189331</created>
@@ -157,28 +157,7 @@
       <option name="project" value="LOCAL" />
       <updated>1671028275430</updated>
     </task>
-    <task id="LOCAL-00005" summary="fixed random 0s in formula">
-      <created>1671049344145</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1671049344145</updated>
-    </task>
-    <task id="LOCAL-00006" summary="it actually works now! yippie">
-      <created>1671052240359</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1671052240359</updated>
-    </task>
-    <task id="LOCAL-00007" summary="THE GENERATOR IS ALIVE">
-      <created>1671088691030</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1671088691030</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,10 +211,7 @@
     <MESSAGE value="Added dependency?" />
     <MESSAGE value="new generator" />
     <MESSAGE value="new generator fixed" />
-    <MESSAGE value="fixed random 0s in formula" />
-    <MESSAGE value="it actually works now! yippie" />
-    <MESSAGE value="THE GENERATOR IS ALIVE" />
-    <option name="LAST_COMMIT_MESSAGE" value="THE GENERATOR IS ALIVE" />
+    <option name="LAST_COMMIT_MESSAGE" value="new generator fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

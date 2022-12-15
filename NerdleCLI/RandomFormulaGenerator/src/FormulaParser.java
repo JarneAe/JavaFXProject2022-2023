@@ -4,7 +4,7 @@ import org.mariuszgromada.math.mxparser.*;
 
 public class FormulaParser {
 
-    private static final int SIZE_CONSTRAINT = 8; // change here to change the size constraint
+    private static int size_constraint = 8; // change here to change the size constraint
 
     /**
      *
@@ -39,7 +39,7 @@ public class FormulaParser {
             return false; // no operator in input
         }
 
-        if (input.size() != SIZE_CONSTRAINT) {
+        if (input.size() != size_constraint) {
             return false; // wrong size
         }
 
