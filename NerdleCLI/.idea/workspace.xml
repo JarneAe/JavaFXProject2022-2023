@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="it actually works now! yippie">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/GeneratorWithTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/GeneratorWithTemplates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/formulas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/formulas.txt" afterDir="false" />
     </list>
@@ -172,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671052240359</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="THE GENERATOR IS ALIVE">
+      <created>1671088691030</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671088691030</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +234,8 @@
     <MESSAGE value="new generator fixed" />
     <MESSAGE value="fixed random 0s in formula" />
     <MESSAGE value="it actually works now! yippie" />
-    <option name="LAST_COMMIT_MESSAGE" value="it actually works now! yippie" />
+    <MESSAGE value="THE GENERATOR IS ALIVE" />
+    <option name="LAST_COMMIT_MESSAGE" value="THE GENERATOR IS ALIVE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

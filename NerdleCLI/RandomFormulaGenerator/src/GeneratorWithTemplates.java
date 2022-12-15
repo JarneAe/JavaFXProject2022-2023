@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class GeneratorWithTemplates {
-    String[] patterns = {"II+II", "I+I+I", "II-II", "I+I-I", "I+I*I", "I*I/I", "I/I+I", "I*I-I"};
-    ArrayList<String> operators = new ArrayList<>(Arrays.asList("+","-","/","+"));
+    String[] patterns = {"II+II", "I+I+I", "II-II", "I+I-I", "I+I*I", "I*I/I", "I/I+I", "I*I-I", "II*I"};
+    ArrayList<String> operators = new ArrayList<>(Arrays.asList("+", "-", "/", "+"));
     Random random = new Random();
 
 
@@ -14,27 +14,33 @@ public class GeneratorWithTemplates {
 
         ArrayList<String> formula = new ArrayList<>();
         String pattern = patterns[random.nextInt(patterns.length)];
-        int patternLength = patterns.length - (patterns.length - 5);
+        int patternLength = pattern.length();
 
+        try {
+            for (int i = 0; i < patternLength; i++) {
 
-        for (int i = 0; i < patternLength; i++) {
+                int num = (random.nextInt(9));
 
-            int num = (random.nextInt(9));
-
-            if (String.valueOf(pattern.charAt(i)).equals("I")) {
-                //removes weird 0s from formula like a 0 after an operator or at the first index
-                try{
-                    if((num == 0 && operators.contains(String.valueOf(pattern.charAt(i-1)))) || i == 0){
-                        num += random.nextInt(1,9);
+                if (String.valueOf(pattern.charAt(i)).equals("I")) {
+                    //removes weird 0s from formula like a 0 after an operator or at the first index
+                    try {
+                        if ((num == 0 && operators.contains(String.valueOf(pattern.charAt(i - 1)))) || i == 0) {
+                            num += random.nextInt(1, 9);
+                        }
+                        pattern = pattern.replaceFirst(String.valueOf((pattern.charAt(i))), String.valueOf(num));
+                    } catch (StringIndexOutOfBoundsException ignore) {
                     }
-                    pattern = pattern.replaceFirst(String.valueOf((pattern.charAt(i))), String.valueOf(num));
-                }catch(StringIndexOutOfBoundsException ignore){}
+                }
             }
+        } catch (StringIndexOutOfBoundsException ignore) {
         }
 
         //System.out.println(pattern);
-        for (int i = 0; i < patterns.length - 3; i++) {
-            formula.add(String.valueOf(pattern.charAt(i)));
+        try {
+            for (int i = 0; i < patterns.length - 3; i++) {
+                formula.add(String.valueOf(pattern.charAt(i)));
+            }
+        } catch (StringIndexOutOfBoundsException ignore) {
         }
         if (!FormulaParser.validateGeneratorOutput(formula)) {
             formula.clear();
@@ -64,6 +70,7 @@ public class GeneratorWithTemplates {
             e.printStackTrace();
         }
     }
+
     public void GenerateFormulas(int amount) {
 
         ArrayList<ArrayList<String>> formulaArray = new ArrayList<>();
