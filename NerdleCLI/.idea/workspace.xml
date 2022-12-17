@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="new generator fixed">
+      <change afterPath="$PROJECT_DIR$/Nerdle/src/Equation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/GeneratorWithTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/GeneratorWithTemplates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formulas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/formulas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nerdle/Nerdle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/Nerdle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nerdle/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nerdle/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,13 +47,13 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Programming/Repos/JavaFXProject2022-2023/NerdleCLI/lib/MathParser.org-mXparser-v.4.2.0-jdk.1.10.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Github Projects/JavaFXProject2022-2023/NerdleCLI/lib/MathParser.org-mXparser-v.4.2.0-jdk.1.10.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
@@ -69,7 +71,7 @@
       <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\Gamee" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (2)">
+  <component name="RunManager">
     <configuration name="FormulaParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FormulaParser" />
       <module name="RandomFormulaGenerator" />
@@ -84,13 +86,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="RandomFormulaGenerator" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Game" />
@@ -100,10 +95,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (2)" />
+        <item itemvalue="Application.FormulaParser" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.FormulaParser" />
       </list>
     </recent_temporary>
   </component>
@@ -129,6 +123,8 @@
       <workItem from="1671025306179" duration="7819000" />
       <workItem from="1671035516812" duration="1419000" />
       <workItem from="1671093041347" duration="1600000" />
+      <workItem from="1671303143276" duration="1051000" />
+      <workItem from="1671304215880" duration="2057000" />
     </task>
     <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
       <created>1670512189331</created>
