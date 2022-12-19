@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="made Equation, refactoring">
-      <change afterPath="$PROJECT_DIR$/Nerdle/src/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Nerdle/src/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Nerdle/src/GameSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Nerdle/src/NerdleApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Nerdle/src/Overview.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Nerdle/src/OverviewPart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Nerdle/src/Try.java" afterDir="false" />
+    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="new generator fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nerdle/src/GameSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/src/GameSession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Nerdle/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +70,7 @@
       <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\Gamee" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration name="FormulaParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FormulaParser" />
       <module name="RandomFormulaGenerator" />
@@ -107,10 +101,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NerdleApp" />
-        <item itemvalue="Application.FormulaParser" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.FormulaParser" />
+        <item itemvalue="Application.NerdleApp" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
