@@ -12,15 +12,11 @@ public class Main { // testing rommel
 
         Equation.setSizeConstraint(8);
 
-        Scanner sc = new Scanner(System.in);
-        Equation eq;
-
-        for (int i = 0; i < 15; i++) {
-            eq = new Equation(Arrays.asList(sc.nextLine().split("")));
-        }
-
-        Equation equation = new Equation(new ArrayList<>(List.of("8", "1", "-", "3", "8", "=", "4")));
+        Equation equation = new Equation(new ArrayList<>(List.of("8", "1", "-", "3", "8", "=", "4", "3")));
 
         System.out.println(equation);
+
+        Overview overview = new Overview();
+        System.out.println(overview);
     }
 }

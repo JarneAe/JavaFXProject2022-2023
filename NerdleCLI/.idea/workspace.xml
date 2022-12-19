@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="new generator fixed">
-      <change afterPath="$PROJECT_DIR$/Nerdle/src/Equation.java" afterDir="false" />
+    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="made Equation, refactoring">
+      <change afterPath="$PROJECT_DIR$/Nerdle/src/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Nerdle/src/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Nerdle/src/GameSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Nerdle/src/NerdleApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Nerdle/src/Overview.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Nerdle/src/OverviewPart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Nerdle/src/Try.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nerdle/Nerdle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/Nerdle.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Nerdle/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nerdle/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nerdle/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -93,8 +98,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NerdleApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="NerdleApp" />
+      <module name="Nerdle" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NerdleApp" />
         <item itemvalue="Application.FormulaParser" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
@@ -124,7 +137,8 @@
       <workItem from="1671035516812" duration="1419000" />
       <workItem from="1671093041347" duration="1600000" />
       <workItem from="1671303143276" duration="1051000" />
-      <workItem from="1671304215880" duration="2057000" />
+      <workItem from="1671304215880" duration="2854000" />
+      <workItem from="1671444019275" duration="2171000" />
     </task>
     <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
       <created>1670512189331</created>
@@ -154,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671028275430</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="made Equation, refactoring">
+      <created>1671306498029</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671306498029</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +229,8 @@
     <MESSAGE value="Added dependency?" />
     <MESSAGE value="new generator" />
     <MESSAGE value="new generator fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="new generator fixed" />
+    <MESSAGE value="made Equation, refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="made Equation, refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
