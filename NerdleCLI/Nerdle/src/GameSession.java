@@ -5,8 +5,11 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 
 public class GameSession {
-    public static void startSession() {
+
+    private User user;
+    public static void startSession(User user) {
         System.out.println("session started");
+        System.out.println("User: " + user.toString());
     }
 
     public String GetFormula() {

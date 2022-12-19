@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Overview {
@@ -12,6 +11,7 @@ public class Overview {
         }
     }
 
+    @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (OverviewPart op : parts) {
@@ -21,8 +21,32 @@ public class Overview {
         return result.toString();
     }
 
+    public void display() {
+        for (OverviewPart part : parts) {
+            if (part.getColor() == Color.CLEAR) {
+                System.out.print(ConsoleColors.RESET);
+
+            } else if (part.getColor() == Color.GREEN) {
+                System.out.print(ConsoleColors.GREEN);
+
+            } else if (part.getColor() == Color.PURPLE) {
+                System.out.print(ConsoleColors.PURPLE);
+
+            } else if (part.getColor() == Color.BLACK) {
+                System.out.print(ConsoleColors.BLACK);
+            }
+
+            System.out.print(part.getValue() + " ");
+        }
+
+        System.out.println();
+    }
+
     public void setColor(String value, Color color) {
-        // TODO: implement this
-        // OverviewPart has a setColor method
+        for (OverviewPart part : parts) {
+            if (part.getValue().equals(value)) {
+                part.setColor(color);
+            }
+        }
     }
 }

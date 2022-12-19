@@ -11,6 +11,14 @@ public class OverviewPart {
         this.color = color;
     }
 
+    public String getValue() {
+        return value;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
     @Override
     public String toString() {
         return "OverviewPart{" +
