@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="updated Overview for coloured output, updated GameSession to work with users">
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/ConsoleColors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Equation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/GameSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/NerdleApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Overview.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/OverviewPart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Try.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/randomformulagenerator/FormulaParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/randomformulagenerator/GeneratorWithTemplates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/randomformulagenerator/Main.java" afterDir="false" />
+    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="refactored project into packages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/Equation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Equation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/Try.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Try.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/kdg/randomformulagenerator/FormulaParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/randomformulagenerator/FormulaParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +121,7 @@
       <workItem from="1671303143276" duration="1051000" />
       <workItem from="1671304215880" duration="2854000" />
       <workItem from="1671444019275" duration="2171000" />
-      <workItem from="1671545012032" duration="301000" />
+      <workItem from="1671545012032" duration="1994000" />
     </task>
     <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
       <created>1670512189331</created>
@@ -175,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671471883407</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactored project into packages">
+      <created>1671545575557</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671545575557</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +228,8 @@
     <MESSAGE value="new generator fixed" />
     <MESSAGE value="made Equation, refactoring" />
     <MESSAGE value="updated Overview for coloured output, updated GameSession to work with users" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated Overview for coloured output, updated GameSession to work with users" />
+    <MESSAGE value="refactored project into packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored project into packages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

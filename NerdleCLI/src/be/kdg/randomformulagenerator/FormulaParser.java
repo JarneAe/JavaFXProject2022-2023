@@ -1,18 +1,23 @@
 package be.kdg.randomformulagenerator;
 
 import java.util.ArrayList;
+import java.util.List;
 import org.mariuszgromada.math.mxparser.*;
 
 public class FormulaParser {
 
-    private static int size_constraint = 8; // change here to change the size constraint
+    private static int sizeConstraint = 8;
+
+    public static void setSizeConstraint(int size_constraint) {
+        FormulaParser.sizeConstraint = size_constraint;
+    }
 
     /**
      *
      * @param formula the formula in an array of strings WITHOUT A RESULT!
      * @return result of the formula
      */
-    public static double getResult(ArrayList<String> formula) {
+    public static double getResult(List<String> formula) {
         StringBuilder expressionBuilder = new StringBuilder();
         for (String character : formula) {
             expressionBuilder.append(character);
@@ -27,11 +32,11 @@ public class FormulaParser {
 
     /**
      *
-     * @param input the input from user in an arraylist
+     * @param input the input from user in a list
      * @return true if the input passes all checks (has a result, result matches expression, expression contains operators)
      * and false if it does not
      */
-    public static boolean validateExpressionWithResult(ArrayList<String> input) {
+    public static boolean validateExpressionWithResult(List<String> input) {
         if (!input.contains("=")) {
             return false; // no result in input
         }
@@ -40,7 +45,7 @@ public class FormulaParser {
             return false; // no operator in input
         }
 
-        if (input.size() != size_constraint) {
+        if (input.size() != sizeConstraint) {
             return false; // wrong size
         }
 
