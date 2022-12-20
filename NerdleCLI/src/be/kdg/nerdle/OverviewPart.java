@@ -1,3 +1,5 @@
+package be.kdg.nerdle;
+
 public class OverviewPart {
     private String value;
     private Color color;

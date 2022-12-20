@@ -1,3 +1,5 @@
+package be.kdg.nerdle;
+
 import java.util.Scanner;
 
 public class NerdleApp {

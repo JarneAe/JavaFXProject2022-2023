@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+package be.kdg.nerdle;
 
 public class Main { // testing rommel
     public static void main(String[] args) {

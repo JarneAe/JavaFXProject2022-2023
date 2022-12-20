@@ -1,3 +1,5 @@
+package be.kdg.nerdle;
+
 public class User {
     private static int idCount = 0;
 

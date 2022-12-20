@@ -1,5 +1,6 @@
-import java.util.ArrayList;
+package be.kdg.randomformulagenerator;
 
+import java.util.ArrayList;
 import org.mariuszgromada.math.mxparser.*;
 
 public class FormulaParser {
