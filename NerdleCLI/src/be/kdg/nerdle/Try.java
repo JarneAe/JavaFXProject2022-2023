@@ -20,8 +20,9 @@ public class Try {
             equationInput = scanner.nextLine();
             List<String> lst = List.of(equationInput.split(""));
             equation = new Equation(lst);
-        } while (!equation.isValidated());
+        } while (equation.getValue() == null);
 
+        System.out.println(equation.getValue());
         this.guess = equation;
     }
 

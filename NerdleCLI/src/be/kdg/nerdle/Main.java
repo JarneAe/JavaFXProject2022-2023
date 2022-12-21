@@ -1,6 +1,7 @@
 package be.kdg.nerdle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,9 +16,10 @@ public class Main { // testing rommel
 
         Equation.setSizeConstraint(8);
 
-        Try try1 = new Try(1);
-        try1.guess();
-        System.out.println(try1.getGuess());
+//        Equation test4 = new Equation(Arrays.asList("2", "1", "6", "/", "3", "=", "7", "2"));
+//        System.out.println(test4);
 
+        Try t = new Try(1);
+        t.guess();
     }
 }

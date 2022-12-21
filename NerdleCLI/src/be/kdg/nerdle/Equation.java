@@ -5,16 +5,13 @@ import be.kdg.randomformulagenerator.FormulaParser;
 
 public class Equation {
     private List<String> value;
-    private boolean validated;
 
     public Equation(List<String> value) {
-        if (validate(value)) {
+        try {
+            validate(value);
             this.value = value;
-            this.validated = true;
-        } else {
+        } catch (Exception e) {
             System.out.println("equation rejected.");
-            this.value = null;
-            this.validated = false;
         }
     }
 
@@ -22,8 +19,8 @@ public class Equation {
         FormulaParser.setSizeConstraint(sizeConstraint);
     }
 
-    public boolean isValidated() {
-        return validated;
+    public List<String> getValue() {
+        return value;
     }
 
     @Override
@@ -35,7 +32,7 @@ public class Equation {
         }
     }
 
-    private boolean validate(List<String> equation) {
-        return FormulaParser.validateExpressionWithResult(equation);
+    private void validate(List<String> equation) throws Exception {
+        FormulaParser.validateExpressionWithResult(equation);
     }
 }

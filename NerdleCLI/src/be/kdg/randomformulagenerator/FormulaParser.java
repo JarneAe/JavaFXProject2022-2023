@@ -36,34 +36,37 @@ public class FormulaParser {
      * @return true if the input passes all checks (has a result, result matches expression, expression contains operators)
      * and false if it does not
      */
-    public static boolean validateExpressionWithResult(List<String> input) {
+    public static void validateExpressionWithResult(List<String> input) throws Exception {
         if (!input.contains("=")) {
-            return false; // no result in input
+            throw new IllegalArgumentException("No result found");
         }
 
         if (!input.contains("+") && !input.contains("-") && !input.contains("*") && !input.contains("/")) {
-            return false; // no operator in input
+            throw new IllegalArgumentException("No operators found");
         }
 
         if (input.size() != sizeConstraint) {
-            return false; // wrong size
+            throw new IllegalArgumentException("Not the right size");
         }
 
 
         int isEqualToIndex = input.indexOf("=");
 
         if (isEqualToIndex+1 >= input.size()) { // if "=" is the last character of the input, thus not having a valid result
-            return false;
+            throw new IllegalArgumentException("No result found");
         }
 
         ArrayList<String> expression = new ArrayList<>(input.subList(0, isEqualToIndex)); // ArrayList of everything before the "=" (the mathematical expression)
         String resultString = String.join("", input.subList(isEqualToIndex+1, input.size())); // String of everything after the "=" (the result)
 
         if (Integer.parseInt(resultString) < 0) { // negative number
-            return false;
+            throw new IllegalArgumentException("Negative result found");
         }
 
-        return Integer.parseInt(resultString) == FormulaParser.getResult(expression); // returns true if the result in input matches the result of the expression
+        if (Integer.parseInt(resultString) != FormulaParser.getResult(expression)) {
+            throw new IllegalArgumentException("Result does not match expression");
+        }
+        // returns true if the result in input matches the result of the expression
         // should also catch decimal number results
     }
 
@@ -72,9 +75,10 @@ public class FormulaParser {
      */
     public static void appendResultToExpression(ArrayList<String> expression) {
 
-        if (validateExpressionWithResult(expression)) {
+        try {
+            validateExpressionWithResult(expression);
+        } catch (Exception e) {
             System.out.println("expression already complete");
-            return;
         }
 
         String resultOfExpression = Integer.toString((int) FormulaParser.getResult(expression));
@@ -86,7 +90,13 @@ public class FormulaParser {
 
     public static boolean validateGeneratorOutput(ArrayList<String> generatorOutput) {
         appendResultToExpression(generatorOutput);
-        return validateExpressionWithResult(generatorOutput);
+
+        try {
+            validateExpressionWithResult(generatorOutput);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
     public static void main(String[] args) {
 //        ArrayList<String> test1 = new ArrayList<String>(Arrays.asList("5", "+", "3", "/", "3", "+", "3", "3", "-", "5", "6", "/", "2")); // 11
