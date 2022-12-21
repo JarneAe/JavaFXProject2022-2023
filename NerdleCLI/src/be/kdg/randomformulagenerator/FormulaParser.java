@@ -33,8 +33,6 @@ public class FormulaParser {
     /**
      *
      * @param input the input from user in a list
-     * @return true if the input passes all checks (has a result, result matches expression, expression contains operators)
-     * and false if it does not
      */
     public static void validateExpressionWithResult(List<String> input) throws Exception {
         if (!input.contains("=")) {

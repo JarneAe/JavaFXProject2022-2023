@@ -22,7 +22,6 @@ public class Try {
             equation = new Equation(lst);
         } while (equation.getValue() == null);
 
-        System.out.println(equation.getValue());
         this.guess = equation;
     }
 

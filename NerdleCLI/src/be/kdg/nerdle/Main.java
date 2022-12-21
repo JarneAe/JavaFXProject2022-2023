@@ -16,10 +16,14 @@ public class Main { // testing rommel
 
         Equation.setSizeConstraint(8);
 
-//        Equation test4 = new Equation(Arrays.asList("2", "1", "6", "/", "3", "=", "7", "2"));
-//        System.out.println(test4);
+        Board board = new Board();
+        board.drawBoard();
 
         Try t = new Try(1);
         t.guess();
+        board.addToTries(t);
+
+        board.drawBoard();
+
     }
 }

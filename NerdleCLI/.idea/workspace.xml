@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="made size_constraint in FormulaParser not final">
+    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="changed FormulaParser and Equation (and connected classes) to work with exceptions in validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/Equation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Equation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/Try.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Try.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/Overview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Overview.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/kdg/randomformulagenerator/FormulaParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/randomformulagenerator/FormulaParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +133,8 @@
       <workItem from="1671622483450" duration="14000" />
       <workItem from="1671622618448" duration="282000" />
       <workItem from="1671625585507" duration="1636000" />
-      <workItem from="1671627640101" duration="2160000" />
+      <workItem from="1671627640101" duration="3170000" />
+      <workItem from="1671631979081" duration="1221000" />
     </task>
     <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
       <created>1670512189331</created>
@@ -163,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671028275430</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="changed FormulaParser and Equation (and connected classes) to work with exceptions in validation">
+      <created>1671629970886</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671629970886</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +225,8 @@
     <MESSAGE value="Added dependency?" />
     <MESSAGE value="new generator" />
     <MESSAGE value="new generator fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="new generator fixed" />
+    <MESSAGE value="changed FormulaParser and Equation (and connected classes) to work with exceptions in validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed FormulaParser and Equation (and connected classes) to work with exceptions in validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
