@@ -16,6 +16,6 @@ public class NerdleApp {
 
         GameSession gameSession = new GameSession(user);
 
-        gameSession.startSession(user);
+        gameSession.startSession();
     }
 }

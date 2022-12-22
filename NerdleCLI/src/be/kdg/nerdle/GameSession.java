@@ -7,15 +7,19 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class GameSession {
-    private User user;
+    private final User user;
 
-    private final int MAX_TRIES = 8;
+    private int maxTries = 8; // standard = 8, uitbreiding: andere aantal tries
 
     public GameSession(User user) {
         this.user = user;
     }
 
-    public void startSession(User user) {
+    public void setMaxTries(int maxTries) {
+        this.maxTries = maxTries;
+    }
+
+    public void startSession() {
         System.out.println("session started");
         System.out.println("User: " + this.user.toString());
 
@@ -23,7 +27,7 @@ public class GameSession {
         System.out.println(getFormula());
         Board board = new Board();
 
-        for (int i = 0; i < MAX_TRIES; i++) {
+        for (int i = 0; i < maxTries; i++) {
             Try userTry = new Try(i);
             userTry.guess();
             board.addToTries(userTry);
