@@ -34,7 +34,7 @@ public class FormulaParser {
      *
      * @param input the input from user in a list
      */
-    public static void validateExpressionWithResult(List<String> input) throws Exception {
+    public static void validateExpressionWithResult(List<String> input) throws RuntimeException {
         if (!input.contains("=")) {
             throw new IllegalArgumentException("No result found");
         }

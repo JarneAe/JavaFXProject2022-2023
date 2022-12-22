@@ -14,6 +14,8 @@ public class NerdleApp {
         System.out.print("Press enter to start the session...");
         sc.nextLine();
 
-        GameSession.startSession(user);
+        GameSession gameSession = new GameSession(user);
+
+        gameSession.startSession(user);
     }
 }

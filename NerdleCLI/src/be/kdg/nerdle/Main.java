@@ -9,8 +9,7 @@ public class Main { // testing rommel
     public static void main(String[] args) {
         User John = new User("John");
         User Tom = new User("Tom");
-        GameSession session = new GameSession();
-        System.out.println(session.GetFormula());
+        GameSession session = new GameSession(John);
         //System.out.println(John.getId());
         //System.out.println(Tom.getId());
 
@@ -22,6 +21,7 @@ public class Main { // testing rommel
         Try t = new Try(1);
         t.guess();
         board.addToTries(t);
+
 
         board.drawBoard();
 

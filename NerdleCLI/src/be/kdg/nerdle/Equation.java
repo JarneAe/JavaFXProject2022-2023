@@ -1,6 +1,8 @@
 package be.kdg.nerdle;
 
 import java.util.List;
+import java.util.Objects;
+
 import be.kdg.randomformulagenerator.FormulaParser;
 
 public class Equation {
@@ -10,7 +12,7 @@ public class Equation {
         try {
             validate(value);
             this.value = value;
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("equation rejected.");
         }
     }
@@ -32,7 +34,7 @@ public class Equation {
         }
     }
 
-    private void validate(List<String> equation) throws Exception {
+    private void validate(List<String> equation) {
         FormulaParser.validateExpressionWithResult(equation);
     }
 }
