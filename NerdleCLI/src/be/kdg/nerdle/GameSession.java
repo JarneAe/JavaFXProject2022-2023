@@ -11,8 +11,14 @@ public class GameSession {
 
     private int maxTries = 8; // standard = 8, uitbreiding: andere aantal tries
 
+    private Equation answer;
+
+    private Board board;
+
     public GameSession(User user) {
         this.user = user;
+        answer = getFormula();
+        board = new Board();
     }
 
     public void setMaxTries(int maxTries) {
@@ -22,10 +28,7 @@ public class GameSession {
     public void startSession() {
         System.out.println("session started");
         System.out.println("User: " + this.user.toString());
-
-        Equation answer = getFormula();
-        System.out.println(getFormula());
-        Board board = new Board();
+        System.out.println(answer);
 
         for (int i = 0; i < maxTries; i++) {
             Try userTry = new Try(i);
@@ -39,6 +42,8 @@ public class GameSession {
         }
 
         System.out.println("finished"); // record game outcome
+        GameOutcome gameOutcome = new GameOutcome(user, board.getTries().size());
+        gameOutcome.writeToFile();
 
 
     }

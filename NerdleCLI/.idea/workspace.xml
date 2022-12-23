@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="updates to Board and Try">
+    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="refactored project into packages">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/json-simple-1.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/GameOutcome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/MathParser_org_mXparser_v_4_2_0_jdk_1_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/MathParser_org_mXparser_v_4_2_0_jdk_1_10.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/Equation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Equation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NerdleCLI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NerdleCLI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/GameSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/GameSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/NerdleApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/NerdleApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/kdg/randomformulagenerator/FormulaParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/randomformulagenerator/FormulaParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/kdg/nerdle/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/nerdle/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -47,15 +51,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "deletionFromPopupRequiresConfirmation": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "F:/Programming/Repos/JavaFXProject2022-2023/NerdleCLI/lib/MathParser.org-mXparser-v.4.2.0-jdk.1.10.jar",
+    "last_opened_file_path": "C:/Github Projects/JavaFXProject2022-2023/NerdleCLI/lib/json-simple-1.1.1.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel",
@@ -64,9 +67,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Github Projects\JavaFXProject2022-2023\NerdleCLI\src\be\kdg\randomformulagenerator" />
+      <recent name="C:\Github Projects\JavaFXProject2022-2023\NerdleCLI\src\be\kdg\nerdle" />
       <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Github Projects\JavaFXProject2022-2023\NerdleCLI\lib" />
       <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\RandomFormulaGenerator\lib" />
       <recent name="C:\Users\robhe\GitHub\NerdleCLI\lib" />
       <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\Gamee\src" />
@@ -77,6 +83,13 @@
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Nerdle" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Game" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -97,6 +110,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.NerdleApp" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
@@ -122,14 +136,11 @@
       <workItem from="1671011003487" duration="1124000" />
       <workItem from="1671025306179" duration="7819000" />
       <workItem from="1671035516812" duration="1419000" />
-      <workItem from="1671622483450" duration="14000" />
-      <workItem from="1671622618448" duration="282000" />
-      <workItem from="1671625585507" duration="1636000" />
-      <workItem from="1671627640101" duration="3170000" />
-      <workItem from="1671631979081" duration="1467000" />
-      <workItem from="1671696971281" duration="497000" />
-      <workItem from="1671699949860" duration="1589000" />
-      <workItem from="1671702324787" duration="1003000" />
+      <workItem from="1671093041347" duration="1600000" />
+      <workItem from="1671303143276" duration="1051000" />
+      <workItem from="1671304215880" duration="2854000" />
+      <workItem from="1671444019275" duration="2171000" />
+      <workItem from="1671545012032" duration="1994000" />
     </task>
     <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
       <created>1670512189331</created>
@@ -159,21 +170,28 @@
       <option name="project" value="LOCAL" />
       <updated>1671028275430</updated>
     </task>
-    <task id="LOCAL-00005" summary="changed FormulaParser and Equation (and connected classes) to work with exceptions in validation">
-      <created>1671629970886</created>
+    <task id="LOCAL-00005" summary="made Equation, refactoring">
+      <created>1671306498029</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1671629970886</updated>
+      <updated>1671306498029</updated>
     </task>
-    <task id="LOCAL-00006" summary="updates to Board and Try">
-      <created>1671638243578</created>
+    <task id="LOCAL-00006" summary="updated Overview for coloured output, updated GameSession to work with users">
+      <created>1671471883407</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1671638243578</updated>
+      <updated>1671471883407</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactored project into packages">
+      <created>1671545575557</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671545575557</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,9 +245,10 @@
     <MESSAGE value="Added dependency?" />
     <MESSAGE value="new generator" />
     <MESSAGE value="new generator fixed" />
-    <MESSAGE value="changed FormulaParser and Equation (and connected classes) to work with exceptions in validation" />
-    <MESSAGE value="updates to Board and Try" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates to Board and Try" />
+    <MESSAGE value="made Equation, refactoring" />
+    <MESSAGE value="updated Overview for coloured output, updated GameSession to work with users" />
+    <MESSAGE value="refactored project into packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored project into packages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
