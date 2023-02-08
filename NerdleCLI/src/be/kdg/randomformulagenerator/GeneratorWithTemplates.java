@@ -17,7 +17,7 @@ public class GeneratorWithTemplates {
         String pattern = patterns[random.nextInt(patterns.length)];
         int patternLength = pattern.length();
 
-        try {
+
             for (int i = 0; i < patternLength; i++) {
 
                 int num = (random.nextInt(9));
@@ -33,8 +33,8 @@ public class GeneratorWithTemplates {
                     }
                 }
             }
-        } catch (StringIndexOutOfBoundsException ignore) {
-        }
+
+
 
         //System.out.println(pattern);
         try {
@@ -62,7 +62,6 @@ public class GeneratorWithTemplates {
                 myWriter.write(output + "\n");
 
             }
-
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
 
