@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="refactored project into packages">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formulas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/formulas.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/kdg/randomformulagenerator/GeneratorWithTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/randomformulagenerator/GeneratorWithTemplates.java" afterDir="false" />
-    </list>
+    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="refactored project into packages" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +147,7 @@
       <workItem from="1671545012032" duration="1994000" />
       <workItem from="1675860795779" duration="268000" />
       <workItem from="1675861074019" duration="140000" />
-      <workItem from="1675861222298" duration="1535000" />
+      <workItem from="1675861222298" duration="1860000" />
     </task>
     <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
       <created>1670512189331</created>
