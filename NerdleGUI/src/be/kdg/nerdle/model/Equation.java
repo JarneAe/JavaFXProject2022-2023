@@ -1,6 +1,6 @@
 package be.kdg.nerdle.model;
 
-import be.kdg.nerdle.utility.FormulaParser;
+import be.kdg.nerdle.model.randomformulagenerator.FormulaParser;
 
 import java.util.List;
 

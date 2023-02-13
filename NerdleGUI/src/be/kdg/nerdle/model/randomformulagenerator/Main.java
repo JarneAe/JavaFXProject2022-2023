@@ -1,4 +1,4 @@
-package be.kdg.nerdle.utility;
+package be.kdg.nerdle.model.randomformulagenerator;
 
 public class Main {
     public static void main(String[] args){

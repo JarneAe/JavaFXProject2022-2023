@@ -1,4 +1,4 @@
-package be.kdg.nerdle.utility;
+package be.kdg.nerdle.model.randomformulagenerator;
 
 import java.io.FileWriter;
 import java.io.IOException;

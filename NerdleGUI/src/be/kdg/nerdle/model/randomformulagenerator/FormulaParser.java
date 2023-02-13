@@ -1,4 +1,4 @@
-package be.kdg.nerdle.utility;
+package be.kdg.nerdle.model.randomformulagenerator;
 
 import org.mariuszgromada.math.mxparser.Expression;
 
