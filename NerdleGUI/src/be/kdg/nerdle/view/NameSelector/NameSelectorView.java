@@ -1,4 +1,4 @@
-package be.kdg.nerdle.view;
+package be.kdg.nerdle.view.NameSelector;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;

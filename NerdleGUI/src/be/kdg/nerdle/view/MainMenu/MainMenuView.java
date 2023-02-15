@@ -1,4 +1,4 @@
-package be.kdg.nerdle.view;
+package be.kdg.nerdle.view.MainMenu;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

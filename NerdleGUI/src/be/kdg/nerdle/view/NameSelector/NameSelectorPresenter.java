@@ -1,4 +1,4 @@
-package be.kdg.nerdle.view;
+package be.kdg.nerdle.view.NameSelector;
 
 import be.kdg.nerdle.model.User;
 import javafx.event.ActionEvent;
@@ -7,7 +7,7 @@ import javafx.event.EventHandler;
 
 public class NameSelectorPresenter {
 
-    private NameSelectorView view;
+    private final NameSelectorView view;
 
 
     public NameSelectorPresenter(NameSelectorView view){
@@ -22,6 +22,8 @@ public class NameSelectorPresenter {
                 String name = view.getTfUserInput().getText();
                 
                 User User = new User(name);
+
+                System.out.println("hello");
 
 
             }
