@@ -18,7 +18,7 @@ public class MainMenuPresenter {
             @Override
             public void handle(ActionEvent actionEvent) {
                 NameSelectorView nameSelectorView = new NameSelectorView();
-                NameSelectorPresenter nameSelectorPresenter = new NameSelectorPresenter(nameSelectorView);
+                new NameSelectorPresenter(nameSelectorView);
 
                 view.getScene().setRoot(nameSelectorView);
                 //nameSelectorView.getScene().getWindow().sizeToScene();

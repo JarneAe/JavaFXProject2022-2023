@@ -23,8 +23,7 @@ public class NameSelectorPresenter {
                 
                 User User = new User(name);
 
-                System.out.println("hello");
-
+                System.out.println(User);
 
             }
         });
