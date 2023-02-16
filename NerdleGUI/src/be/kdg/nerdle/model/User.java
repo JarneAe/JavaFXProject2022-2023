@@ -6,11 +6,11 @@ import java.util.Map;
 
 public class User {
     private String name;
-    private final Map<LocalDate, Integer> scores;
+    //private final Map<LocalDate, Integer> scores;
 
     public User(String name) {
         this.name = name;
-        scores = new HashMap<>();
+        //scores = new HashMap<>();
     }
 
     public String getName() {

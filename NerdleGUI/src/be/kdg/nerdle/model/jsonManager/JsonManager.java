@@ -8,10 +8,14 @@ import java.io.IOException;
 
 public class JsonManager {
 
-    private Gson gson = new Gson();
-
+    Gson gson = new Gson();
 
     public void WriteObjectToJson(User user) throws IOException {
-        gson.toJson(user, new FileWriter("Users.json"));
-    }
+        try (FileWriter writer = new FileWriter("Users.json",true)) {
+            gson.toJson(user, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+        }
 }
