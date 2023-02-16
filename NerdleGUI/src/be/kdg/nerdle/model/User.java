@@ -6,8 +6,6 @@ import java.util.Map;
 
 public class User {
     private String name;
-    private boolean hasPlayedToday;
-
     private final Map<LocalDate, Integer> scores;
 
     public User(String name) {
@@ -23,7 +21,6 @@ public class User {
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                ", hasPlayedToday=" + hasPlayedToday +
                 '}';
     }
 }
