@@ -12,17 +12,4 @@ public class JsonManager {
     public JsonManager(User user){
         this.user = user;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
