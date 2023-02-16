@@ -9,15 +9,15 @@ import javafx.stage.Stage;
 public class NerdleApp extends Application {
     public static void main(String[] args) {
         Application.launch(args);
-
     }
 
     @Override
     public void start(Stage stage) throws Exception {
-        MainMenuView mainMenu = new MainMenuView();
-        MainMenuPresenter presenter = new MainMenuPresenter(mainMenu);
 
+        MainMenuView mainMenu = new MainMenuView();
+        new MainMenuPresenter(mainMenu);
         Scene scene = new Scene(mainMenu);
+
         stage.setScene(scene);
         stage.setWidth(1000);
         stage.setMinWidth(250);

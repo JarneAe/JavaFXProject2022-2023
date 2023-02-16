@@ -25,6 +25,8 @@ public class MainMenuView extends BorderPane {
     }
 
     private void layoutNodes() {
+
+        //Screen setup
         GridPane mainMenu = new GridPane();
 
         mainMenu.setVgap(10);
@@ -32,16 +34,19 @@ public class MainMenuView extends BorderPane {
         mainMenu.setPrefSize(400,400);
         this.setCenter(mainMenu);
 
+        //layout for title
         HBox hbTop = new HBox(lbTitle);
         hbTop.setSpacing(20);
         hbTop.setAlignment(Pos.CENTER);
         BorderPane.setMargin(hbTop,new Insets(10));
 
+        //layout for button
         HBox hbBottom = new HBox(btnStart);
         hbBottom.setSpacing(20);
         hbBottom.setAlignment(Pos.TOP_CENTER);
         BorderPane.setMargin(hbBottom,new Insets(10));
 
+        //putting items on screen
         this.setCenter(hbTop);
         this.setBottom(hbBottom);
 
