@@ -1,6 +1,9 @@
 # idea file
 .idea/
 
+# workspace file
+workspace.xml
+
 
 # Compiled class file
 *.class
