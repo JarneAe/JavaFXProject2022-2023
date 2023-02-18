@@ -12,11 +12,10 @@ public class JsonManager {
     Gson gson = new Gson();
 
     public void WriteObjectToJson(List<User> userList) throws IOException {
-        try (FileWriter writer = new FileWriter("Users.json",true)) {
+        try (FileWriter writer = new FileWriter("Users.json")) {
             gson.toJson(userList, writer);
         } catch (IOException e) {
             e.printStackTrace();
-
         }
-        }
+    }
 }
