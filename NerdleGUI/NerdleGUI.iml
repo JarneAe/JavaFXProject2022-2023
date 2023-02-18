@@ -7,15 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="MathParser.org-mXparser-v.4.2.0-jdk.1.10" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/MathParser.org-mXparser-v.4.2.0-jdk.1.10.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="openjfx.javafx.controls" level="application" />
+    <orderEntry type="library" name="mariuszgromada.math.MathParser.mXparser" level="project" />
+    <orderEntry type="library" name="google.code.gson" level="project" />
   </component>
 </module>

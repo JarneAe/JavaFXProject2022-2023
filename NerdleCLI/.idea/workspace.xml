@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="Added dependency?">
+    <list default="true" id="aafc071e-8eea-4909-9799-d4f9cdeebd64" name="Changes" comment="refactored project into packages">
+      <change afterPath="$PROJECT_DIR$/../NerdleGUI/.idea/libraries/mariuszgromada_math_MathParser_mXparser.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NerdleGUI/src/be/kdg/nerdle/model/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NerdleGUI/src/be/kdg/nerdle/model/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NerdleGUI/src/be/kdg/nerdle/model/Equation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NerdleGUI/src/be/kdg/nerdle/model/GameOutcome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NerdleGUI/src/be/kdg/nerdle/model/Overview.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NerdleGUI/src/be/kdg/nerdle/model/OverviewPart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NerdleGUI/src/be/kdg/nerdle/model/Try.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NerdleGUI/src/be/kdg/nerdle/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NerdleGUI/src/be/kdg/nerdle/utility/FormulaParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NerdleGUI/src/be/kdg/nerdle/utility/GeneratorWithTemplates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NerdleGUI/src/be/kdg/nerdle/utility/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/FormulaParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/FormulaParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RandomFormulaGenerator/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomFormulaGenerator/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NerdleGUI/NerdleGUI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../NerdleGUI/NerdleGUI.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -46,47 +57,37 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Programming/Repos/JavaFXProject2022-2023/NerdleCLI/lib/MathParser.org-mXparser-v.4.2.0-jdk.1.10.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Github Projects/JavaFXProject2022-2023/NerdleCLI/lib/json-simple-1.1.1.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Github Projects\JavaFXProject2022-2023\NerdleCLI\src\be\kdg\randomformulagenerator" />
+      <recent name="C:\Github Projects\JavaFXProject2022-2023\NerdleCLI\src\be\kdg\nerdle" />
       <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Github Projects\JavaFXProject2022-2023\NerdleCLI\lib" />
       <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\RandomFormulaGenerator\lib" />
       <recent name="C:\Users\robhe\GitHub\NerdleCLI\lib" />
       <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\Gamee\src" />
       <recent name="F:\Programming\Repos\JavaFXProject2022-2023\NerdleCLI\Gamee" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (2)">
-    <configuration name="FormulaParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FormulaParser" />
-      <module name="RandomFormulaGenerator" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.NerdleApp">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Nerdle" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="RandomFormulaGenerator" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -98,12 +99,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NerdleApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="be.kdg.nerdle.NerdleApp" />
+      <module name="NerdleCLI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.kdg.nerdle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (2)" />
+        <item itemvalue="Application.NerdleApp" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.FormulaParser" />
       </list>
     </recent_temporary>
   </component>
@@ -124,6 +137,18 @@
       <workItem from="1670574450639" duration="1057000" />
       <workItem from="1670575519226" duration="156000" />
       <workItem from="1670857404093" duration="5282000" />
+      <workItem from="1671008160977" duration="2365000" />
+      <workItem from="1671011003487" duration="1124000" />
+      <workItem from="1671025306179" duration="7819000" />
+      <workItem from="1671035516812" duration="1419000" />
+      <workItem from="1671093041347" duration="1600000" />
+      <workItem from="1671303143276" duration="1051000" />
+      <workItem from="1671304215880" duration="2854000" />
+      <workItem from="1671444019275" duration="2171000" />
+      <workItem from="1671545012032" duration="1994000" />
+      <workItem from="1675864534317" duration="456000" />
+      <workItem from="1675865877370" duration="537000" />
+      <workItem from="1675866848874" duration="1346000" />
     </task>
     <task id="LOCAL-00001" summary="Added comments and TODOs, file restructuring">
       <created>1670512189331</created>
@@ -139,7 +164,42 @@
       <option name="project" value="LOCAL" />
       <updated>1670575266179</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="new generator">
+      <created>1671028155609</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671028155609</updated>
+    </task>
+    <task id="LOCAL-00004" summary="new generator fixed">
+      <created>1671028275430</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671028275430</updated>
+    </task>
+    <task id="LOCAL-00005" summary="made Equation, refactoring">
+      <created>1671306498029</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671306498029</updated>
+    </task>
+    <task id="LOCAL-00006" summary="updated Overview for coloured output, updated GameSession to work with users">
+      <created>1671471883407</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671471883407</updated>
+    </task>
+    <task id="LOCAL-00007" summary="refactored project into packages">
+      <created>1671545575557</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671545575557</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +251,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added comments and TODOs, file restructuring" />
     <MESSAGE value="Added dependency?" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added dependency?" />
+    <MESSAGE value="new generator" />
+    <MESSAGE value="new generator fixed" />
+    <MESSAGE value="made Equation, refactoring" />
+    <MESSAGE value="updated Overview for coloured output, updated GameSession to work with users" />
+    <MESSAGE value="refactored project into packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored project into packages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -202,5 +267,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
