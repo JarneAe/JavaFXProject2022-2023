@@ -1,1 +1,14 @@
-[{"name":"Bart2"},{"name":"Bart"}]
+[
+  {
+    "name": "Bart",
+    "scores": {
+      "2023-02-18": 5
+    }
+  },
+  {
+    "name": "nog is bart",
+    "scores": {
+      "2023-02-18": 3
+    }
+  }
+]
