@@ -1,5 +1,6 @@
 package be.kdg.nerdle;
 
+import be.kdg.nerdle.view.GameScreen.GameScreenView;
 import be.kdg.nerdle.view.MainMenu.MainMenuPresenter;
 import be.kdg.nerdle.view.MainMenu.MainMenuView;
 import javafx.application.Application;
@@ -14,8 +15,8 @@ public class NerdleApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        MainMenuView mainMenu = new MainMenuView();
-        new MainMenuPresenter(mainMenu);
+        GameScreenView mainMenu = new GameScreenView();
+        //new MainMenuPresenter(mainMenu);
         Scene scene = new Scene(mainMenu);
 
         stage.setScene(scene);
