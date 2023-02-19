@@ -12,8 +12,8 @@ import javafx.scene.text.Font;
 
 
 public class MainMenuView extends BorderPane {
-    public static final Font BUTTONFONT = Font.font("Times New Roman", 40);
-    public static final Font LABELFONT = Font.font("Times New Roman", 40);
+    private  static final Font BUTTONFONT = Font.font("Times New Roman", 40);
+    private static final Font LABELFONT = Font.font("Times New Roman", 40);
     private Label lbTitle;
     private Button btnStart;
 
