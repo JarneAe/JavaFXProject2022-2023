@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class User {
-    private String name;
+    private final String name;
     private final Map<LocalDate, Integer> scores;
 
     public User(String name) {
@@ -25,11 +25,17 @@ public class User {
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                "datemap" + scores + '\'' +
+                "scores" + scores + '\'' +
                 '}';
     }
 
-    public void addToScores(int score) {
-        scores.put(LocalDate.now(), score);
+    /**
+     * add a score to a user
+     * @param date LocalDate of the date you are trying to assign a score for. Normally always LocalDate.now(), but
+     *             this was kept in for testing purposes
+     * @param score integer of the score you are trying to assign
+     */
+    public void addToScores(LocalDate date, int score) {
+        scores.put(date, score);
     }
 }
