@@ -6,6 +6,10 @@ import java.lang.reflect.Type;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * TypeAdapter for LocalDate. Without this, writing and reading any User object from json will not work, as gson does
+ * not work with LocalDate objects out of the box.
+ */
 public class LocalDateAdapter implements JsonSerializer<LocalDate>, JsonDeserializer<LocalDate> {
     @Override
     public LocalDate deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
