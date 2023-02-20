@@ -32,15 +32,22 @@ public class GameSession {
     public Equation getFormula() {
 
         int dayNumber = LocalDate.now().getDayOfYear();
+        System.out.println(dayNumber);
         String line = null;
 
         try {
-            line = Files.readAllLines(Paths.get("formulas.txt")).get(dayNumber);
+            line = Files.readAllLines(Paths.get("formulas.txt")).get(dayNumber-1);
         } catch (IOException e) {
             e.printStackTrace();
         }
         assert line != null; // moest van IntelliJ :)
-        return new Equation(List.of(line.split("")));
+        return new Equation(line);
+    }
+
+    public static void main(String[] args) {
+        User u = new User("bart");
+        GameSession g = new GameSession(u);
+        System.out.println(g.getFormula());
     }
 }
 

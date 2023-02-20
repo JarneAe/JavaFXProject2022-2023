@@ -2,12 +2,14 @@ package be.kdg.nerdle.model;
 
 import be.kdg.nerdle.model.randomformulagenerator.FormulaParser;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Equation {
-    private List<String> value;
+    private String value;
 
-    public Equation(List<String> value) {
+    public Equation(String value) {
         try {
             validate(value);
             this.value = value;
@@ -20,7 +22,7 @@ public class Equation {
         FormulaParser.setSizeConstraint(sizeConstraint);
     }
 
-    public List<String> getValue() {
+    public String  getValue() {
         return value;
     }
 
@@ -33,7 +35,8 @@ public class Equation {
         }
     }
 
-    private void validate(List<String> equation) {
-        FormulaParser.validateExpressionWithResult(equation);
+    private void validate(String equation) {
+        List<String> equationAsList = new ArrayList<String>(Arrays.asList(equation.split("")));
+        FormulaParser.validateExpressionWithResult(equationAsList);
     }
 }

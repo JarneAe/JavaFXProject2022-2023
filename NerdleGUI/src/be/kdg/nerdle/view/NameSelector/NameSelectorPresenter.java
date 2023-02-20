@@ -1,6 +1,7 @@
 package be.kdg.nerdle.view.NameSelector;
 
 import be.kdg.nerdle.model.User;
+import be.kdg.nerdle.model.jsonManager.JsonManager;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -20,16 +21,9 @@ public class NameSelectorPresenter {
             @Override
             public void handle(ActionEvent actionEvent) {
                 String name = view.getTfUserInput().getText();
-                
-                User User = new User(name);
-
-                System.out.println(User);
-
+                User user = JsonManager.handleEnteredUsername(name);
+                System.out.println(user);
             }
         });
-
-
-
     }
-
 }

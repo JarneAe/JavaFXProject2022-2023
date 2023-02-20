@@ -4,14 +4,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class GeneratorWithTemplates {
-    String[] patterns = {"II+II", "I+I+I", "II-II", "I+I-I", "I+I*I", "I*I/I", "I/I+I", "I*I-I", "II*I"};
-    ArrayList<String> operators = new ArrayList<>(Arrays.asList("+", "-", "/", "+"));
-    Random random = new Random();
+    private static final String[] patterns = {"II+II", "I+I+I", "II-II", "I+I-I", "I+I*I", "I*I/I", "I/I+I", "I*I-I", "II*I"};
+    private static final List<String> operators = new ArrayList<>(Arrays.asList("+", "-", "/", "+"));
+    private static final Random random = new Random();
 
-    private ArrayList<String> generate() {
+    private List<String> generate() {
 
         ArrayList<String> formula = new ArrayList<>();
         String pattern = patterns[random.nextInt(patterns.length)];
@@ -49,12 +50,12 @@ public class GeneratorWithTemplates {
         return formula;
     }
 
-    private void WriteToFile(ArrayList<ArrayList<String>> array) {
+    private void WriteToFile(List<List<String>> array) {
         // Tries overwriting a file and throws an error if not possible
         try {
             FileWriter myWriter = new FileWriter("formulas.txt");
             //loops through the array writing every line to the file
-            for (ArrayList<String> strings : array) {
+            for (List<String> strings : array) {
 
                 String output = String.valueOf(strings);
                 //removes the [] , and whitespace from the Strings
@@ -73,15 +74,20 @@ public class GeneratorWithTemplates {
 
     public void GenerateFormulas(int amount) {
 
-        ArrayList<ArrayList<String>> formulaArray = new ArrayList<>();
+        List<List<String>> formulaArray = new ArrayList<>();
+        boolean filled = false;
+        int counter = 0;
 
-        for (int i = 0; i < amount; i++) {
+        while (!filled) {
 
-            ArrayList<String> generatedFormula = generate();
+            List<String> generatedFormula = generate();
 
             if (!generatedFormula.isEmpty()) {
                 formulaArray.add(generatedFormula);
+                counter++;
             }
+
+            if (counter == amount) filled = true;
         }
         WriteToFile(formulaArray);
     }

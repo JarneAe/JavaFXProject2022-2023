@@ -18,7 +18,7 @@ public class JsonManager {
      * only this gson object should be used to interface with Users.json, or gson objects created exactly like this,
      *      as without the TypeAdapter for LocalDate, writing to Users.json simply will not work.
      */
-    private final Gson gson = new GsonBuilder()
+    private static final Gson gson = new GsonBuilder()
             .setPrettyPrinting()
             .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
             .create();
@@ -29,7 +29,7 @@ public class JsonManager {
      * username already exists, and will not write the user to the json if this is the case
      * @param user the user to write to the json file
      */
-    public void writeUserToJson(User user) {
+    public static void writeUserToJson(User user) {
         UserList userList = getAllUsersFromJson();
 
         if (!nameTaken(user.getName())) {
@@ -46,7 +46,7 @@ public class JsonManager {
      * @param userList UserList object, typically read from the json beforehand. WARNING: if this is a new UserList object,
      *                 it will truncate the Users.json file!
      */
-    private void writeUserListToJson(UserList userList) {
+    private static void writeUserListToJson(UserList userList) {
         try {
             FileWriter writer = new FileWriter("Users.json");
             gson.toJson(userList, writer);
@@ -62,7 +62,7 @@ public class JsonManager {
      * @return UserList object with the contents of the Users.json file
      */
 
-    private UserList getAllUsersFromJson() {
+    private static UserList getAllUsersFromJson() {
         try (Reader reader = new FileReader("Users.json")) {
             UserList userList = gson.fromJson(reader, UserList.class);
 
@@ -82,7 +82,7 @@ public class JsonManager {
      * @param name the name of the user you are trying to get. Case-sensitive!
      * @return the User object. if the name does not match any of the entries in the json file, this will return null!
      */
-    public User getUserByName(String name) {
+    public static User getUserByName(String name) {
         for (User user : Objects.requireNonNull(getAllUsersFromJson()).getUsers()) {
             if (user.getName().equals(name)) return user;
         }
@@ -98,7 +98,7 @@ public class JsonManager {
      *             this was kept in for testing purposes
      * @param score integer of the score you are trying to assign
      */
-    public void addToScoresByName(String name, LocalDate date, int score) {
+    public static void addToScoresByName(String name, LocalDate date, int score) {
         UserList userList = getAllUsersFromJson();
 
         for (int i = 0; i < Objects.requireNonNull(userList).getUsers().size(); i++) {
@@ -113,7 +113,7 @@ public class JsonManager {
      * @param name name you are trying to check is available
      * @return True if the name is taken, false if it is not
      */
-    public boolean nameTaken(String name) {
+    public static boolean nameTaken(String name) {
         List<User> userList = Objects.requireNonNull(getAllUsersFromJson()).getUsers();
 
         for (User user : userList) {
@@ -131,7 +131,7 @@ public class JsonManager {
      * @param name name of the user. Input from text field, probably
      * @return User object, either read from Users.json or newly created
      */
-    public User handleEnteredUsername(String name) {
+    public static User handleEnteredUsername(String name) {
         if (nameTaken(name)) return getUserByName(name);
         else {
             User user = new User(name);

@@ -15,8 +15,8 @@ public class NerdleApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        GameScreenView mainMenu = new GameScreenView();
-        //new MainMenuPresenter(mainMenu);
+        MainMenuView mainMenu = new MainMenuView();
+        new MainMenuPresenter(mainMenu);
         Scene scene = new Scene(mainMenu);
 
         stage.setScene(scene);
@@ -24,6 +24,7 @@ public class NerdleApp extends Application {
         stage.setMinWidth(250);
         stage.setHeight(720);
         stage.setMinHeight(250);
+        stage.setTitle("Nerdle");
         stage.show();
     }
 }
