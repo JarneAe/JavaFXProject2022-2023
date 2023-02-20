@@ -62,8 +62,8 @@ public class GameScreenView extends BorderPane {
         btnStats = new Button("");
         btnStats.setFont(FONT);
 
-        ImageView profileImage = new ImageView(new Image("F:\\Programming\\Repos\\JavaFXProject2022-2023\\NerdleGUI\\ProfileIcon.jpg"));
-        ImageView statsImage = new ImageView(new Image("F:\\Programming\\Repos\\JavaFXProject2022-2023\\NerdleGUI\\leaderboard.png"));
+        ImageView profileImage = new ImageView(new Image("ProfileIcon.jpg"));
+        ImageView statsImage = new ImageView(new Image("leaderboard.png"));
         profileImage.resize(10,10);
         btnProfile.setGraphic(profileImage);
         btnProfile.setPadding(Insets.EMPTY);
@@ -73,8 +73,4 @@ public class GameScreenView extends BorderPane {
         btnStats.setPadding(Insets.EMPTY);
 
     }
-
-
-
-
 }
