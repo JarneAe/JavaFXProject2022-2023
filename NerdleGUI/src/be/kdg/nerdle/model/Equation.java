@@ -36,7 +36,7 @@ public class Equation {
     }
 
     private void validate(String equation) {
-        List<String> equationAsList = new ArrayList<String>(Arrays.asList(equation.split("")));
+        List<String> equationAsList = new ArrayList<>(Arrays.asList(equation.split("")));
         FormulaParser.validateExpressionWithResult(equationAsList);
     }
 }
