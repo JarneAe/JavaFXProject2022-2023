@@ -4,6 +4,7 @@ import be.kdg.nerdle.view.GameScreen.GameScreenView;
 import be.kdg.nerdle.view.MainMenu.MainMenuPresenter;
 import be.kdg.nerdle.view.MainMenu.MainMenuView;
 import javafx.application.Application;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 

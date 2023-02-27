@@ -9,6 +9,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
@@ -22,6 +24,7 @@ public class JsonManager {
             .setPrettyPrinting()
             .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
             .create();
+    private static final Path pathToUsersFile = Paths.get("./resources/Users.json");
 
 
     /**
@@ -37,7 +40,7 @@ public class JsonManager {
             userList.addToUsers(user);
             writeUserListToJson(userList);
         } else {
-            System.out.printf("user with this username already exists. (%s)", user.getName());
+            System.out.printf("user with this username already exists. (%s)%n", user.getName());
         }
     }
 
@@ -48,7 +51,7 @@ public class JsonManager {
      */
     private static void writeUserListToJson(UserList userList) {
         try {
-            FileWriter writer = new FileWriter("Users.json");
+            FileWriter writer = new FileWriter(pathToUsersFile.toFile());
             gson.toJson(userList, writer);
             writer.flush(); // has to be done, otherwise it doesn't want to write half the time
             writer.close();
@@ -62,8 +65,8 @@ public class JsonManager {
      * @return UserList object with the contents of the Users.json file
      */
 
-    private static UserList getAllUsersFromJson() {
-        try (Reader reader = new FileReader("Users.json")) {
+    public static UserList getAllUsersFromJson() {
+        try (Reader reader = new FileReader(pathToUsersFile.toFile())) {
             UserList userList = gson.fromJson(reader, UserList.class);
 
             if (userList == null) userList = new UserList(); // deal with empty JSON file
@@ -96,13 +99,13 @@ public class JsonManager {
      * @param name name of the user you are trying to update. Case-sensitive!
      * @param date LocalDate of the date you are trying to assign a score for. Normally always LocalDate.now(), but
      *             this was kept in for testing purposes
-     * @param score integer of the score you are trying to assign
+     * @param tries integer of the number of tries you are trying to assign
      */
-    public static void addToScoresByName(String name, LocalDate date, int score) {
+    public static void addToOutcomesByName(String name, LocalDate date, int tries) {
         UserList userList = getAllUsersFromJson();
 
         for (int i = 0; i < Objects.requireNonNull(userList).getUsers().size(); i++) {
-            if (userList.getUsers().get(i).getName().equals(name)) userList.getUsers().get(i).addToScores(date, score);
+            if (userList.getUsers().get(i).getName().equals(name)) userList.getUsers().get(i).addToOutcomes(date, tries);
         }
 
         writeUserListToJson(userList);

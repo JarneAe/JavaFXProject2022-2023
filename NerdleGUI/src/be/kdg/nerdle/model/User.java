@@ -1,31 +1,32 @@
 package be.kdg.nerdle.model;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class User {
+public class User implements Comparable<User> {
     private final String name;
-    private final Map<LocalDate, Integer> scores;
+    private final Map<LocalDate, Integer> outcomes;
 
     public User(String name) {
         this.name = name;
-        scores = new HashMap<>();
+        outcomes = new HashMap<>();
     }
 
     public String getName() {
         return name;
     }
 
-    public Map<LocalDate, Integer> getScores() {
-        return scores;
+    public Map<LocalDate, Integer> getOutcomes() {
+        return outcomes;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                "scores" + scores + '\'' +
+                "outcomes=" + outcomes + '\'' +
                 '}';
     }
 
@@ -33,9 +34,18 @@ public class User {
      * add a score to a user
      * @param date LocalDate of the date you are trying to assign a score for. Normally always LocalDate.now(), but
      *             this was kept in for testing purposes
-     * @param score integer of the score you are trying to assign
+     * @param tries integer of the number of tries you are trying to assign
      */
-    public void addToScores(LocalDate date, int score) {
-        scores.put(date, score);
+    public void addToOutcomes(LocalDate date, int tries) {
+        outcomes.put(date, tries);
+    }
+
+    public double getAverageTries() {
+        return outcomes.values().stream().mapToDouble(d -> d).average().orElse(0.0);
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return -Double.compare(o.getAverageTries(), getAverageTries()); // negative, because lower average tries is better
     }
 }
