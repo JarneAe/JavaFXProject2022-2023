@@ -26,18 +26,9 @@ public class NameSelectorView extends BorderPane {
     }
 
     private void layoutNodes() {
-        GridPane gpScreen = new GridPane();
-
-
-        gpScreen.setVgap(10);
-        gpScreen.setHgap(10);
-        gpScreen.setPrefSize(400,400);
-        this.setCenter(gpScreen);
         HBox hbCenter = new HBox(lbText,tfUserInput,btnConfirm);
-        hbCenter.setSpacing(20);
         hbCenter.setAlignment(Pos.CENTER);
         HBox hbTop = new HBox(lbTitle);
-        hbTop.setSpacing(20);
         hbTop.setAlignment(Pos.TOP_CENTER);
 
 
@@ -52,7 +43,7 @@ public class NameSelectorView extends BorderPane {
     private void initialiseNodes() {
         lbTitle = new Label("Nerdle");
         lbTitle.setFont(LABELFONT);
-        lbText = new Label("enter your name:");
+        lbText = new Label("enter your name: ");
         lbText.setFont(SELECTORFONT);
         tfUserInput = new TextField("");
         tfUserInput.setFont(SELECTORFONT);

@@ -6,10 +6,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.image.ImageView;
-
-import java.util.Objects;
 
 public class GameScreenView extends BorderPane {
 
@@ -18,39 +18,32 @@ public class GameScreenView extends BorderPane {
     private Button btnProfile;
     private Button btnStats;
 
+    private Label lbTest;
+
+    private Rectangle square;
+
     public GameScreenView(){
         initialiseNodes();
         layoutNodes();
     }
 
     private void layoutNodes() {
-        GridPane gameScreen = new GridPane();
-
-        gameScreen.setVgap(10);
-        gameScreen.setHgap(10);
-        gameScreen.setPrefSize(400,400);
-        this.setCenter(gameScreen);
 
         HBox hbButn = new HBox(btnProfile,btnStats);
-        hbButn.setSpacing(20);
-        hbButn.setAlignment(Pos.TOP_RIGHT);
-        BorderPane.setMargin(hbButn,new Insets(10));
-
+        hbButn.setAlignment(Pos.BASELINE_RIGHT);
 
         HBox hbTitle = new HBox(lbTitle);
-        hbTitle.setSpacing(20);
-        hbTitle.setAlignment(Pos.TOP_LEFT);
-        BorderPane.setMargin(hbButn,new Insets(10));
+        hbTitle.setAlignment(Pos.BASELINE_CENTER);
+
 
 
         HBox hbTop = new HBox(hbTitle,hbButn);
-        hbTop.setSpacing(20);
-        hbTop.setAlignment(Pos.TOP_RIGHT);
-        BorderPane.setMargin(hbTop,new Insets(10));
+        hbTop.setSpacing(50);
+        hbTop.setAlignment(Pos.TOP_CENTER);
+        hbTop.setMinSize(400,400);
 
 
         this.setTop(hbTop);
-        
 
     }
 
@@ -61,6 +54,11 @@ public class GameScreenView extends BorderPane {
         btnProfile.setFont(FONT);
         btnStats = new Button("");
         btnStats.setFont(FONT);
+        lbTest = new Label("test");
+        lbTest.setFont(FONT);
+        lbTest.setMinHeight(20);
+        lbTest.setMinWidth(20);
+        Rectangle square = new Rectangle(150,150, Color.BLUE);
 
         ImageView profileImage = new ImageView(new Image("ProfileIcon.jpg"));
         ImageView statsImage = new ImageView(new Image("leaderboard.png"));
