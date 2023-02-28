@@ -21,8 +21,4 @@ public class GameOutcome {
                 ", date=" + date +
                 '}';
     }
-
-    public void writeToFile() {
-        // write to json file
-    }
 }

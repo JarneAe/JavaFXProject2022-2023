@@ -1,9 +1,9 @@
 package be.kdg.nerdle.model;
 
 import java.time.LocalDate;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class User implements Comparable<User> {
     private final String name;
@@ -44,8 +44,25 @@ public class User implements Comparable<User> {
         return outcomes.values().stream().mapToDouble(d -> d).average().orElse(0.0);
     }
 
+    public boolean hasPlayedToday() {
+        return outcomes.containsKey(LocalDate.now());
+    }
+
     @Override
     public int compareTo(User o) {
         return -Double.compare(o.getAverageTries(), getAverageTries()); // negative, because lower average tries is better
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return this.name.equals(user.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, outcomes);
     }
 }

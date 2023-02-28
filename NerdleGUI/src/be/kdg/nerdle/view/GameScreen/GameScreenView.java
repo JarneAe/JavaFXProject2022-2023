@@ -29,21 +29,18 @@ public class GameScreenView extends BorderPane {
 
     private void layoutNodes() {
 
-        HBox hbButn = new HBox(btnProfile,btnStats);
-        hbButn.setAlignment(Pos.BASELINE_RIGHT);
+        lbTitle.setAlignment(Pos.CENTER);
 
-        HBox hbTitle = new HBox(lbTitle);
-        hbTitle.setAlignment(Pos.BASELINE_CENTER);
+        Label lbLeft = new Label();
+        lbLeft.setPrefSize(100, 0);
+        lbLeft.setMinSize(0,0);
 
+        BorderPane bpTop = new BorderPane();
+        bpTop.setCenter(lbTitle);
+        bpTop.setRight(btnProfile);
+        bpTop.setLeft(btnStats);
 
-
-        HBox hbTop = new HBox(hbTitle,hbButn);
-        hbTop.setSpacing(50);
-        hbTop.setAlignment(Pos.TOP_CENTER);
-        hbTop.setMinSize(400,400);
-
-
-        this.setTop(hbTop);
+        this.setTop(bpTop);
 
     }
 
