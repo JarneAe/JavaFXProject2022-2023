@@ -1,5 +1,6 @@
 package be.kdg.nerdle.view.GameScreen;
 
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
@@ -21,7 +22,8 @@ public class BoardPart extends StackPane {
 
     public void style() {
         square.setPrefSize(50, 50);
-        square.setStyle("-fx-background-color: #818181; -fx-background-radius: 10 10 10 10; -fx-border-color: black; ");
+        square.setStyle("-fx-background-color: #8e8c8c; -fx-background-radius: 10 10 10 10; " +
+                "-fx-border-color: black; -fx-border-radius: 10;");
 
 
 
@@ -29,6 +31,8 @@ public class BoardPart extends StackPane {
         label.setMinHeight(20);
         label.setMinWidth(20);
         label.setFont(FONT);
+
+        this.setPadding(new Insets(2,2,2,2));
 
     }
 

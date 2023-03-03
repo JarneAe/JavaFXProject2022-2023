@@ -56,6 +56,7 @@ public class GameScreenView extends BorderPane {
             }
         }
 
+
         this.setTop(bpTop);
         this.setCenter(gpMid);
         gpMid.setAlignment(Pos.CENTER);
@@ -78,11 +79,10 @@ public class GameScreenView extends BorderPane {
 
         square = new Region();
         square.setPrefSize(50, 50);
-        square.setStyle("-fx-background-color: #818181; -fx-background-radius: 10 10 10 10; -fx-border-color: 'Black'; )" );
 
         spSquare = new StackPane(square,lbTest);
 
-        spSquare.setPadding(new Insets(30,30,30,30));
+
 
         ImageView profileImage = new ImageView(new Image("ProfileIcon.jpg"));
         ImageView statsImage = new ImageView(new Image("leaderboard.png"));
@@ -100,6 +100,8 @@ public class GameScreenView extends BorderPane {
                 boardParts[i][j].style();
             }
         }
+
+
 
     }
 }
