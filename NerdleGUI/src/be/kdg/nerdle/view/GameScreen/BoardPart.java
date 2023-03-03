@@ -21,13 +21,15 @@ public class BoardPart extends StackPane {
 
     public void style() {
         square.setPrefSize(50, 50);
-        square.setStyle("-fx-background-color: #818181; -fx-background-radius: 10 10 10 10");
+        square.setStyle("-fx-background-color: #818181; -fx-background-radius: 10 10 10 10; -fx-border-color: black; ");
+
 
 
         label.setText("1");
         label.setMinHeight(20);
         label.setMinWidth(20);
         label.setFont(FONT);
+
     }
 
     public void setText(String text) {
