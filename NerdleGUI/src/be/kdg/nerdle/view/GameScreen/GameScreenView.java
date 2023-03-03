@@ -20,7 +20,8 @@ public class GameScreenView extends BorderPane {
 
     private Label lbTest;
 
-    private Rectangle square;
+    private Region square;
+
 
     public GameScreenView(){
         initialiseNodes();
@@ -40,7 +41,14 @@ public class GameScreenView extends BorderPane {
         bpTop.setRight(btnProfile);
         bpTop.setLeft(btnStats);
 
+
+
+        GridPane gpMid = new GridPane();
+        StackPane spSquare = new StackPane(square,lbTest);
+        gpMid.add(spSquare,1,1);
+
         this.setTop(bpTop);
+        this.setCenter(gpMid);
 
     }
 
@@ -51,11 +59,14 @@ public class GameScreenView extends BorderPane {
         btnProfile.setFont(FONT);
         btnStats = new Button("");
         btnStats.setFont(FONT);
-        lbTest = new Label("test");
+        lbTest = new Label("1");
         lbTest.setFont(FONT);
         lbTest.setMinHeight(20);
         lbTest.setMinWidth(20);
-        Rectangle square = new Rectangle(150,150, Color.BLUE);
+
+        square = new Region();
+        square.setPrefSize(50, 50);
+        square.setStyle("-fx-background-color: #818181; -fx-background-radius: 10 10 10 10");
 
         ImageView profileImage = new ImageView(new Image("ProfileIcon.jpg"));
         ImageView statsImage = new ImageView(new Image("leaderboard.png"));
