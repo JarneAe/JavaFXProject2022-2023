@@ -12,19 +12,16 @@ import javafx.scene.text.Font;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
+import java.util.ArrayList;
+
 public class GameScreenView extends BorderPane {
 
     private static final Font FONT = Font.font("Times New Roman", 40);
     private Label lbTitle;
     private BoardPart[][] boardParts = new BoardPart[8][8];
+    private BoardPart[][] keyboardParts = new BoardPart[8][2];
     private Button btnProfile;
     private Button btnStats;
-
-    private Label lbTest;
-
-    private Region square;
-    private StackPane spSquare;
-
 
     public GameScreenView(){
         initialiseNodes();
@@ -56,13 +53,20 @@ public class GameScreenView extends BorderPane {
             }
         }
 
+        GridPane gpBottom = new GridPane();
+
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 2; j++) {
+                gpBottom.add(keyboardParts[i][j], i, j);
+            }
+        }
+
 
         this.setTop(bpTop);
         this.setCenter(gpMid);
+        this.setBottom(gpBottom);
         gpMid.setAlignment(Pos.CENTER);
-
-        boardParts[3][2].setText("2");
-
+        gpBottom.setAlignment(Pos.CENTER);
     }
 
     private void initialiseNodes() {
@@ -72,17 +76,6 @@ public class GameScreenView extends BorderPane {
         btnProfile.setFont(FONT);
         btnStats = new Button();
         btnStats.setFont(FONT);
-        lbTest = new Label("1");
-        lbTest.setFont(FONT);
-        lbTest.setMinHeight(20);
-        lbTest.setMinWidth(20);
-
-        square = new Region();
-        square.setPrefSize(50, 50);
-
-        spSquare = new StackPane(square,lbTest);
-
-
 
         ImageView profileImage = new ImageView(new Image("ProfileIcon.jpg"));
         ImageView statsImage = new ImageView(new Image("leaderboard.png"));
@@ -101,7 +94,16 @@ public class GameScreenView extends BorderPane {
             }
         }
 
+        String[] keyboardCharacters = {"1","2","3","4","5","6","7","8","9","0","<-","+","-","*","/","->"};
+        int count = 0;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 2; j++) {
 
-
+                keyboardParts[i][j] = new BoardPart(new Region(), new Label());
+                keyboardParts[i][j].style();
+                keyboardParts[i][j].setText(keyboardCharacters[count]);
+                count++;
+            }
+        }
     }
 }

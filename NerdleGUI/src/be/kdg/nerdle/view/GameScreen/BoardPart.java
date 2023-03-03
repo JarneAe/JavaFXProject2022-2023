@@ -27,7 +27,7 @@ public class BoardPart extends StackPane {
 
 
 
-        label.setText("1");
+        label.setText("");
         label.setMinHeight(20);
         label.setMinWidth(20);
         label.setFont(FONT);
