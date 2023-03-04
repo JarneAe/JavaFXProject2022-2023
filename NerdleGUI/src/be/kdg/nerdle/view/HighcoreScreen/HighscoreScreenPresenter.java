@@ -4,6 +4,7 @@ import be.kdg.nerdle.model.User;
 import be.kdg.nerdle.model.UserList;
 import be.kdg.nerdle.model.jsonManager.JsonManager;
 
+import java.util.List;
 import java.util.Map;
 
 public class HighscoreScreenPresenter {
@@ -23,11 +24,11 @@ public class HighscoreScreenPresenter {
     }
 
     private void enterHighscoreList() {
-        Map<String, Double> highscoreList = userList.generateHighScoreList();
+        List<User> highscoreList = userList.generateHighScoreList();
 
-        for (Map.Entry<String, Double> entry : highscoreList.entrySet()) {
-            if (entry.getValue() != 0) {
-                view.addToHighscoreList(entry.getKey(), entry.getValue(), entry.getKey().equals(user.getName()));
+        for (User u : highscoreList) {
+            if (u.getAverageTries() != 0) {
+                view.addToHighscoreList(u.getName(), u.getAverageTries(), u.equals(this.user));
             }
         }
     }

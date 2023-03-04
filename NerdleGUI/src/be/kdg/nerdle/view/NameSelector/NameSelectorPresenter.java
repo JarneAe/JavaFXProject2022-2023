@@ -25,7 +25,7 @@ public class NameSelectorPresenter {
     private void userHandlerAndSwitchScreen(){
         String name = view.getTfUserInput().getText();
 
-        if (name.length() < 3) { // name length is a minimum of 3
+        if (name.length() <= 3 || name.length() >= 20) { // name length is a minimum of 3, max of 20
             view.setStyleInvalidUsername();
 
         } else {

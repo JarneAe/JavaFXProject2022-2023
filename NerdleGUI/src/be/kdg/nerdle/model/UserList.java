@@ -21,14 +21,9 @@ public class UserList {
             users.add(user);
     }
 
-    public Map<String, Double> generateHighScoreList() {
-        Map<String, Double> highScoreList = new TreeMap<>();
+    public List<User> generateHighScoreList() {
         Collections.sort(users);
-        for (User user : users) {
-            highScoreList.put(user.getName(), user.getAverageTries());
-        }
-
-        return highScoreList;
+        return users;
     }
 
 

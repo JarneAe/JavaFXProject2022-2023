@@ -12,12 +12,12 @@ public class HighscoreScreenView extends ScrollPane {
     private Label rankTitle;
 
     private static int rowCounter = 1;
-    private static final String TITLE_STYLE = "-fx-border-color: black; -fx-label-padding: 10; -fx-font-weight: bold; -fx-background-color: #a4a4a4;" +
+    private static final String TITLE_STYLE = "-fx-border-color: black; -fx-padding: 10; -fx-font-weight: bold; -fx-background-color: #a4a4a4;" +
             " -fx-font-family: 'Times New Roman'; -fx-font-size: 30";
 
-    private static final String ENTRY_STYLE = "-fx-label-padding: 10; -fx-font-family: 'Times New Roman'; -fx-font-size: 25";
+    private static final String ENTRY_STYLE = "-fx-label-padding: 10; -fx-font-family: 'Times New Roman'; -fx-font-size: 20";
 
-    private static final String LOGGED_IN_USER_STYLE = "-fx-label-padding: 10; -fx-font-family: 'Times New Roman'; -fx-font-size: 25; -fx-text-fill: red";
+    private static final String LOGGED_IN_USER_STYLE = "-fx-label-padding: 10; -fx-font-family: 'Times New Roman'; -fx-font-size: 20; -fx-text-fill: red";
     public HighscoreScreenView() {
         initialiseNodes();
         layoutNodes();
@@ -56,6 +56,8 @@ public class HighscoreScreenView extends ScrollPane {
             nameLabel.setStyle(ENTRY_STYLE);
             scoreLabel.setStyle(ENTRY_STYLE);
         }
+
+        nameLabel.setMaxSize(150, Double.MAX_VALUE);
 
         highscoreList.add(rankLabel, 0, rowCounter);
         highscoreList.add(nameLabel, 1, rowCounter);
