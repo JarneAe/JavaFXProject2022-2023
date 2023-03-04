@@ -52,12 +52,11 @@ public class GameScreenPresenter {
             new HighscoreScreenPresenter(highscoreView, session.getUser());
 
             Stage highScoreStage = new Stage();
-            //highScoreStage.initOwner(view.getScene().getWindow());
-            //highScoreStage.initModality(Modality.NONE);
             highScoreStage.setAlwaysOnTop(false);
             highScoreStage.setScene(new Scene(highscoreView));
             highScoreStage.setHeight(1000);
             highScoreStage.setWidth(480);
+            highScoreStage.setTitle("High scores");
             highScoreStage.show();
         });
     }
