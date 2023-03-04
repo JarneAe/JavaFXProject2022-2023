@@ -35,11 +35,14 @@ public class GameScreenView extends BorderPane {
     public BoardPart getBoardPart(int i, int j) {
         return boardParts[i][j];
     }
+
     public BoardPart getKeyboardPart(int i) {
         return keyboardParts.get(i);
     }
 
-
+    public Button getBtnStats() {
+        return btnStats;
+    }
 
     private void layoutNodes() {
 

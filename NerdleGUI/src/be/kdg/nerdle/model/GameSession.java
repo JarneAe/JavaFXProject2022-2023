@@ -24,6 +24,10 @@ public class GameSession {
         currentTry = 0;
     }
 
+    public User getUser() {
+        return user;
+    }
+
     public int getCurrentTry() {
         return currentTry;
     }

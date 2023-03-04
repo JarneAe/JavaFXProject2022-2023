@@ -38,7 +38,6 @@ public class MainMenuView extends BorderPane {
         this.setCenter(hbTop);
         this.setBottom(hbBottom);
 
-
     }
 
     private void initialiseNodes() {

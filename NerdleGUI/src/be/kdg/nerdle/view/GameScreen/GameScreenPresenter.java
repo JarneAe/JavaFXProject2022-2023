@@ -2,6 +2,11 @@ package be.kdg.nerdle.view.GameScreen;
 
 import be.kdg.nerdle.model.GameSession;
 import be.kdg.nerdle.model.User;
+import be.kdg.nerdle.view.HighcoreScreen.HighscoreScreenPresenter;
+import be.kdg.nerdle.view.HighcoreScreen.HighscoreScreenView;
+import javafx.scene.Scene;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class GameScreenPresenter {
     private final GameScreenView view;
@@ -41,6 +46,20 @@ public class GameScreenPresenter {
 
             view.getKeyboardPart(i).setOnMouseExited(event -> view.getKeyboardPart(finalI).setInactiveStyle());
         }
+
+        view.getBtnStats().setOnMouseClicked(event -> {
+            HighscoreScreenView highscoreView = new HighscoreScreenView();
+            new HighscoreScreenPresenter(highscoreView, session.getUser());
+
+            Stage highScoreStage = new Stage();
+            //highScoreStage.initOwner(view.getScene().getWindow());
+            //highScoreStage.initModality(Modality.NONE);
+            highScoreStage.setAlwaysOnTop(false);
+            highScoreStage.setScene(new Scene(highscoreView));
+            highScoreStage.setHeight(1000);
+            highScoreStage.setWidth(480);
+            highScoreStage.show();
+        });
     }
 
     public void handleKeyboardClick(String value) {
