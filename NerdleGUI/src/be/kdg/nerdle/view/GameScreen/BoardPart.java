@@ -8,8 +8,8 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 
 public class BoardPart extends StackPane {
-    private Region square;
-    private Label label;
+    private final Region square;
+    private final Label label;
     private static final Font FONT = Font.font("Times New Roman", 40);
 
 
@@ -36,8 +36,27 @@ public class BoardPart extends StackPane {
 
     }
 
+    public void setActiveStyle() {
+        square.setStyle("-fx-background-color: #8e8c8c; -fx-background-radius: 10 10 10 10; " +
+                "-fx-border-color: red; -fx-border-radius: 10;");
+    }
+
+    public void setInactiveStyle() {
+        square.setStyle("-fx-background-color: #8e8c8c; -fx-background-radius: 10 10 10 10; " +
+                "-fx-border-color: black; -fx-border-radius: 10;");
+    }
+
+    public void setHoverStyle() {
+        square.setStyle("-fx-background-color: #e0e0e0; -fx-background-radius: 10 10 10 10; " +
+                "-fx-border-color: black; -fx-border-radius: 10;");
+    }
+
     public void setText(String text) {
         this.label.setText(text);
+    }
+
+    public String getText() {
+        return label.getText();
     }
 
 

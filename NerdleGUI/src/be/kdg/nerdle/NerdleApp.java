@@ -9,9 +9,11 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.mariuszgromada.math.mxparser.License;
 
 public class NerdleApp extends Application {
     public static void main(String[] args) {
+        License.iConfirmNonCommercialUse("rob hellemans"); // startpoint of the app needs to do this otherwise they won't shut up about licenses
         Application.launch(args);
     }
 
@@ -24,9 +26,9 @@ public class NerdleApp extends Application {
 
         stage.setScene(scene);
         stage.setWidth(1000);
-        stage.setMinWidth(250);
+        stage.setMinWidth(500);
         stage.setHeight(720);
-        stage.setMinHeight(250);
+        stage.setMinHeight(500);
         stage.setTitle("Nerdle");
         stage.show();
     }

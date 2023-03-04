@@ -10,6 +10,7 @@ import javafx.event.EventHandler;
 public class NameSelectorPresenter {
 
     private final NameSelectorView view;
+    private User user;
 
 
     public NameSelectorPresenter(NameSelectorView view){
@@ -18,26 +19,23 @@ public class NameSelectorPresenter {
     }
 
     private void addEventListeners() {
-        view.getBtnConfirm().setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                userHandler();
-                switchScreen();
-
-            }
-        });
+        view.getBtnConfirm().setOnAction(actionEvent -> userHandlerAndSwitchScreen());
     }
 
-    private void userHandler(){
+    private void userHandlerAndSwitchScreen(){
         String name = view.getTfUserInput().getText();
-        User user = JsonManager.handleEnteredUsername(name);
-        System.out.println(user);
-    }
 
-    private void switchScreen(){
-        GameScreenView GameScreenView = new GameScreenView();
-        new GameScreenPresenter(GameScreenView);
+        if (name.length() < 3) { // name length is a minimum of 3
+            view.setStyleInvalidUsername();
 
-        view.getScene().setRoot(GameScreenView);
+        } else {
+            this.user = JsonManager.handleEnteredUsername(name);
+            System.out.println(user);
+
+            GameScreenView GameScreenView = new GameScreenView();
+            new GameScreenPresenter(GameScreenView, user);
+
+            view.getScene().setRoot(GameScreenView);
+        }
     }
 }

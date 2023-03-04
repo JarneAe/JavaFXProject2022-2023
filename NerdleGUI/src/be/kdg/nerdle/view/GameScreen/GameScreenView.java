@@ -12,14 +12,18 @@ import javafx.scene.text.Font;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class GameScreenView extends BorderPane {
 
     private static final Font FONT = Font.font("Times New Roman", 40);
     private Label lbTitle;
-    private BoardPart[][] boardParts = new BoardPart[8][8];
-    private BoardPart[][] keyboardParts = new BoardPart[8][2];
+    private final BoardPart[][] boardParts = new BoardPart[8][8];
+    private final List<BoardPart> keyboardParts = new ArrayList<>();
+    private final BoardPart[] keyboardPartsNumeric = new BoardPart[10];
+    private final BoardPart[] keyboardPartsOperatorsAndControls = new BoardPart[7];
     private Button btnProfile;
     private Button btnStats;
 
@@ -31,6 +35,11 @@ public class GameScreenView extends BorderPane {
     public BoardPart getBoardPart(int i, int j) {
         return boardParts[i][j];
     }
+    public BoardPart getKeyboardPart(int i) {
+        return keyboardParts.get(i);
+    }
+
+
 
     private void layoutNodes() {
 
@@ -53,20 +62,27 @@ public class GameScreenView extends BorderPane {
             }
         }
 
-        GridPane gpBottom = new GridPane();
+        HBox numeric = new HBox();
+        HBox operatorsAndControls = new HBox();
+        VBox overview = new VBox();
 
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 2; j++) {
-                gpBottom.add(keyboardParts[i][j], i, j);
-            }
+        for (BoardPart bp : keyboardPartsNumeric) {
+            numeric.getChildren().add(bp);
         }
 
+        for (BoardPart bp : keyboardPartsOperatorsAndControls) {
+            operatorsAndControls.getChildren().add(bp);
+        }
+
+        overview.getChildren().addAll(numeric, operatorsAndControls);
+        numeric.setAlignment(Pos.CENTER);
+        operatorsAndControls.setAlignment(Pos.CENTER);
 
         this.setTop(bpTop);
         this.setCenter(gpMid);
-        this.setBottom(gpBottom);
+        this.setBottom(overview);
         gpMid.setAlignment(Pos.CENTER);
-        gpBottom.setAlignment(Pos.CENTER);
+        overview.setAlignment(Pos.CENTER);
     }
 
     private void initialiseNodes() {
@@ -94,16 +110,20 @@ public class GameScreenView extends BorderPane {
             }
         }
 
-        String[] keyboardCharacters = {"1","2","3","4","5","6","7","8","9","0","<-","+","-","*","/","->"};
-        int count = 0;
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 2; j++) {
+        String[] keyboardCharactersNumeric = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        String[] keyboardCharactersOperatorsAndControls = {"+", "-", "*", "/", "=", "Enter", "Delete"};
+        for (int i = 0; i < 10; i++) {
+            keyboardPartsNumeric[i] = new BoardPart(new Region(), new Label());
+            keyboardParts.add(keyboardPartsNumeric[i]);
+            keyboardPartsNumeric[i].style();
+            keyboardPartsNumeric[i].setText(keyboardCharactersNumeric[i]);
+        }
 
-                keyboardParts[i][j] = new BoardPart(new Region(), new Label());
-                keyboardParts[i][j].style();
-                keyboardParts[i][j].setText(keyboardCharacters[count]);
-                count++;
-            }
+        for (int i = 0; i < 7; i++) {
+            keyboardPartsOperatorsAndControls[i] = new BoardPart(new Region(), new Label());
+            keyboardParts.add(keyboardPartsOperatorsAndControls[i]);
+            keyboardPartsOperatorsAndControls[i].style();
+            keyboardPartsOperatorsAndControls[i].setText(keyboardCharactersOperatorsAndControls[i]);
         }
     }
 }

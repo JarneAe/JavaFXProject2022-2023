@@ -7,9 +7,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class GameSession {
-    private final User user;
+    private User user;
 
-    private int maxTries = 8; // standard = 8, uitbreiding: andere aantal tries
+    private int currentTry;
+
+    private int maxTries = 7; // 0 tot en met 7 = 8 tries
 
     private Equation answer;
 
@@ -19,14 +21,23 @@ public class GameSession {
         this.user = user;
         answer = getFormula();
         board = new Board();
+        currentTry = 0;
+    }
+
+    public int getCurrentTry() {
+        return currentTry;
     }
 
     public void setMaxTries(int maxTries) {
         this.maxTries = maxTries;
     }
 
-    public void startSession() {
+    public void updateBoard(int column, String value) {
+        board.updateBoard(currentTry, column, value);
+    }
 
+    public boolean validateRow() {
+        return board.validateRow(currentTry);
     }
 
     public Equation getFormula() {

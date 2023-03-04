@@ -15,6 +15,7 @@ public class Equation {
             this.value = value;
         } catch (IllegalArgumentException e) {
             System.out.println("equation rejected.");
+            throw new IllegalArgumentException();
         }
     }
 
