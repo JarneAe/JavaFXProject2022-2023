@@ -4,8 +4,8 @@ public class OverviewPart {
     private String value;
     private Color color;
 
-    public OverviewPart(String value) {
-        this.value = value;
+    public OverviewPart() {
+        this.value = "";
         this.color = Color.CLEAR;
     }
 
@@ -17,8 +17,16 @@ public class OverviewPart {
         return value;
     }
 
+    public void setValue(String value) {
+        this.value = value;
+    }
+
     public Color getColor() {
         return color;
     }
 
+    @Override
+    public String toString() {
+        return String.format("OverviewPart{%s, %s}", value, color);
+    }
 }

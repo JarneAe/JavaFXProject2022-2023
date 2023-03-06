@@ -6,14 +6,16 @@ import java.util.List;
 
 public class Board {
     private List<Try> tries;
-
-    private Overview overview;
-
-    private String[][] board = new String[8][8];
+    private OverviewPart[][] board = new OverviewPart[6][8];
 
     public Board() {
         this.tries = new ArrayList<>();
-        overview = new Overview();
+
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 8; j++) {
+                board[i][j] = new OverviewPart();
+            }
+        }
     }
 
     public List<Try> getTries() {
@@ -21,7 +23,7 @@ public class Board {
     }
 
     public void updateBoard(int row, int column, String value) {
-        board[row][column] = value;
+        board[row][column].setValue(value);
         System.out.println(Arrays.deepToString(board));
     }
 
@@ -31,10 +33,13 @@ public class Board {
                 return false;
             }
         }
+        StringBuilder eqValue = new StringBuilder();
+        for (int i = 0; i < 8; i++) {
+            eqValue.append(board[row][i].getValue());
+        }
 
-        String eqValue = String.join("", board[row]);
         try {
-            Equation equation = new Equation(eqValue);
+            new Equation(eqValue.toString()); // test if the input fits into an Equation object, therefore validating it
         } catch (IllegalArgumentException e){
             return false;
         }

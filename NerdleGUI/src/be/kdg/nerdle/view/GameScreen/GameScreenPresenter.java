@@ -5,7 +5,6 @@ import be.kdg.nerdle.model.User;
 import be.kdg.nerdle.view.HighcoreScreen.HighscoreScreenPresenter;
 import be.kdg.nerdle.view.HighcoreScreen.HighscoreScreenView;
 import javafx.scene.Scene;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class GameScreenPresenter {
@@ -23,14 +22,8 @@ public class GameScreenPresenter {
 
         // all listeners for board portion of the screen
         for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                int finalI = i;
-                int finalJ = j;
-                view.getBoardPart(i, j).setOnMouseClicked(event -> {
-                    view.getBoardPart(finalI, finalJ).setText("2");
-                    System.out.println(view.getKeyboardPart(2).getText()); // testing
-                    view.getBoardPart(1, 1).setActiveStyle();
-                });
+            for (int j = 0; j < 6; j++) {
+                view.getBoardPart(i, j).setOnMouseClicked(event -> view.getBoardPart(1, 1).setActiveStyle());
             }
         }
 
@@ -54,7 +47,7 @@ public class GameScreenPresenter {
             Stage highScoreStage = new Stage();
             highScoreStage.setAlwaysOnTop(false);
             highScoreStage.setScene(new Scene(highscoreView));
-            highScoreStage.setHeight(1000);
+            highScoreStage.setHeight(800);
             highScoreStage.setWidth(480);
             highScoreStage.setTitle("High scores");
             highScoreStage.show();

@@ -11,7 +11,7 @@ public class HighscoreScreenView extends ScrollPane {
     private Label scoreTitle;
     private Label rankTitle;
 
-    private static int rowCounter = 1;
+    private int rowCounter = 1;
     private static final String TITLE_STYLE = "-fx-border-color: black; -fx-padding: 10; -fx-font-weight: bold; -fx-background-color: #a4a4a4;" +
             " -fx-font-family: 'Times New Roman'; -fx-font-size: 30";
 
