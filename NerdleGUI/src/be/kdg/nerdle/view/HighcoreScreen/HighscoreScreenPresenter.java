@@ -25,10 +25,12 @@ public class HighscoreScreenPresenter {
 
     private void enterHighscoreList() {
         List<User> highscoreList = userList.generateHighScoreList();
+        int rankCounter = 1;
 
         for (User u : highscoreList) {
             if (u.getAverageTries() != 0) {
-                view.addToHighscoreList(u.getName(), u.getAverageTries(), u.equals(this.user));
+                view.addToHighscoreList(rankCounter, u.getName(), u.getAverageTries(), u.equals(this.user));
+                rankCounter++;
             }
         }
     }

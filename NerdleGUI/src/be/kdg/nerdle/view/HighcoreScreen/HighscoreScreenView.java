@@ -11,7 +11,6 @@ public class HighscoreScreenView extends ScrollPane {
     private Label scoreTitle;
     private Label rankTitle;
 
-    private int rowCounter = 1;
     private static final String TITLE_STYLE = "-fx-border-color: black; -fx-padding: 10; -fx-font-weight: bold; -fx-background-color: #a4a4a4;" +
             " -fx-font-family: 'Times New Roman'; -fx-font-size: 30";
 
@@ -42,8 +41,8 @@ public class HighscoreScreenView extends ScrollPane {
         this.setContent(highscoreList);
     }
 
-    public void addToHighscoreList(String name, Double score, boolean isLoggedInUser) {
-        Label rankLabel = new Label(Integer.toString(rowCounter));
+    public void addToHighscoreList(int rank, String name, Double score, boolean isLoggedInUser) {
+        Label rankLabel = new Label(Integer.toString(rank));
         Label nameLabel = new Label(name);
         Label scoreLabel = new Label(score.toString());
 
@@ -59,9 +58,8 @@ public class HighscoreScreenView extends ScrollPane {
 
         nameLabel.setMaxSize(150, Double.MAX_VALUE);
 
-        highscoreList.add(rankLabel, 0, rowCounter);
-        highscoreList.add(nameLabel, 1, rowCounter);
-        highscoreList.add(scoreLabel, 2, rowCounter);
-        rowCounter++;
+        highscoreList.add(rankLabel, 0, rank);
+        highscoreList.add(nameLabel, 1, rank);
+        highscoreList.add(scoreLabel, 2, rank);
     }
 }
