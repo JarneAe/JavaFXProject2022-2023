@@ -37,7 +37,7 @@ public class BoardPart extends StackPane {
     }
 
     public void setActiveStyle() {
-        square.setStyle("-fx-background-color: #8e8c8c; -fx-background-radius: 10 10 10 10; " +
+        square.setStyle("-fx-background-color: #696868; -fx-background-radius: 10 10 10 10; " +
                 "-fx-border-color: red; -fx-border-radius: 10;");
     }
 

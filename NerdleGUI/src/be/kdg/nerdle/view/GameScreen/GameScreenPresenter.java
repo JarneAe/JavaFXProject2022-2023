@@ -5,7 +5,6 @@ import be.kdg.nerdle.model.User;
 import be.kdg.nerdle.view.HighcoreScreen.HighscoreScreenPresenter;
 import be.kdg.nerdle.view.HighcoreScreen.HighscoreScreenView;
 import javafx.scene.Scene;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class GameScreenPresenter {
@@ -54,7 +53,7 @@ public class GameScreenPresenter {
             Stage highScoreStage = new Stage();
             highScoreStage.setAlwaysOnTop(false);
             highScoreStage.setScene(new Scene(highscoreView));
-            highScoreStage.setHeight(1000);
+            highScoreStage.setHeight(800);
             highScoreStage.setWidth(480);
             highScoreStage.setTitle("High scores");
             highScoreStage.show();
