@@ -20,7 +20,7 @@ public class GameScreenView extends BorderPane {
 
     private static final Font FONT = Font.font("Times New Roman", 40);
     private Label lbTitle;
-    private final BoardPart[][] boardParts = new BoardPart[8][8];
+    private final BoardPart[][] boardParts = new BoardPart[8][6];
     private final List<BoardPart> keyboardParts = new ArrayList<>();
     private final BoardPart[] keyboardPartsNumeric = new BoardPart[10];
     private final BoardPart[] keyboardPartsOperatorsAndControls = new BoardPart[7];
@@ -60,7 +60,7 @@ public class GameScreenView extends BorderPane {
         GridPane gpMid = new GridPane();
 
         for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
+            for (int j = 0; j < 6; j++) {
                 gpMid.add(boardParts[i][j], i, j);
             }
         }
@@ -107,7 +107,7 @@ public class GameScreenView extends BorderPane {
         btnStats.setPadding(Insets.EMPTY);
 
         for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
+            for (int j = 0; j < 6; j++) {
                 boardParts[i][j] = new BoardPart(new Region(), new Label());
                 boardParts[i][j].style();
             }

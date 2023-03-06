@@ -22,14 +22,8 @@ public class GameScreenPresenter {
 
         // all listeners for board portion of the screen
         for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                int finalI = i;
-                int finalJ = j;
-                view.getBoardPart(i, j).setOnMouseClicked(event -> {
-                    view.getBoardPart(finalI, finalJ).setText("2");
-                    System.out.println(view.getKeyboardPart(2).getText()); // testing
-                    view.getBoardPart(1, 1).setActiveStyle();
-                });
+            for (int j = 0; j < 6; j++) {
+                view.getBoardPart(i, j).setOnMouseClicked(event -> view.getBoardPart(1, 1).setActiveStyle());
             }
         }
 
