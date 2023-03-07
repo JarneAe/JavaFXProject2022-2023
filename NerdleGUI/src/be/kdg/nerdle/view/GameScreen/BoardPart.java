@@ -1,7 +1,7 @@
 package be.kdg.nerdle.view.GameScreen;
 
+import be.kdg.nerdle.model.Color;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
@@ -25,8 +25,6 @@ public class BoardPart extends StackPane {
         square.setStyle("-fx-background-color: #8e8c8c; -fx-background-radius: 10 10 10 10; " +
                 "-fx-border-color: black; -fx-border-radius: 10;");
 
-
-
         label.setText("");
         label.setMinHeight(20);
         label.setMinWidth(20);
@@ -41,14 +39,30 @@ public class BoardPart extends StackPane {
                 "-fx-border-color: red; -fx-border-radius: 10;");
     }
 
-    public void setInactiveStyle() {
-        square.setStyle("-fx-background-color: #8e8c8c; -fx-background-radius: 10 10 10 10; " +
-                "-fx-border-color: black; -fx-border-radius: 10;");
+    public void setInactiveStyle(Color color) {
+        String hexCode = color.translateColorToHex();
+        square.setStyle(String.format("-fx-background-color: %s; -fx-background-radius: 10 10 10 10; " +
+                "-fx-border-color: black; -fx-border-radius: 10;", hexCode));
     }
 
-    public void setHoverStyle() {
-        square.setStyle("-fx-background-color: #e0e0e0; -fx-background-radius: 10 10 10 10; " +
-                "-fx-border-color: black; -fx-border-radius: 10;");
+    public void setHoverStyle(Color color) {
+        String hexCode = color.translateColorToLighterHex();
+        square.setStyle(String.format("-fx-background-color: %s; -fx-background-radius: 10 10 10 10; " +
+                "-fx-border-color: black; -fx-border-radius: 10;", hexCode));
+
+        if (color == Color.BLACK) {
+            label.setStyle("-fx-text-fill: white");
+        }
+    }
+
+    public void setCustomColor(Color color) {
+        String hexCode = color.translateColorToHex();
+        square.setStyle(String.format("-fx-background-color: %s; -fx-background-radius: 10 10 10 10; " +
+                "-fx-border-color: black; -fx-border-radius: 10;", hexCode));
+
+        if (hexCode.equals("#000000") || hexCode.equals("#1e1e1e")) {
+            label.setStyle("-fx-text-fill: white");
+        }
     }
 
     public void setText(String text) {
@@ -58,7 +72,4 @@ public class BoardPart extends StackPane {
     public String getText() {
         return label.getText();
     }
-
-
-
 }

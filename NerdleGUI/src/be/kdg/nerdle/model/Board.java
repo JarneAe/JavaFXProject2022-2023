@@ -27,6 +27,10 @@ public class Board {
         System.out.println(Arrays.deepToString(board));
     }
 
+    public Color getColorByIndex(int i, int j) {
+        return board[i][j].getColor();
+    }
+
     public boolean validateRow(int row) {
         for (int i = 0; i < 8; i++) {
             if (board[row][i] == null) {

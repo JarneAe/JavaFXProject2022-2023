@@ -4,6 +4,10 @@ public class OverviewPart {
     private String value;
     private Color color;
 
+    public OverviewPart(String value) {
+        this.value = value;
+        this.color = Color.CLEAR;
+    }
     public OverviewPart() {
         this.value = "";
         this.color = Color.CLEAR;
