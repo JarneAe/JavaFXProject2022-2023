@@ -65,20 +65,23 @@ public class Board {
     public void assignColorsToBoardParts(Equation answer, int row) {
 
         char[] answerList = answer.getValue().toCharArray();
+
         for (int i = 0; i < 8 ; i++) {
 
             char Answer = answer.getValue().charAt(i);
             char userInput = board[row][i].getValue().charAt(0);
 
-            if(Answer == userInput){
-                board[row][i].setColor(Color.GREEN);
-                System.out.println(answerList);
-            }
-
             for (char c : answerList ){
                 if(c == userInput){
                     board[row][i].setColor(Color.PURPLE);
                 }
+            }
+            if(Answer == userInput){
+                board[row][i].setColor(Color.GREEN);
+                System.out.println(answerList);
+            }
+            if(board[row][i].getColor() == Color.CLEAR){
+                board[row][i].setColor(Color.BLACK);
             }
         }
     }
