@@ -51,5 +51,15 @@ public class Board {
     public void addToTries(Try t) {
         tries.add(t);
     }
+
+    /*
+    TODO: this function is supposed to loop through a row on the board, and assign the right colors on the board.
+        to assign a color to a particular value, use board[row][i].setColor(Color)
+        note that the Color passed as argument is **NOT** a JavaFX Color, but a Color as defined in
+        the enum class, somewhere else in the model.
+     */
+    public void updateBoardAfterValidation(Equation answer, int row) {
+
+    }
 }
 
