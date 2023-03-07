@@ -70,16 +70,18 @@ public class Board {
 
             char Answer = answer.getValue().charAt(i);
             char userInput = board[row][i].getValue().charAt(0);
-
+            //checks if char is in answer
             for (char c : answerList ){
                 if(c == userInput){
                     board[row][i].setColor(Color.PURPLE);
                 }
             }
+            //checks if char on correct place
             if(Answer == userInput){
                 board[row][i].setColor(Color.GREEN);
                 System.out.println(answerList);
             }
+            // makes all the other tiles black
             if(board[row][i].getColor() == Color.CLEAR){
                 board[row][i].setColor(Color.BLACK);
             }
