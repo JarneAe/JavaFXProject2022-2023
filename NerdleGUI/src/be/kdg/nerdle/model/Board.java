@@ -58,7 +58,7 @@ public class Board {
         note that the Color passed as argument is **NOT** a JavaFX Color, but a Color as defined in
         the enum class, somewhere else in the model.
      */
-    public void updateBoardAfterValidation(Equation answer, int row) {
+    public void assignColorsToBoardParts(Equation answer, int row) {
 
     }
 }
