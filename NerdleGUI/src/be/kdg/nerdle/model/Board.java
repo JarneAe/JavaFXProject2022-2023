@@ -63,6 +63,13 @@ public class Board {
         the enum class, somewhere else in the model.
      */
     public void assignColorsToBoardParts(Equation answer, int row) {
+        for (int i = 0; i < board.length ; i++) {
+            //System.out.println(board[row][i].getValue());
+            System.out.println(answer.getValue().charAt(i));
+            if(board[row][i].getValue().equals(answer.getValue().charAt(i))){
+                System.out.println("CORRECT = " + board[row][i].getValue().charAt(i));
+            }
+        }
 
     }
 }
