@@ -18,6 +18,10 @@ public class Board {
         System.out.println(Arrays.deepToString(board));
     }
 
+    public Part[] getRow(int i) {
+        return board[i];
+    }
+
     public Color getColorByIndex(int i, int j) {
         return board[i][j].getColor();
     }

@@ -14,12 +14,14 @@ public class Overview {
         }
     }
 
-    public Part getPartByIndex(int i) {
-        return parts.get(i);
-    }
-
     public Color getColorByIndex(int i) {
         return parts.get(i).getColor();
+    }
+
+    public void updateColors(Part[] row) {
+        for (Part part : row) {
+            setColor(part.getValue(), part.getColor());
+        }
     }
 
     public void setColor(String value, Color color) {

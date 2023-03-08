@@ -6,20 +6,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.util.List;
 
 public class GameSession {
     private final User user;
 
     private int currentTry;
-
-    private int maxTries = 7; // 0 tot en met 7 = 8 tries
-
     private final Equation answer;
 
     private final Board board;
 
-    private Overview overview;
+    private final Overview overview;
 
     public GameSession(User user) {
         this.user = user;
@@ -49,14 +45,6 @@ public class GameSession {
         return overview.getColorByIndex(i);
     }
 
-    public String getOverviewValueByIndex(int i) {
-        return overview.getPartByIndex(i).getValue();
-    }
-
-    public void setMaxTries(int maxTries) {
-        this.maxTries = maxTries;
-    }
-
     public void updateBoard(int column, String value) {
         board.updateBoard(currentTry, column, value);
     }
@@ -82,6 +70,9 @@ public class GameSession {
 
     public void assignColorsToBoardParts() {
         board.assignColorsToBoardParts(answer, currentTry);
+    }
+    public void assignColorsToOverview() {
+        overview.updateColors(board.getRow(currentTry));
     }
 
     public boolean hasGameEnded() {

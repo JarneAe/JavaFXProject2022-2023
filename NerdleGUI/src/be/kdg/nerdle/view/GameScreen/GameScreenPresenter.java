@@ -3,7 +3,6 @@ package be.kdg.nerdle.view.GameScreen;
 import be.kdg.nerdle.model.Color;
 import be.kdg.nerdle.model.GameSession;
 import be.kdg.nerdle.model.User;
-import be.kdg.nerdle.model.jsonManager.JsonManager;
 import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenPresenter;
 import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenView;
 import javafx.scene.control.Alert;
@@ -55,6 +54,7 @@ public class GameScreenPresenter {
                 }
 
                 session.assignColorsToBoardParts();
+                session.assignColorsToOverview();
                 colorAssignment();
 
                 session.nextTry();
