@@ -1,5 +1,7 @@
 package be.kdg.nerdle.model;
 
+import be.kdg.nerdle.model.jsonManager.JsonManager;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -84,6 +86,10 @@ public class GameSession {
 
     public boolean hasGameEnded() {
         return board.hasGameEnded(currentTry-1);
+    }
+
+    public void handleEndOfGame() {
+        JsonManager.addToOutcomesByName(user.getName(), LocalDate.now(), currentTry);
     }
 }
 
