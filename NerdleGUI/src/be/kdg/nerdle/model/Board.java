@@ -56,6 +56,8 @@ public class Board {
         tries.add(t);
     }
 
+
+
     /*
     TODO: this function is supposed to loop through a row on the board, and assign the right colors on the board.
         to assign a color to a particular value, use board[row][i].setColor(Color)
@@ -68,7 +70,7 @@ public class Board {
 
         for (int i = 0; i < 8 ; i++) {
 
-            char Answer = answer.getValue().charAt(i);
+            char answerChar = answer.getValue().charAt(i);
             char userInput = board[row][i].getValue().charAt(0);
             //checks if char is in answer
             for (char c : answerList ){
@@ -77,7 +79,7 @@ public class Board {
                 }
             }
             //checks if char on correct place
-            if(Answer == userInput){
+            if(answerChar == userInput){
                 board[row][i].setColor(Color.GREEN);
                 System.out.println(answerList);
             }
@@ -86,6 +88,23 @@ public class Board {
                 board[row][i].setColor(Color.BLACK);
             }
         }
+    }
+
+    public boolean hasGameEnded(int row) {
+        if (row == 5) return true;
+
+        boolean correctCheck = true;
+
+        for (OverviewPart part : board[row]) {
+            System.out.println(row);
+            System.out.println(part);
+            if (!part.getColor().equals(Color.GREEN)) {
+                correctCheck = false;
+                break;
+            }
+        }
+
+        return correctCheck;
     }
 }
 

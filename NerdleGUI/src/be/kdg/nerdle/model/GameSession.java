@@ -81,5 +81,9 @@ public class GameSession {
     public void assignColorsToBoardParts() {
         board.assignColorsToBoardParts(answer, currentTry);
     }
+
+    public boolean hasGameEnded() {
+        return board.hasGameEnded(currentTry-1);
+    }
 }
 

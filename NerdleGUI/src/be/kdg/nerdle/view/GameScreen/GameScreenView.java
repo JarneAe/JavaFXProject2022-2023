@@ -1,18 +1,9 @@
 package be.kdg.nerdle.view.GameScreen;
 
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
-import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +15,6 @@ public class GameScreenView extends BorderPane {
     private final List<BoardPart> keyboardParts = new ArrayList<>();
     private final BoardPart[] keyboardPartsNumeric = new BoardPart[10];
     private final BoardPart[] keyboardPartsOperatorsAndControls = new BoardPart[7];
-    private Button btnProfile;
-    private Button btnStats;
 
     public GameScreenView(){
         initialiseNodes();
@@ -40,10 +29,6 @@ public class GameScreenView extends BorderPane {
         return keyboardParts.get(i);
     }
 
-    public Button getBtnStats() {
-        return btnStats;
-    }
-
     private void layoutNodes() {
 
         lbTitle.setAlignment(Pos.CENTER);
@@ -54,8 +39,6 @@ public class GameScreenView extends BorderPane {
 
         BorderPane bpTop = new BorderPane();
         bpTop.setCenter(lbTitle);
-        bpTop.setRight(btnProfile);
-        bpTop.setLeft(btnStats);
 
         GridPane gpMid = new GridPane();
 
@@ -91,20 +74,6 @@ public class GameScreenView extends BorderPane {
     private void initialiseNodes() {
         lbTitle = new Label("Nerdle");
         lbTitle.setFont(FONT);
-        btnProfile = new Button();
-        btnProfile.setFont(FONT);
-        btnStats = new Button();
-        btnStats.setFont(FONT);
-
-        ImageView profileImage = new ImageView(new Image("ProfileIcon.jpg"));
-        ImageView statsImage = new ImageView(new Image("leaderboard.png"));
-        profileImage.resize(10,10);
-        btnProfile.setGraphic(profileImage);
-        btnProfile.setPadding(Insets.EMPTY);
-        btnProfile.setMaxSize(10,10);
-        btnStats.setMaxSize(10,10);
-        btnStats.setGraphic(statsImage);
-        btnStats.setPadding(Insets.EMPTY);
 
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 6; j++) {

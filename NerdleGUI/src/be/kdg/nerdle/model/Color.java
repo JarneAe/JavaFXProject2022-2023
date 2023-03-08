@@ -8,10 +8,10 @@ public enum Color {
             case CLEAR -> {
                 return "#8e8c8c";
 
-
             }
             case GREEN -> {
                 return "#30b052";
+
             }
 
             case BLACK -> {

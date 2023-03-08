@@ -41,19 +41,6 @@ public class GameScreenPresenter {
 
             view.getKeyboardPart(i).setOnMouseExited(event -> view.getKeyboardPart(finalI).setInactiveStyle(session.getColorByOverviewIndex(finalI)));
         }
-
-        view.getBtnStats().setOnMouseClicked(event -> {
-            HighscoreScreenView highscoreView = new HighscoreScreenView();
-            new HighscoreScreenPresenter(highscoreView, session.getUser());
-
-            Stage highScoreStage = new Stage();
-            highScoreStage.setAlwaysOnTop(false);
-            highScoreStage.setScene(new Scene(highscoreView));
-            highScoreStage.setHeight(800);
-            highScoreStage.setWidth(480);
-            highScoreStage.setTitle("High scores");
-            highScoreStage.show();
-        });
     }
 
     public void handleKeyboardClick(String value) {
@@ -70,12 +57,12 @@ public class GameScreenPresenter {
                 session.assignColorsToBoardParts();
                 colorAssignment();
 
-                if (session.getCurrentTry() == 5) {
-                    // TODO: max tries exceeded implementation
-                    System.out.println("MAX TRIES EXCEEDED");
+                session.nextTry();
+
+                if (session.hasGameEnded()) {
+                    // TODO handle game end
+                    System.out.println("game ended!");
                     break;
-                } else {
-                    session.nextTry();
                 }
 
                 activeColumn = 0;

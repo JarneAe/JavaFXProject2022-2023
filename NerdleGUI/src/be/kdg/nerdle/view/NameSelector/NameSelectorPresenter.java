@@ -4,6 +4,8 @@ import be.kdg.nerdle.model.User;
 import be.kdg.nerdle.model.jsonManager.JsonManager;
 import be.kdg.nerdle.view.GameScreen.GameScreenPresenter;
 import be.kdg.nerdle.view.GameScreen.GameScreenView;
+import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenPresenter;
+import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -30,12 +32,10 @@ public class NameSelectorPresenter {
 
         } else {
             this.user = JsonManager.handleEnteredUsername(name);
-            System.out.println(user);
 
-            GameScreenView GameScreenView = new GameScreenView();
-            new GameScreenPresenter(GameScreenView, user);
-
-            view.getScene().setRoot(GameScreenView);
+            IntermediaryScreenView intermediaryScreenView = new IntermediaryScreenView();
+            new IntermediaryScreenPresenter(intermediaryScreenView, user);
+            view.getScene().setRoot(intermediaryScreenView);
         }
     }
 }
