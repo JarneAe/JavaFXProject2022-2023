@@ -1,14 +1,14 @@
 package be.kdg.nerdle.model;
 
-public class OverviewPart {
+public class Part {
     private String value;
     private Color color;
 
-    public OverviewPart(String value) {
+    public Part(String value) {
         this.value = value;
         this.color = Color.CLEAR;
     }
-    public OverviewPart() {
+    public Part() {
         this.value = "";
         this.color = Color.CLEAR;
     }

@@ -18,10 +18,6 @@ public class User implements Comparable<User> {
         return name;
     }
 
-    public Map<LocalDate, Integer> getOutcomes() {
-        return outcomes;
-    }
-
     @Override
     public String toString() {
         return "User{" +

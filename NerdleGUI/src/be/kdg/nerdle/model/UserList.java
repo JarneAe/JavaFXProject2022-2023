@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class UserList {
 
-    private List<User> users;
+    private final List<User> users;
 
     public UserList() {
         this.users = new ArrayList<>();
@@ -25,10 +25,6 @@ public class UserList {
         Collections.sort(users);
         return users;
     }
-
-
-
-
 
     @Override
     public String toString() {

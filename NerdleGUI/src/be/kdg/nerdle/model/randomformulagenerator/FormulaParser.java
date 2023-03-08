@@ -1,7 +1,6 @@
 package be.kdg.nerdle.model.randomformulagenerator;
 
 import org.mariuszgromada.math.mxparser.Expression;
-import org.mariuszgromada.math.mxparser.License;
 
 import java.util.ArrayList;
 import java.util.List;
