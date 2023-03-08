@@ -1,6 +1,11 @@
 # idea file
-.idea 
+.idea/
 
+# workspace file
+workspace.xml
+
+# users file
+Users.json
 
 # Compiled class file
 *.class
