@@ -4,9 +4,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 
@@ -31,10 +29,6 @@ public class NameSelectorView extends BorderPane {
         hbCenter.setAlignment(Pos.CENTER);
         HBox hbTop = new HBox(lbTitle);
         hbTop.setAlignment(Pos.TOP_CENTER);
-
-
-
-
         this.setCenter(hbCenter);
         this.setTop(hbTop);
 
