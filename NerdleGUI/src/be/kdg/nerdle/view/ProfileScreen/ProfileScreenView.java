@@ -50,7 +50,7 @@ public class ProfileScreenView extends BorderPane {
         lbPlayed.setFont(STATFONT);
 
         btnBackButton = new Button("BACK");
-        btnBackButton.setFont(STATFONT);
+        setStyles();
     }
 
     private void layoutNodes() {
@@ -87,4 +87,14 @@ public class ProfileScreenView extends BorderPane {
     public Button getBtnBackButton() {
         return btnBackButton;
     }
+
+    private void setStyles(){
+        btnBackButton.setStyle("-fx-text-fill: white;" +
+                "    -fx-font-family: \"Arial Narrow\";" +
+                "    -fx-font-weight: bold;" +
+                "    -fx-background-color: linear-gradient(#61a2b1, #2A5058); -fx-font-size: 25");
+        this.setStyle("-fx-background-color: #cecccc");
+
+    }
+
 }

@@ -42,6 +42,7 @@ public class HighscoreScreenView extends ScrollPane {
         usernameTitle.setStyle(TITLE_STYLE);
         scoreTitle.setStyle(TITLE_STYLE);
         btnBack.setStyle(BUTTON_BACK_STYLE);
+        setStyles();
     }
 
     private void layoutNodes() {
@@ -77,5 +78,14 @@ public class HighscoreScreenView extends ScrollPane {
 
     public void addBackButton(int row) {
         highscoreList.add(btnBack, 0, row);
+    }
+
+    private void setStyles(){
+        btnBack.setStyle("-fx-text-fill: white;" +
+                "    -fx-font-family: \"Arial Narrow\";" +
+                "    -fx-font-weight: bold;" +
+                "    -fx-background-color: linear-gradient(#61a2b1, #2A5058); -fx-font-size: 25;-fx-hgap: 5");
+        this.setStyle("-fx-background-color: #cecccc");
+
     }
 }

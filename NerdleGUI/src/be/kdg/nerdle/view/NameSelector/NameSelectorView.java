@@ -1,5 +1,6 @@
 package be.kdg.nerdle.view.NameSelector;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -29,6 +30,8 @@ public class NameSelectorView extends BorderPane {
         hbCenter.setAlignment(Pos.CENTER);
         HBox hbTop = new HBox(lbTitle);
         hbTop.setAlignment(Pos.TOP_CENTER);
+
+        hbCenter.setSpacing(15);
         this.setCenter(hbCenter);
         this.setTop(hbTop);
 
@@ -44,6 +47,7 @@ public class NameSelectorView extends BorderPane {
         tfUserInput.setFont(SELECTORFONT);
         btnConfirm = new Button("Confirm");
         btnConfirm.setFont(SELECTORFONT);
+        setStyles();
     }
 
     public TextField getTfUserInput() {
@@ -57,4 +61,15 @@ public class NameSelectorView extends BorderPane {
     public Button getBtnConfirm() {
         return btnConfirm;
     }
+
+    private void setStyles(){
+        btnConfirm.setStyle("-fx-text-fill: white;" +
+                "    -fx-font-family: \"Arial Narrow\";" +
+                "    -fx-font-weight: bold;" +
+                "    -fx-background-color: linear-gradient(#61a2b1, #2A5058); -fx-font-size: 25;-fx-hgap: 5");
+        this.setStyle("-fx-background-color: #cecccc");
+
+    }
 }
+
+

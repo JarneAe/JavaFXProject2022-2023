@@ -45,6 +45,7 @@ public class MainMenuView extends BorderPane {
         lbTitle.setFont(LABELFONT);
         btnStart = new Button("START");
         btnStart.setFont(BUTTONFONT);
+        setStyles();
     }
 
     public Label getLbTitle() {
@@ -53,5 +54,14 @@ public class MainMenuView extends BorderPane {
 
     public Button getBtnStart() {
         return btnStart;
+    }
+
+    private void setStyles(){
+        btnStart.setStyle("-fx-text-fill: white;" +
+                "    -fx-font-family: \"Arial Narrow\";" +
+                "    -fx-font-weight: bold;" +
+                "    -fx-background-color: linear-gradient(#61a2b1, #2A5058); -fx-font-size: 25;-fx-hgap: 5");
+        this.setStyle("-fx-background-color: #cecccc");
+
     }
 }

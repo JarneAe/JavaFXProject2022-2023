@@ -97,5 +97,11 @@ public class GameScreenView extends BorderPane {
             keyboardPartsOperatorsAndControls[i].style();
             keyboardPartsOperatorsAndControls[i].setText(keyboardCharactersOperatorsAndControls[i]);
         }
+
+        setStyles();
+    }
+
+    private void setStyles(){
+        this.setStyle("-fx-background-color: #cecccc");
     }
 }

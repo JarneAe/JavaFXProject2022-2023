@@ -56,10 +56,19 @@ public class IntermediaryScreenView extends HBox {
 
         this.getChildren().addAll(btnProfile, btnStart, btnStats);
         this.setSpacing(100);
-
+        setStyles();
     }
 
     private void layoutNodes() {
         this.setAlignment(Pos.CENTER);
+    }
+
+    private void setStyles(){
+        btnStart.setStyle("-fx-text-fill: white;" +
+                "    -fx-font-family: \"Arial Narrow\";" +
+                "    -fx-font-weight: bold;" +
+                "    -fx-background-color: linear-gradient(#61a2b1, #2A5058); -fx-font-size: 40;-fx-hgap: 5");
+        this.setStyle("-fx-background-color: #cecccc");
+
     }
 }
