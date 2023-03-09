@@ -1,24 +1,20 @@
 package be.kdg.nerdle;
 
-import be.kdg.nerdle.view.GameScreen.GameScreenView;
 import be.kdg.nerdle.view.MainMenu.MainMenuPresenter;
 import be.kdg.nerdle.view.MainMenu.MainMenuView;
 import javafx.application.Application;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import org.mariuszgromada.math.mxparser.License;
 
 public class NerdleApp extends Application {
     public static void main(String[] args) {
-        License.iConfirmNonCommercialUse("rob hellemans"); // startpoint of the app needs to do this otherwise they won't shut up about licenses
+        License.iConfirmNonCommercialUse("Rob Hellemans"); // start point of the app needs to do this otherwise they won't shut up about licenses
         Application.launch(args);
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
 
         MainMenuView mainMenu = new MainMenuView();
         new MainMenuPresenter(mainMenu);
