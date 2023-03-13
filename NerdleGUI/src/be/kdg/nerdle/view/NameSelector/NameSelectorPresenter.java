@@ -2,17 +2,12 @@ package be.kdg.nerdle.view.NameSelector;
 
 import be.kdg.nerdle.model.User;
 import be.kdg.nerdle.model.jsonManager.JsonManager;
-import be.kdg.nerdle.view.GameScreen.GameScreenPresenter;
-import be.kdg.nerdle.view.GameScreen.GameScreenView;
 import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenPresenter;
 import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenView;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 
 public class NameSelectorPresenter {
 
     private final NameSelectorView view;
-    private User user;
 
 
     public NameSelectorPresenter(NameSelectorView view){
@@ -31,7 +26,7 @@ public class NameSelectorPresenter {
             view.setStyleInvalidUsername();
 
         } else {
-            this.user = JsonManager.handleEnteredUsername(name);
+            User user = JsonManager.handleEnteredUsername(name);
 
             IntermediaryScreenView intermediaryScreenView = new IntermediaryScreenView();
             new IntermediaryScreenPresenter(intermediaryScreenView, user);
