@@ -7,6 +7,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 
+//TODO
+// alle stomme getters moeten package protected zijn lol
 
 public class MainMenuView extends BorderPane {
     private  static final Font BUTTONFONT = Font.font("Times New Roman", 40);
