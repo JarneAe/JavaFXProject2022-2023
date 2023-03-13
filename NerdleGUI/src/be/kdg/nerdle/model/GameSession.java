@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 
 public class GameSession {
-    private final User user;
+    private User user;
 
     private int currentTry;
     private final Equation answer;
@@ -27,6 +27,10 @@ public class GameSession {
 
     public User getUser() {
         return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getCurrentTry() {
