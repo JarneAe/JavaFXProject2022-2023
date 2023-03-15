@@ -19,15 +19,15 @@ public class IntermediaryScreenView extends HBox {
         layoutNodes();
     }
 
-    public Button getBtnStart() {
+    Button getBtnStart() {
         return btnStart;
     }
 
-    public Button getBtnProfile() {
+    Button getBtnProfile() {
         return btnProfile;
     }
 
-    public Button getBtnStats() {
+    Button getBtnStats() {
         return btnStats;
     }
 
@@ -50,7 +50,8 @@ public class IntermediaryScreenView extends HBox {
         btnStats.setPadding(Insets.EMPTY);
 
         // this dumb button decides on a whim to resize to the most
-        // idiotic things, so this is somehow necessary
+        // idiotic things, (without the screen doing anything, just hovering over it seems to do the trick)
+        // so this is somehow necessary
         btnStart.setMinSize(150, 75);
         btnStart.setMaxSize(150, 75);
 

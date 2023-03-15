@@ -22,7 +22,7 @@ public class HighscoreScreenView extends ScrollPane {
 
     private static final String LOGGED_IN_USER_STYLE = "-fx-label-padding: 10; -fx-font-family: 'Times New Roman'; -fx-font-size: 20; -fx-text-fill: red";
 
-    public Button getBtnBack() {
+    Button getBtnBack() {
         return btnBack;
     }
 

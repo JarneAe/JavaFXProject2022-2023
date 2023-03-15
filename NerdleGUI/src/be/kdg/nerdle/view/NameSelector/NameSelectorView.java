@@ -1,6 +1,5 @@
 package be.kdg.nerdle.view.NameSelector;
 
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -10,7 +9,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 
 public class NameSelectorView extends BorderPane {
-
     public static final Font SELECTORFONT = Font.font("Times New Roman",20);
     public static final Font LABELFONT = Font.font("Times New Roman", 40);
     private Label lbTitle;
@@ -54,11 +52,11 @@ public class NameSelectorView extends BorderPane {
         return tfUserInput;
     }
 
-    public void setStyleInvalidUsername() {
+    void setStyleInvalidUsername() {
         tfUserInput.setStyle("-fx-border-color: red");
     }
 
-    public Button getBtnConfirm() {
+    Button getBtnConfirm() {
         return btnConfirm;
     }
 

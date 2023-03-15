@@ -3,9 +3,9 @@ package be.kdg.nerdle.model;
 import java.util.ArrayList;
 import java.util.List;
 
-// this class will probably be deleted
 public class Overview {
     private final List<Part> parts;
+    public static final int LENGTH_OF_OVERVIEW = 17;
 
     public Overview() {
         this.parts = new ArrayList<>();
