@@ -1,18 +1,12 @@
 package be.kdg.nerdle.model.randomformulagenerator;
 
+import be.kdg.nerdle.model.Board;
 import org.mariuszgromada.math.mxparser.Expression;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FormulaParser {
-    private static int sizeConstraint = 8;
-
-
-    public static void setSizeConstraint(int size_constraint) {
-        FormulaParser.sizeConstraint = size_constraint;
-    }
-
     /**
      *
      * @param formula the formula in an array of strings WITHOUT A RESULT!
@@ -44,7 +38,7 @@ public class FormulaParser {
             throw new IllegalArgumentException("No operators found");
         }
 
-        if (input.size() != sizeConstraint) {
+        if (input.size() != Board.LENGTH_OF_ROW) {
             throw new IllegalArgumentException("Not the right size");
         }
 

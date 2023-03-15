@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// IntelliJ told me this should be a record, so it's a record.
 public record Equation(String value) {
     public Equation(String value) {
         try {
