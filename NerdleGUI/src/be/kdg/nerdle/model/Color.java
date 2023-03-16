@@ -20,7 +20,7 @@ public enum Color {
             }
 
             case PURPLE -> {
-               return "#6f17a6";
+               return "#Ad187b";
 
             }
 
@@ -48,7 +48,7 @@ public enum Color {
             }
 
             case PURPLE -> {
-                return "#A020F0";
+                return "#D01d94";
 
             }
 
