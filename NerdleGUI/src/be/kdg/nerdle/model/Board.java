@@ -3,11 +3,13 @@ package be.kdg.nerdle.model;
 import java.util.Arrays;
 
 public class Board {
-    private final Part[][] board = new Part[6][8];
+    public static final int ROWS = 6;
+    public static final int LENGTH_OF_ROW = 8;
+    private final Part[][] board = new Part[ROWS][LENGTH_OF_ROW];
 
     public Board() {
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 8; j++) {
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < LENGTH_OF_ROW; j++) {
                 board[i][j] = new Part();
             }
         }
@@ -26,14 +28,19 @@ public class Board {
         return board[i][j].getColor();
     }
 
+    /**
+     * checks if a row on the board is a valid Equation (as defined in the Equation class) and has a length of 8 characters.
+     * @param row the index of a row on the board
+     * @return true, if the row is a valid equation. False, if it is not.
+     */
     public boolean validateRow(int row) {
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < LENGTH_OF_ROW; i++) {
             if (board[row][i] == null) {
                 return false;
             }
         }
         StringBuilder eqValue = new StringBuilder();
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < LENGTH_OF_ROW; i++) {
             eqValue.append(board[row][i].getValue());
         }
 
@@ -49,11 +56,11 @@ public class Board {
 
     public void assignColorsToBoardParts(Equation answer, int row) {
 
-        char[] answerList = answer.getValue().toCharArray();
+        char[] answerList = answer.value().toCharArray();
 
-        for (int i = 0; i < 8 ; i++) {
+        for (int i = 0; i < LENGTH_OF_ROW; i++) {
 
-            char answerChar = answer.getValue().charAt(i);
+            char answerChar = answer.value().charAt(i);
             char userInput = board[row][i].getValue().charAt(0);
             //checks if char is in answer
             for (char c : answerList ){
@@ -74,7 +81,7 @@ public class Board {
     }
 
     public boolean hasGameEnded(int row) {
-        if (row == 5) return true;
+        if (row == ROWS-1) return true;
 
         boolean correctCheck = true;
 

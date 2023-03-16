@@ -5,6 +5,8 @@ import be.kdg.nerdle.view.GameScreen.GameScreenPresenter;
 import be.kdg.nerdle.view.GameScreen.GameScreenView;
 import be.kdg.nerdle.view.HighcoreScreen.HighscoreScreenPresenter;
 import be.kdg.nerdle.view.HighcoreScreen.HighscoreScreenView;
+import be.kdg.nerdle.view.ProfileScreen.ProfileScreenPresenter;
+import be.kdg.nerdle.view.ProfileScreen.ProfileScreenView;
 import javafx.scene.control.Alert;
 
 public class IntermediaryScreenPresenter {
@@ -43,6 +45,15 @@ public class IntermediaryScreenPresenter {
             view.getScene().setRoot(highscoreView);
             highscoreView.getScene().getWindow().setWidth(480);
             highscoreView.getScene().getWindow().setHeight(500);
+        });
+
+        view.getBtnProfile().setOnMouseClicked(event -> {
+            ProfileScreenView profileScreenView = new ProfileScreenView();
+            new ProfileScreenPresenter(profileScreenView, user);
+
+            view.getScene().setRoot(profileScreenView);
+            profileScreenView.getScene().getWindow().setWidth(480);
+            profileScreenView.getScene().getWindow().setHeight(500);
         });
     }
 }

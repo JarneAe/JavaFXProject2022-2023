@@ -37,6 +37,7 @@ public class User implements Comparable<User> {
     }
 
     public double getAverageTries() {
+        // people on stackOverflow say the darnedest things
         return outcomes.values().stream().mapToDouble(d -> d).average().orElse(0.0);
     }
 

@@ -1,12 +1,9 @@
 package be.kdg.nerdle.view.MainMenu;
 
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 
@@ -48,11 +45,7 @@ public class MainMenuView extends BorderPane {
         setStyles();
     }
 
-    public Label getLbTitle() {
-        return lbTitle;
-    }
-
-    public Button getBtnStart() {
+    Button getBtnStart() {
         return btnStart;
     }
 

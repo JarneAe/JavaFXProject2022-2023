@@ -85,6 +85,7 @@ public class GameSession {
 
     public void handleEndOfGame() {
         JsonManager.addToOutcomesByName(user.getName(), LocalDate.now(), currentTry);
+        this.user = JsonManager.getUserByName(user.getName());
     }
 }
 

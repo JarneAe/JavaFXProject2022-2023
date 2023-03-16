@@ -9,7 +9,8 @@ import org.mariuszgromada.math.mxparser.License;
 
 public class NerdleApp extends Application {
     public static void main(String[] args) {
-        License.iConfirmNonCommercialUse("Rob Hellemans"); // start point of the app needs to do this otherwise they won't shut up about licenses
+        // start point of the app needs to do this otherwise they won't shut up about licenses
+        License.iConfirmNonCommercialUse("Rob Hellemans");
         Application.launch(args);
     }
 

@@ -1,4 +1,4 @@
-package be.kdg.nerdle.view.GameScreen;
+package be.kdg.nerdle.customcomponents;
 
 import be.kdg.nerdle.model.Color;
 import javafx.geometry.Insets;
@@ -60,7 +60,8 @@ public class BoardPart extends StackPane {
         square.setStyle(String.format("-fx-background-color: %s; -fx-background-radius: 10 10 10 10; " +
                 "-fx-border-color: black; -fx-border-radius: 10;", hexCode));
 
-        if (hexCode.equals("#000000") || hexCode.equals("#1e1e1e")) {
+//        if (hexCode.equals("#000000") || hexCode.equals("#1e1e1e")) {
+        if (color.equals(Color.BLACK)) {
             label.setStyle("-fx-text-fill: white");
         }
     }

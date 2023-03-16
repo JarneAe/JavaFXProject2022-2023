@@ -6,9 +6,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Equation {
-    private String value;
-
+// IntelliJ told me this should be a record, so it's a record.
+public record Equation(String value) {
     public Equation(String value) {
         try {
             validate(value);
@@ -19,19 +18,12 @@ public class Equation {
         }
     }
 
-    public static void setSizeConstraint(int sizeConstraint) {
-        FormulaParser.setSizeConstraint(sizeConstraint);
-    }
-
-    public String  getValue() {
-        return value;
-    }
-
     @Override
     public String toString() {
         try {
             return String.join("", value);
         } catch (NullPointerException npe) {
+            // should theoretically never happen, since value is checked in the constructor?
             return "Equation has no valid value.";
         }
     }

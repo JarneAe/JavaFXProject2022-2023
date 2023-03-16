@@ -149,6 +149,9 @@ public class JsonManager {
         }
     }
 
+    /**
+     * private method to make a Users.json file if it doesn't already exist
+     */
     private static void initialize() {
         try {
             File tmpFile = pathToUsersFile.toFile();
