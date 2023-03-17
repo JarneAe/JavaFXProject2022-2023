@@ -34,10 +34,6 @@ public class GeneratorWithTemplates {
                     }
                 }
             }
-
-
-
-        //System.out.println(pattern);
         try {
             for (int i = 0; i < patterns.length - 3; i++) {
                 formula.add(String.valueOf(pattern.charAt(i)));
@@ -49,7 +45,6 @@ public class GeneratorWithTemplates {
         }
         return formula;
     }
-
     private void WriteToFile(List<List<String>> array) {
         // Tries overwriting a file and throws an error if not possible
         try {
