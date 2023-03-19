@@ -9,8 +9,7 @@ import javafx.scene.text.Font;
 
 
 public class MainMenuView extends BorderPane {
-    private  static final Font BUTTONFONT = Font.font("Times New Roman", 40);
-    private static final Font LABELFONT = Font.font("Times New Roman", 40);
+    public static final Font FONT = Font.font("Times New Roman", 40);
     private Label lbTitle;
     private Button btnStart;
 
@@ -39,9 +38,9 @@ public class MainMenuView extends BorderPane {
 
     private void initialiseNodes() {
         lbTitle = new Label("Nerdle");
-        lbTitle.setFont(LABELFONT);
+        lbTitle.setFont(FONT);
         btnStart = new Button("START");
-        btnStart.setFont(BUTTONFONT);
+        btnStart.setFont(FONT);
         setStyles();
     }
 
