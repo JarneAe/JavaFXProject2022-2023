@@ -14,21 +14,24 @@ public class GeneratorWithTemplates {
 
     private List<String> generate() {
 
+        //gets random pattern from the array
         ArrayList<String> formula = new ArrayList<>();
         String pattern = patterns[random.nextInt(patterns.length)];
-        int patternLength = pattern.length();
 
+        int patternLength = pattern.length();
 
             for (int i = 0; i < patternLength; i++) {
 
                 int num = (random.nextInt(9));
 
                 if (String.valueOf(pattern.charAt(i)).equals("I")) {
+
                     //removes weird 0s from formula like a 0 after an operator or at the first index
                     try {
                         if ((num == 0 && operators.contains(String.valueOf(pattern.charAt(i - 1)))) || i == 0) {
                             num = random.nextInt(1, 9);
                         }
+                        //replaces the 'I' in the template with a number
                         pattern = pattern.replaceFirst(String.valueOf((pattern.charAt(i))), String.valueOf(num));
                     } catch (StringIndexOutOfBoundsException ignore) {
                     }
