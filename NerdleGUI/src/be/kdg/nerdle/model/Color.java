@@ -43,7 +43,7 @@ public enum Color {
             }
 
             case BLACK -> {
-                return "#1e1e1e";
+                return "#303030";
 
             }
 

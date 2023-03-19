@@ -32,7 +32,9 @@ public class GameSession {
     public void setUser(User user) {
         this.user = user;
     }
-
+    public Equation getAnswer() {
+        return answer;
+    }
     public int getCurrentTry() {
         return currentTry;
     }
@@ -84,7 +86,7 @@ public class GameSession {
     }
 
     public void handleEndOfGame() {
-        JsonManager.addToOutcomesByName(user.getName(), LocalDate.now(), currentTry);
+        JsonManager.addToOutcomesByName(user.getName(), LocalDate.now(), currentTry+1);
         this.user = JsonManager.getUserByName(user.getName());
     }
 }
