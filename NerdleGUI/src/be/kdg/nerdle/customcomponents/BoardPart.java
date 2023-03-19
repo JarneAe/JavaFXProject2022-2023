@@ -60,7 +60,6 @@ public class BoardPart extends StackPane {
         square.setStyle(String.format("-fx-background-color: %s; -fx-background-radius: 10 10 10 10; " +
                 "-fx-border-color: black; -fx-border-radius: 10;", hexCode));
 
-//        if (hexCode.equals("#000000") || hexCode.equals("#1e1e1e")) {
         if (color.equals(Color.BLACK)) {
             label.setStyle("-fx-text-fill: white");
         }
