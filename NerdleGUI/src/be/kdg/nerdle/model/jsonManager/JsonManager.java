@@ -25,7 +25,7 @@ public class JsonManager {
 
 
     /**
-     * Writes a single user to the Users.json file in the root of the project. This method checks if a user with the given
+     * Writes a single user to the Users.json file in the resources folder. This method checks if a user with the given
      * username already exists, and will not write the user to the json if this is the case
      *
      * @param user the user to write to the json file
