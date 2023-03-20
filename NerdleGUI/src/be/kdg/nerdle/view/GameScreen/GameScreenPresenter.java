@@ -51,7 +51,8 @@ public class GameScreenPresenter {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Spel afgelopen");
                     alert.setHeaderText("Het spel is afgelopen!");
-                    alert.setContentText("Klik OK om het spel te beëindigen.");
+                    alert.setContentText(String.format("Het antwoord was %s\nKlik OK om het spel te beëindigen.",
+                            session.getAnswer().toString()));
                     alert.showAndWait();
 
                     session.handleEndOfGame();
@@ -71,7 +72,7 @@ public class GameScreenPresenter {
                     break;
                 }
 
-                if (activeColumn == Board.LENGTH_OF_ROW-1 && !view.getBoardPart(activeColumn, session.getCurrentTry()).getText().equals("")) {
+                if (activeColumn == Board.LENGTH_OF_ROW - 1 && !view.getBoardPart(activeColumn, session.getCurrentTry()).getText().equals("")) {
                     view.getBoardPart(activeColumn, session.getCurrentTry()).setText("");
                     session.updateBoard(activeColumn, null);
                     break;
@@ -87,7 +88,7 @@ public class GameScreenPresenter {
                 view.getBoardPart(activeColumn, session.getCurrentTry()).setText(value);
                 session.updateBoard(activeColumn, value);
                 view.getBoardPart(activeColumn, session.getCurrentTry()).setInactiveStyle(session.getColorByBoardIndex(session.getCurrentTry(), activeColumn));
-                if (activeColumn < Board.LENGTH_OF_ROW-1) {
+                if (activeColumn < Board.LENGTH_OF_ROW - 1) {
                     activeColumn++;
                 }
 
