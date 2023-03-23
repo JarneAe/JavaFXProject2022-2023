@@ -1,4 +1,4 @@
-package be.kdg.nerdle.model.jsonManager;
+package be.kdg.nerdle.model.jsonmanager;
 
 import com.google.gson.*;
 

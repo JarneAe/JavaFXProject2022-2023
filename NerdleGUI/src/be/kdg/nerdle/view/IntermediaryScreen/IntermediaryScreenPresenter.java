@@ -19,7 +19,7 @@ public class IntermediaryScreenPresenter {
         addEventListeners();
     }
 
-    public void addEventListeners() {
+    private void addEventListeners() {
         System.out.println(user);
 
         view.getBtnStart().setOnMouseClicked(event -> {

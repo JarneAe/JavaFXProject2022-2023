@@ -3,7 +3,10 @@ package be.kdg.nerdle.view.GameScreen;
 import be.kdg.nerdle.model.*;
 import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenPresenter;
 import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenView;
+import javafx.animation.Interpolator;
+import javafx.animation.RotateTransition;
 import javafx.scene.control.Alert;
+import javafx.util.Duration;
 
 public class GameScreenPresenter {
     private final GameScreenView view;
@@ -17,7 +20,7 @@ public class GameScreenPresenter {
         addEventListeners();
     }
 
-    public void addEventListeners() {
+    private void addEventListeners() {
         // all listeners on the keyboard portion of the screen
         for (int i = 0; i < Overview.LENGTH_OF_OVERVIEW; i++) {
             int finalI = i;
@@ -31,30 +34,19 @@ public class GameScreenPresenter {
         }
     }
 
-    public void handleKeyboardClick(String value) {
+    private void handleKeyboardClick(String value) {
         switch (value) {
             case "Enter" -> {
-                if (session.validateRow()) {
-                    System.out.println("good");
-                } else {
-                    System.out.println("bad");
-                    break;
-                }
+                if (!session.validateRow()) break;
 
                 session.assignColorsToBoardParts();
                 session.assignColorsToOverview();
                 colorAssignment();
-
                 session.nextTry();
 
                 if (session.hasGameEnded()) {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Spel afgelopen");
-                    alert.setHeaderText("Het spel is afgelopen!");
-                    alert.setContentText(String.format("Het antwoord was %s\nKlik OK om het spel te beëindigen.",
-                            session.getAnswer().toString()));
-                    alert.showAndWait();
-
+                    animate();
+                    showAlert();
                     session.handleEndOfGame();
                     IntermediaryScreenView intermediaryScreenView = new IntermediaryScreenView();
                     new IntermediaryScreenPresenter(intermediaryScreenView, session.getUser());
@@ -63,14 +55,11 @@ public class GameScreenPresenter {
                 }
 
                 activeColumn = 0;
-
                 view.getBoardPart(0, session.getCurrentTry()).setActiveStyle();
             }
 
             case "Delete" -> {
-                if (activeColumn == 0) {
-                    break;
-                }
+                if (activeColumn == 0) break;
 
                 if (activeColumn == Board.LENGTH_OF_ROW - 1 && !view.getBoardPart(activeColumn, session.getCurrentTry()).getText().equals("")) {
                     view.getBoardPart(activeColumn, session.getCurrentTry()).setText("");
@@ -97,7 +86,7 @@ public class GameScreenPresenter {
         }
     }
 
-    public void colorAssignment() {
+    private void colorAssignment() {
         for (int i = 0; i < Board.LENGTH_OF_ROW; i++) {
             Color color = session.getColorByBoardIndex(session.getCurrentTry(), i);
             view.getBoardPart(i, session.getCurrentTry()).setCustomColor(color);
@@ -106,6 +95,29 @@ public class GameScreenPresenter {
         for (int i = 0; i < Overview.LENGTH_OF_OVERVIEW; i++) {
             Color color = session.getColorByOverviewIndex(i);
             view.getKeyboardPart(i).setCustomColor(color);
+        }
+    }
+
+    private void showAlert() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Spel afgelopen");
+        alert.setHeaderText("Het spel is afgelopen!");
+        alert.setContentText(String.format("Het antwoord was %s\nKlik OK om het spel te beëindigen.",
+                session.getAnswer().toString()));
+        alert.showAndWait();
+    }
+
+    private void animate() {
+        for (int i = 0; i < Board.ROWS; i++) {
+            for (int j = 0; j < Board.LENGTH_OF_ROW; j++) {
+                RotateTransition transition = new RotateTransition();
+                transition.setDuration(Duration.millis(2000));
+                transition.setByAngle(360);
+                transition.setCycleCount(1);
+                transition.setInterpolator(Interpolator.LINEAR);
+                transition.setNode(view.getBoardPart(j, i));
+                transition.play();
+            }
         }
     }
 }

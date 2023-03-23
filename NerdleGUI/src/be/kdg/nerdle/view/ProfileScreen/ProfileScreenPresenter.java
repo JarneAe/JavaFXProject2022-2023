@@ -7,7 +7,7 @@ import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenView;
 public class ProfileScreenPresenter {
     private  final ProfileScreenView view;
 
-    private User user;
+    private final User user;
 
     public ProfileScreenPresenter(ProfileScreenView view,User user) {
         this.view = view;
@@ -16,7 +16,7 @@ public class ProfileScreenPresenter {
         addEventListeners();
     }
 
-    public void setLabels(){
+    private void setLabels(){
         view.getLbUserName().setText(user.getName());
         view.getLbTries().setText(String.valueOf(user.getAverageTries()));
         view.getLbPlayed().setText(String.valueOf(user.hasPlayedToday()));
@@ -32,6 +32,5 @@ public class ProfileScreenPresenter {
             intermediaryScreenView.getScene().getWindow().setHeight(720);
         });
     }
-
 }
 

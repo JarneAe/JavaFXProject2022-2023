@@ -2,7 +2,7 @@ package be.kdg.nerdle.view.HighcoreScreen;
 
 import be.kdg.nerdle.model.User;
 import be.kdg.nerdle.model.UserList;
-import be.kdg.nerdle.model.jsonManager.JsonManager;
+import be.kdg.nerdle.model.jsonmanager.JsonManager;
 import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenPresenter;
 import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenView;
 import java.util.List;

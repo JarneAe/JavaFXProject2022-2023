@@ -1,6 +1,6 @@
 package be.kdg.nerdle.model;
 
-import be.kdg.nerdle.model.jsonManager.JsonManager;
+import be.kdg.nerdle.model.jsonmanager.JsonManager;
 
 import java.io.IOException;
 import java.nio.file.Files;

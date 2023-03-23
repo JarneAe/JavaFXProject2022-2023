@@ -7,5 +7,5 @@ module be.kdg.nerdle {
 
     exports be.kdg.nerdle.model;
     exports be.kdg.nerdle;
-    exports be.kdg.nerdle.model.jsonManager;
+    exports be.kdg.nerdle.model.jsonmanager;
 }
