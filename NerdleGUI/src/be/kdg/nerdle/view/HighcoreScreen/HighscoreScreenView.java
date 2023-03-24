@@ -80,7 +80,7 @@ public class HighscoreScreenView extends ScrollPane {
         highscoreList.add(btnBack, 0, row);
     }
 
-    private void setStyles(){
+    private void setStyles() {
         btnBack.setStyle("-fx-text-fill: white;" +
                 "    -fx-font-family: \"Arial Narrow\";" +
                 "    -fx-font-weight: bold;" +

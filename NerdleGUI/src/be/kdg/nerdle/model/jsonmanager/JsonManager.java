@@ -12,6 +12,12 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
+
+/**
+ * class to interact with the Users.json file, used for saving and loading User objects
+ *
+ * @author robhe
+ */
 public class JsonManager {
     /**
      * only this gson object should be used to interface with Users.json, or gson objects created exactly like this,
@@ -23,9 +29,8 @@ public class JsonManager {
             .create();
     private static final Path pathToUsersFile = Paths.get("./resources/Users.json");
 
-
     /**
-     * Writes a single user to the Users.json file in the resources folder. This method checks if a user with the given
+     * Writes a single user to the Users.json file in the Resources folder. This method checks if a user with the given
      * username already exists, and will not write the user to the json if this is the case
      *
      * @param user the user to write to the json file
@@ -156,8 +161,15 @@ public class JsonManager {
         try {
             File tmpFile = pathToUsersFile.toFile();
             if (!tmpFile.exists()) {
+
+                /*
+                createNewFile() returns a boolean if it successfully created the new file,
+                but I don't really care about the result. It only returns false if the file already existed,
+                which is also fine in this context.
+                 */
                 boolean ignored = tmpFile.createNewFile();
             }
-        } catch (IOException ignored) {}
+        } catch (IOException ignored) {
+        }
     }
 }

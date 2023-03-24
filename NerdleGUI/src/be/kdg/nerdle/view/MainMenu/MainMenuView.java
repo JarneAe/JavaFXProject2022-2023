@@ -14,10 +14,17 @@ public class MainMenuView extends BorderPane {
     private Button btnStart;
 
 
-
-    public MainMenuView(){
+    public MainMenuView() {
         initialiseNodes();
         layoutNodes();
+    }
+
+    private void initialiseNodes() {
+        lbTitle = new Label("Nerdle");
+        lbTitle.setFont(FONT);
+        btnStart = new Button("START");
+        btnStart.setFont(FONT);
+        setStyles();
     }
 
     private void layoutNodes() {
@@ -36,19 +43,11 @@ public class MainMenuView extends BorderPane {
 
     }
 
-    private void initialiseNodes() {
-        lbTitle = new Label("Nerdle");
-        lbTitle.setFont(FONT);
-        btnStart = new Button("START");
-        btnStart.setFont(FONT);
-        setStyles();
-    }
-
     Button getBtnStart() {
         return btnStart;
     }
 
-    private void setStyles(){
+    private void setStyles() {
         btnStart.setStyle("-fx-text-fill: white;" +
                 "    -fx-font-family: \"Arial Narrow\";" +
                 "    -fx-font-weight: bold;" +

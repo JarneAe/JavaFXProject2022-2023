@@ -9,31 +9,16 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 
 public class NameSelectorView extends BorderPane {
-    public static final Font SELECTORFONT = Font.font("Times New Roman",20);
+    public static final Font SELECTORFONT = Font.font("Times New Roman", 20);
     public static final Font LABELFONT = Font.font("Times New Roman", 40);
     private Label lbTitle;
     private Label lbText;
-
     private TextField tfUserInput;
-
     private Button btnConfirm;
 
-    public NameSelectorView(){
+    public NameSelectorView() {
         initialiseNodes();
         layoutNodes();
-    }
-
-    private void layoutNodes() {
-        HBox hbCenter = new HBox(lbText,tfUserInput,btnConfirm);
-        hbCenter.setAlignment(Pos.CENTER);
-        HBox hbTop = new HBox(lbTitle);
-        hbTop.setAlignment(Pos.TOP_CENTER);
-
-        hbCenter.setSpacing(15);
-        this.setCenter(hbCenter);
-        this.setTop(hbTop);
-
-
     }
 
     private void initialiseNodes() {
@@ -48,6 +33,19 @@ public class NameSelectorView extends BorderPane {
         setStyles();
     }
 
+    private void layoutNodes() {
+        HBox hbCenter = new HBox(lbText, tfUserInput, btnConfirm);
+        hbCenter.setAlignment(Pos.CENTER);
+        HBox hbTop = new HBox(lbTitle);
+        hbTop.setAlignment(Pos.TOP_CENTER);
+
+        hbCenter.setSpacing(15);
+        this.setCenter(hbCenter);
+        this.setTop(hbTop);
+
+
+    }
+
     public TextField getTfUserInput() {
         return tfUserInput;
     }
@@ -60,7 +58,7 @@ public class NameSelectorView extends BorderPane {
         return btnConfirm;
     }
 
-    private void setStyles(){
+    private void setStyles() {
         btnConfirm.setStyle("-fx-text-fill: white;" +
                 "    -fx-font-family: \"Arial Narrow\";" +
                 "    -fx-font-weight: bold;" +

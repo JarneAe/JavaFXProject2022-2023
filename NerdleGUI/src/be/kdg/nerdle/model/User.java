@@ -28,8 +28,9 @@ public class User implements Comparable<User> {
 
     /**
      * add a score to a user
-     * @param date LocalDate of the date you are trying to assign a score for. Normally always LocalDate.now(), but
-     *             this was kept in for testing purposes
+     *
+     * @param date  LocalDate of the date you are trying to assign a score for. Normally always LocalDate.now(), but
+     *              this was kept in for testing purposes
      * @param tries integer of the number of tries you are trying to assign
      */
     public void addToOutcomes(LocalDate date, int tries) {

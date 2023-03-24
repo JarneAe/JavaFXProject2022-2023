@@ -10,7 +10,7 @@ public class NameSelectorPresenter {
     private final NameSelectorView view;
 
 
-    public NameSelectorPresenter(NameSelectorView view){
+    public NameSelectorPresenter(NameSelectorView view) {
         this.view = view;
         addEventListeners();
     }
@@ -19,10 +19,10 @@ public class NameSelectorPresenter {
         view.getBtnConfirm().setOnAction(actionEvent -> userHandlerAndSwitchScreen());
     }
 
-    private void userHandlerAndSwitchScreen(){
+    private void userHandlerAndSwitchScreen() {
         String name = view.getTfUserInput().getText();
 
-        if (name.length() <= 3 || name.length() >= 20) { // name length is a minimum of 3, max of 20
+        if (name.length() < 3 || name.length() > 20) { // name length is a minimum of 3, max of 20
             view.setStyleInvalidUsername();
 
         } else {

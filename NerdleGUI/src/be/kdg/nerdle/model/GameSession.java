@@ -9,12 +9,9 @@ import java.time.LocalDate;
 
 public class GameSession {
     private User user;
-
     private int currentTry;
     private final Equation answer;
-
     private final Board board;
-
     private final Overview overview;
 
     public GameSession(User user) {
@@ -32,9 +29,11 @@ public class GameSession {
     public void setUser(User user) {
         this.user = user;
     }
+
     public Equation getAnswer() {
         return answer;
     }
+
     public int getCurrentTry() {
         return currentTry;
     }
@@ -65,9 +64,8 @@ public class GameSession {
         String line = null;
 
         try {
-            line = Files.readAllLines(Paths.get("formulas.txt")).get(dayNumber-1);
-        } catch (IOException e) {
-            e.printStackTrace();
+            line = Files.readAllLines(Paths.get("formulas.txt")).get(dayNumber - 1);
+        } catch (IOException ignored) {
         }
         assert line != null; // moest van IntelliJ :)
         return new Equation(line);
@@ -76,16 +74,17 @@ public class GameSession {
     public void assignColorsToBoardParts() {
         board.assignColorsToBoardParts(answer, currentTry);
     }
+
     public void assignColorsToOverview() {
         overview.updateColors(board.getRow(currentTry));
     }
 
     public boolean hasGameEnded() {
-        return board.hasGameEnded(currentTry-1);
+        return board.hasGameEnded(currentTry - 1);
     }
 
     public void handleEndOfGame() {
-        JsonManager.addToOutcomesByName(user.getName(), LocalDate.now(), currentTry+1);
+        JsonManager.addToOutcomesByName(user.getName(), LocalDate.now(), currentTry + 1);
         this.user = JsonManager.getUserByName(user.getName());
     }
 }

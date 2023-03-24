@@ -41,11 +41,11 @@ public class IntermediaryScreenView extends HBox {
 
         ImageView profileImage = new ImageView(new Image("ProfileIcon.jpg"));
         ImageView statsImage = new ImageView(new Image("leaderboard.png"));
-        profileImage.resize(10,10);
+        profileImage.resize(10, 10);
         btnProfile.setGraphic(profileImage);
         btnProfile.setPadding(Insets.EMPTY);
-        btnProfile.setMaxSize(10,10);
-        btnStats.setMaxSize(10,10);
+        btnProfile.setMaxSize(10, 10);
+        btnStats.setMaxSize(10, 10);
         btnStats.setGraphic(statsImage);
         btnStats.setPadding(Insets.EMPTY);
 
@@ -64,7 +64,7 @@ public class IntermediaryScreenView extends HBox {
         this.setAlignment(Pos.CENTER);
     }
 
-    private void setStyles(){
+    private void setStyles() {
         btnStart.setStyle("-fx-text-fill: white;" +
                 "    -fx-font-family: \"Arial Narrow\";" +
                 "    -fx-font-weight: bold;" +

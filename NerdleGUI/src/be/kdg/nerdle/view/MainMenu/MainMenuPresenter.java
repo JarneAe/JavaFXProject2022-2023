@@ -6,7 +6,7 @@ import be.kdg.nerdle.view.NameSelector.NameSelectorView;
 public class MainMenuPresenter {
     private final MainMenuView view;
 
-    public MainMenuPresenter(MainMenuView view){
+    public MainMenuPresenter(MainMenuView view) {
         this.view = view;
         addEventListeners();
     }
@@ -17,7 +17,6 @@ public class MainMenuPresenter {
             new NameSelectorPresenter(nameSelectorView);
 
             view.getScene().setRoot(nameSelectorView);
-            //nameSelectorView.getScene().getWindow().sizeToScene();
         });
     }
 }

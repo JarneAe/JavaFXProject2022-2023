@@ -8,6 +8,7 @@ public class Part {
         this.value = value;
         this.color = Color.CLEAR;
     }
+
     public Part() {
         this.value = "";
         this.color = Color.CLEAR;

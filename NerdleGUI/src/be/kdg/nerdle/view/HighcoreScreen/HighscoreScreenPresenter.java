@@ -5,12 +5,14 @@ import be.kdg.nerdle.model.UserList;
 import be.kdg.nerdle.model.jsonmanager.JsonManager;
 import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenPresenter;
 import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenView;
+
 import java.util.List;
 
 public class HighscoreScreenPresenter {
     private final HighscoreScreenView view;
     private final User user;
     UserList userList;
+
     public HighscoreScreenPresenter(HighscoreScreenView view, User user) {
         this.user = user;
         this.view = view;
@@ -41,6 +43,6 @@ public class HighscoreScreenPresenter {
             }
         }
 
-        view.addBackButton(rankCounter+1);
+        view.addBackButton(rankCounter + 1);
     }
 }

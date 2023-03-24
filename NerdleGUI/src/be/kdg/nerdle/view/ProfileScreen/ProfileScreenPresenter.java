@@ -5,18 +5,17 @@ import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenPresenter;
 import be.kdg.nerdle.view.IntermediaryScreen.IntermediaryScreenView;
 
 public class ProfileScreenPresenter {
-    private  final ProfileScreenView view;
-
+    private final ProfileScreenView view;
     private final User user;
 
-    public ProfileScreenPresenter(ProfileScreenView view,User user) {
+    public ProfileScreenPresenter(ProfileScreenView view, User user) {
         this.view = view;
         this.user = user;
         setLabels();
         addEventListeners();
     }
 
-    private void setLabels(){
+    private void setLabels() {
         view.getLbUserName().setText(user.getName());
         view.getLbTries().setText(String.valueOf(user.getAverageTries()));
         view.getLbPlayed().setText(String.valueOf(user.hasPlayedToday()));

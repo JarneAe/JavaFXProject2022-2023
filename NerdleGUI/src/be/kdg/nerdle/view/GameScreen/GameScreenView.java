@@ -6,6 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class GameScreenView extends BorderPane {
     private final BoardPart[] keyboardPartsNumeric = new BoardPart[10];
     private final BoardPart[] keyboardPartsOperatorsAndControls = new BoardPart[7];
 
-    public GameScreenView(){
+    public GameScreenView() {
         initialiseNodes();
         layoutNodes();
     }
@@ -31,13 +32,32 @@ public class GameScreenView extends BorderPane {
         return keyboardParts.get(i);
     }
 
+    private void initialiseNodes() {
+        lbTitle = new Label("Nerdle");
+        lbTitle.setFont(FONT);
+
+        for (int i = 0; i < Board.LENGTH_OF_ROW; i++) {
+            for (int j = 0; j < Board.ROWS; j++) {
+                boardParts[i][j] = new BoardPart(new Region(), new Label());
+            }
+        }
+
+        String[] keyboardCharactersNumeric = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        String[] keyboardCharactersOperatorsAndControls = {"+", "-", "*", "/", "=", "Enter", "Delete"};
+
+        initialiseKeyboard(keyboardCharactersNumeric, keyboardPartsNumeric);
+        initialiseKeyboard(keyboardCharactersOperatorsAndControls, keyboardPartsOperatorsAndControls);
+
+        this.setStyle("-fx-background-color: #cecccc");
+    }
+
     private void layoutNodes() {
 
         lbTitle.setAlignment(Pos.CENTER);
 
         Label lbLeft = new Label();
         lbLeft.setPrefSize(100, 0);
-        lbLeft.setMinSize(0,0);
+        lbLeft.setMinSize(0, 0);
 
         BorderPane bpTop = new BorderPane();
         bpTop.setCenter(lbTitle);
@@ -73,32 +93,11 @@ public class GameScreenView extends BorderPane {
         overview.setAlignment(Pos.CENTER);
     }
 
-    private void initialiseNodes() {
-        lbTitle = new Label("Nerdle");
-        lbTitle.setFont(FONT);
-
-        for (int i = 0; i < Board.LENGTH_OF_ROW; i++) {
-            for (int j = 0; j < Board.ROWS; j++) {
-                boardParts[i][j] = new BoardPart(new Region(), new Label());
-                boardParts[i][j].style();
-            }
-        }
-
-        String[] keyboardCharactersNumeric = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-        String[] keyboardCharactersOperatorsAndControls = {"+", "-", "*", "/", "=", "Enter", "Delete"};
-
-        initialiseKeyboard(keyboardCharactersNumeric, keyboardPartsNumeric);
-        initialiseKeyboard(keyboardCharactersOperatorsAndControls, keyboardPartsOperatorsAndControls);
-
-        this.setStyle("-fx-background-color: #cecccc");
-    }
-
     // extracted method from something that was done manually before
     private void initialiseKeyboard(String[] characters, BoardPart[] parts) {
         for (int i = 0; i < characters.length; i++) {
             parts[i] = new BoardPart(new Region(), new Label());
             keyboardParts.add(parts[i]);
-            parts[i].style();
             parts[i].setText(characters[i]);
         }
     }

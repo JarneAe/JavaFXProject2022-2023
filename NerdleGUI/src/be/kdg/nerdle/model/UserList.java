@@ -4,6 +4,8 @@ import java.util.*;
 
 /**
  * wrapper class for interacting with Users.json file.
+ *
+ * @author robhe
  */
 public class UserList {
 
@@ -18,7 +20,7 @@ public class UserList {
     }
 
     public void addToUsers(User user) {
-            users.add(user);
+        users.add(user);
     }
 
     public List<User> generateHighScoreList() {

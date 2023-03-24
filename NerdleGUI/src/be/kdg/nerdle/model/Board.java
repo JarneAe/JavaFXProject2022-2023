@@ -29,6 +29,7 @@ public class Board {
 
     /**
      * checks if a row on the board is a valid Equation (as defined in the Equation class) and has a length of 8 characters.
+     *
      * @param row the index of a row on the board
      * @return true, if the row is a valid equation. False, if it is not.
      */
@@ -45,7 +46,7 @@ public class Board {
 
         try {
             new Equation(eqValue.toString()); // test if the input fits into an Equation object, therefore validating it
-        } catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             return false;
         }
 
@@ -62,26 +63,28 @@ public class Board {
             char answerChar = answer.value().charAt(i);
             char userInput = board[row][i].getValue().charAt(0);
             //checks if char is in answer
-            for (char c : answerList ){
-                if(c == userInput){
+            for (char c : answerList) {
+                if (c == userInput) {
                     board[row][i].setColor(Color.PURPLE);
                 }
             }
             //checks if char on correct place
-            if(answerChar == userInput){
+            if (answerChar == userInput) {
                 board[row][i].setColor(Color.GREEN);
-                System.out.println("Answer: "+ Arrays.toString(answerList));
+                System.out.println("Answer: " + Arrays.toString(answerList));
             }
             // makes all the other tiles black
-            if(board[row][i].getColor() == Color.CLEAR){
+            if (board[row][i].getColor() == Color.CLEAR) {
                 board[row][i].setColor(Color.BLACK);
             }
         }
     }
 
     public boolean hasGameEnded(int row) {
-        if (row == ROWS-1) return true;
+        // ran out of attempts
+        if (row == ROWS - 1) return true;
 
+        // check if every part of a given row is green. If it is, the player got it right
         boolean correctCheck = true;
 
         for (Part part : board[row]) {

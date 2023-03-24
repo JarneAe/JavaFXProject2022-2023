@@ -6,9 +6,14 @@ import org.mariuszgromada.math.mxparser.Expression;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class to evaluate formulas (represented as Equation class in the model)
+ * bunch of static methods only used with GeneratorWithTemplates, or interacted with through the Equation class.
+ *
+ * @author robhe
+ */
 public class FormulaParser {
     /**
-     *
      * @param formula the formula in an array of strings WITHOUT A RESULT!
      * @return result of the formula
      */
@@ -26,7 +31,6 @@ public class FormulaParser {
     }
 
     /**
-     *
      * @param input the input from user in a list
      */
     public static void validateExpressionWithResult(List<String> input) throws IllegalArgumentException {
@@ -45,12 +49,12 @@ public class FormulaParser {
 
         int isEqualToIndex = input.indexOf("=");
 
-        if (isEqualToIndex+1 >= input.size()) { // if "=" is the last character of the input, thus not having a valid result
+        if (isEqualToIndex + 1 >= input.size()) { // if "=" is the last character of the input, thus not having a valid result
             throw new IllegalArgumentException("No result found");
         }
 
         ArrayList<String> expression = new ArrayList<>(input.subList(0, isEqualToIndex)); // ArrayList of everything before the "=" (the mathematical expression)
-        String resultString = String.join("", input.subList(isEqualToIndex+1, input.size())); // String of everything after the "=" (the result)
+        String resultString = String.join("", input.subList(isEqualToIndex + 1, input.size())); // String of everything after the "=" (the result)
 
         if (Integer.parseInt(resultString) < 0) { // negative number
             throw new IllegalArgumentException("Negative result found");
@@ -70,7 +74,8 @@ public class FormulaParser {
 
         try {
             validateExpressionWithResult(expression);
-        } catch (IllegalArgumentException ignored) {} // if the method is called when a result is already present
+        } catch (IllegalArgumentException ignored) {
+        } // if the method is called when a result is already present
 
         String resultOfExpression = Integer.toString((int) FormulaParser.getResult(expression));
         expression.add("=");
