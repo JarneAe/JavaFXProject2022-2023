@@ -63,7 +63,7 @@ public class GeneratorWithTemplates {
     private void WriteToFile(List<List<String>> array) {
         // Tries overwriting a file and throws an error if not possible
         try {
-            FileWriter myWriter = new FileWriter("formulas.txt");
+            FileWriter myWriter = new FileWriter("resources/formulas.txt");
             //loops through the array writing every line to the file
             for (List<String> strings : array) {
 

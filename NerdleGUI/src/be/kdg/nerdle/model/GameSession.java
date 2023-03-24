@@ -64,7 +64,7 @@ public class GameSession {
         String line = null;
 
         try {
-            line = Files.readAllLines(Paths.get("formulas.txt")).get(dayNumber - 1);
+            line = Files.readAllLines(Paths.get("resources/formulas.txt")).get(dayNumber - 1);
         } catch (IOException ignored) {
         }
         assert line != null; // moest van IntelliJ :)
