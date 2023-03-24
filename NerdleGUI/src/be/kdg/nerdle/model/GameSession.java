@@ -62,7 +62,6 @@ public class GameSession {
     public Equation getFormula() {
 
         int dayNumber = LocalDate.now().getDayOfYear();
-        System.out.println(dayNumber);
         String line = null;
 
         try {

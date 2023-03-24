@@ -13,7 +13,6 @@ public record Equation(String value) {
             validate(value);
             this.value = value;
         } catch (IllegalArgumentException e) {
-            System.out.println("equation rejected.");
             throw new IllegalArgumentException();
         }
     }

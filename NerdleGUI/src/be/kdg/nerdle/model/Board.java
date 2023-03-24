@@ -17,7 +17,6 @@ public class Board {
 
     public void updateBoard(int row, int column, String value) {
         board[row][column].setValue(value);
-        System.out.println(Arrays.deepToString(board));
     }
 
     public Part[] getRow(int i) {
@@ -71,7 +70,7 @@ public class Board {
             //checks if char on correct place
             if(answerChar == userInput){
                 board[row][i].setColor(Color.GREEN);
-                System.out.println(answerList);
+                System.out.println("Answer: "+ Arrays.toString(answerList));
             }
             // makes all the other tiles black
             if(board[row][i].getColor() == Color.CLEAR){
@@ -86,8 +85,6 @@ public class Board {
         boolean correctCheck = true;
 
         for (Part part : board[row]) {
-            System.out.println(row);
-            System.out.println(part);
             if (!part.getColor().equals(Color.GREEN)) {
                 correctCheck = false;
                 break;
